@@ -10,7 +10,7 @@
 #   Este script extrae datos de un archivo Excel fuente, aplica tipos de datos estrictos
 #   y exporta los resultados a archivos CSV para su posterior limpieza y análisis.
 #   Además, normaliza los encabezados de los archivos CSV generados, reemplazando espacios por guion bajo y cambiando
-#   'Antiguedad (Años)' por 'Antiguedad_Annos' para asegurar consistencia en el procesamiento posterior.
+#   'Antiguedad (Años)' por 'Antiguedad_Annos' para asegurar consistencia en el procesamiento.
 # -------------------------------------------------------------
 
 # =======================
