@@ -1,4 +1,3 @@
-
 """
 -------------------------------------------------------------
 export_estado_analysis.py
@@ -48,4 +47,3 @@ def export_estado_analysis_xlsx():
 			df = pd.read_sql(query, engine)
 			df.to_excel(writer, sheet_name=sheet, index=False)
 	print(f"[OK] Análisis de estados exportado a {output_path}")
-

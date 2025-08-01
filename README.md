@@ -1,3 +1,4 @@
+
 # RealEstate_BI_Project
 
 Este proyecto implementa la metodología OSEMN para análisis de datos inmobiliarios, integrando Python, SQL y herramientas de visualización ejecutiva.
@@ -5,38 +6,54 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 ## Estructura
 - `data/sourceData/`: Datos originales (Excel)
 - `data/processedData/`: Datos limpios y logs de outliers
+- `data/cleanData/`: Datos limpios finales para análisis
+- `data/query_data/`: Resultados de queries y análisis exportados a Excel
 - `notebooks/`: Exploración y visualización
-- `scripts/`: Obtención de datos, limpieza y carga a SQL
+- `scripts/`: Obtención de datos, limpieza, carga a SQL y análisis exploratorio
 - `sql_queries/`: Consultas clave para análisis
 - `config/`: Variables de entorno y credenciales
+- `run_project.bat`: Script para ejecutar todo el pipeline automáticamente
 
+## Ejecución rápida del pipeline
 
-## Flujo sugerido
-Ahora puedes ejecutar todo el flujo desde un solo punto de entrada:
+1. **Instala las dependencias:**
+	 ```
+	 pip install -r requirements.txt
+	 ```
 
-1. Ejecuta `main.py` y selecciona la opción del proceso que deseas realizar:
-	- **1:** Obtener datos desde Excel y generar CSVs limpios (`scripts/obtain_data.py`)
-	- **2:** Limpiar datos de muestra (`scripts/clean_muestra.py`)
-	- **3:** Limpiar datos de estados (`scripts/clean_estados.py`)
-	- **4:** Cargar datos limpios a la base SQL (`scripts/load_to_sql.py`)
-2. Usa los notebooks y dashboards para análisis y visualización.
+2. **Configura la base de datos (MySQL):**
+	 - Crea la base de datos en tu servidor MySQL:
+		 ```sql
+		 CREATE DATABASE realestate_db CHARACTER SET utf8mb4;
+		 ```
+	 - Ajusta usuario, contraseña y host en `config/.env`:
+		 ```
+		 DATABASE_URL=mysql+mysqlconnector://usuario:password@localhost:3306/realestate_db
+		 ```
 
-## Requisitos
-Instala dependencias con:
-```
-pip install -r requirements.txt
-```
+3. **Ejecuta el pipeline completo:**
+	 - Haz doble clic en `run_project.bat` o ejecútalo desde la terminal:
+		 ```
+		 run_project.bat
+		 ```
+	 - El script activará el entorno virtual, ejecutará `main.py` y te guiará paso a paso:
+		 - Limpieza y backup de datos
+		 - Obtención y procesamiento de datos
+		 - Limpieza de muestra y estados
+		 - Carga a base de datos SQL
+		 - Exportación de resultados y análisis a Excel
+		 - Opción de ejecutar análisis exploratorio interactivo (`main_analysis.py`)
 
-## Configuración de base de datos (MySQL)
-1. Crea la base de datos en tu servidor MySQL:
-	```sql
-	CREATE DATABASE realestate_db CHARACTER SET utf8mb4;
-	```
-2. Ajusta usuario, contraseña y host en `config/.env`:
-	```
-	DATABASE_URL=mysql+mysqlconnector://usuario:password@localhost:3306/realestate_db
-	```
-3. Usa MySQL Workbench para administrar y consultar la base de datos.
+4. **Análisis exploratorio (opcional):**
+	 - Al finalizar el pipeline, puedes elegir realizar un análisis exploratorio interactivo de los datos limpios.
+	 - El sistema ejecutará automáticamente `main_analysis.py` usando el entorno virtual, permitiendo visualizar correlaciones, outliers y relaciones clave.
+
+## Notas importantes
+- El pipeline es completamente automatizado y modular.
+- Todos los scripts usan el entorno virtual para evitar conflictos de dependencias.
+- El archivo `run_project.bat` garantiza que siempre se use el entorno correcto.
+- Los resultados de queries y análisis se exportan automáticamente a la carpeta `data/query_data/`.
+- El análisis exploratorio requiere tener instalados los paquetes `seaborn` y `plotly` (ya incluidos en requirements.txt si es necesario).
 
 ## Seguridad
 Las credenciales de la base de datos deben ir en `config/.env` (no subir a repositorios públicos).
