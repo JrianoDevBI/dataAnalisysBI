@@ -8,13 +8,14 @@
 # Descripción:
 #   Este script coordina la ejecución completa del pipeline de análisis de datos:
 #   1. Análisis pre-limpieza para detectar inconsistencias
-#   2. Limpieza inteligente de datos con backup automático
-#   3. Obtención y procesamiento de datos desde fuentes Excel
-#   4. Limpieza avanzada de muestra y estados con validación
-#   5. Carga de datos a base de datos SQL con verificación
-#   6. Exportación de resultados de análisis a Excel
-#   7. Análisis exploratorio con indicadores clave y correlaciones
-#   8. Opción de generar informes ejecutivos (PDF/Word)
+#   2. Tratamiento avanzado de inconsistencias con técnicas estadísticas
+#   3. Limpieza inteligente de datos con backup automático
+#   4. Obtención y procesamiento de datos desde fuentes Excel
+#   5. Limpieza avanzada de muestra y estados con validación
+#   6. Carga de datos a base de datos SQL con verificación
+#   7. Exportación de resultados de análisis a Excel
+#   8. Análisis exploratorio con indicadores clave y correlaciones
+#   9. Opción de generar informes ejecutivos (PDF/Word)
 #
 #   El pipeline es completamente modular y automatizado, permitiendo
 #   la ejecución paso a paso o completa según las necesidades del usuario.
@@ -42,6 +43,7 @@ from scripts.test_db_connection import probar_conexion_db
 from scripts.load_to_sql import main as load_to_sql_main
 from scripts.analisis_exploratorio import ejecutar_analisis_completo
 from scripts.analisis_pre_limpieza import ejecutar_analisis_pre_limpieza
+from scripts.tratamiento_inconsistencias import ejecutar_tratamiento_inconsistencias
 import subprocess
 import sys
 
@@ -103,10 +105,26 @@ def run_pipeline():
     print("Analizando datos RAW para identificar inconsistencias antes de limpiar...")
     ejecutar_analisis_pre_limpieza()
 
-    print("\n¿Desea continuar con la limpieza después de revisar las inconsistencias?")
-    continuar = input('Escriba "Si" para continuar con la limpieza, o "No" para finalizar: ').strip().lower()
+    print("\n¿Desea continuar con el tratamiento de inconsistencias después de revisar el análisis?")
+    continuar = input('Escriba "Si" para continuar con el tratamiento, o "No" para finalizar: ').strip().lower()
     if continuar != "si":
         print("Proceso detenido para revisar inconsistencias.")
+        return
+
+    # Paso 1.6: Tratamiento avanzado de inconsistencias
+    print("\n" + "=" * 70)
+    print("[1.6] TRATAMIENTO AVANZADO DE INCONSISTENCIAS")
+    print("=" * 70)
+    print("Aplicando técnicas estadísticas para tratar inconsistencias...")
+    if not ejecutar_tratamiento_inconsistencias():
+        print("⚠️ Error en el tratamiento de inconsistencias. Continuando con limpieza estándar...")
+    else:
+        print("✅ Tratamiento de inconsistencias completado exitosamente.")
+
+    print("\n¿Desea continuar con la limpieza final después del tratamiento?")
+    continuar_limpieza = input('Escriba "Si" para continuar con la limpieza, o "No" para finalizar: ').strip().lower()
+    if continuar_limpieza != "si":
+        print("Proceso detenido después del tratamiento de inconsistencias.")
         return
 
     # Paso 2: Limpiar datos de muestra

@@ -1,5 +1,5 @@
 Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Contacto,Precio_Solicitado,Area,Piso,Garajes,Ascensores,Antiguedad_Annos
-1116578,Ventana,Bogota,EL PRADO,4.0,376895.0,Apartamento,Margarita ,******44661,250000000.0,62.0,4,1.0,0.0,15.0
+1116578,Ventana,Bogota,EL PRADO,4.0,376895.0,apartamento,Margarita ,******44661,250000000.0,62.0,4,1.0,0.0,15.0
 1117262,Ventana,Bogota,EL PRADO,5.0,871551.0,apartamento,vendido,******35458,370000000.0,36.0,4,2.0,1.0,26.0
 1229638,WEB,Bogota,CIUDAD MONTES,3.0,754523.0,apartamento,Buen ,******02547,170000000.0,33.0,12,0.0,2.0,2.0
 1229641,WEB,Bogota,CARVAJAL,3.0,863545.0,apartamento,Camilo ,******36451,170000000.0,45.0,1,0.0,0.0,21.0
@@ -47,7 +47,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1230532,WEB,Bogota,ARBORIZADORA,3.0,1179871.0,apartamento,Edna ,******99122,150000000.0,49.0,4,0.0,0.0,9.0
 1230554,WEB,Bogota,VERBENAL,3.0,869671.0,apartamento,No ,******04756,170000000.0,42.0,1,0.0,1.0,13.0
 1230582,WEB,Bogota,EL PRADO,3.0,867383.0,apartamento,Miguel ,******12959,280000000.0,63.0,1,1.0,1.0,15.0
-1230589,WEB,Bogota,TIBABUYES,3.0,221121.0,apartamento,Gerardo ,******88208,Desconocido,52.0,4,0.0,2.0,4.0
+1230589,WEB,Bogota,TIBABUYES,3.0,221121.0,apartamento,Gerardo ,******88208,155000.0,52.0,4,0.0,2.0,4.0
 1230591,WEB,Bogota,TINTAL SUR,2.0,865867.0,apartamento,Marcela ,******56147,110000000.0,40.0,4,0.0,0.0,14.0
 1230603,WEB,Bogota,CALANDAIMA,2.0,871076.0,apartamento,Yanet ,******56923,135000000.0,57.0,1,0.0,0.0,9.0
 1230613,WEB,Bogota,CASTILLA,3.0,518698.0,apartamento,Pedro ,******24881,190000000.0,47.0,13,0.0,2.0,7.0
@@ -56,7 +56,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1230765,WEB,Bogota,TIBABUYES,3.0,870334.0,apartamento,camilo ,******14584,160000000.0,42.0,4,0.0,0.0,20.0
 1230773,WEB,Bogota,ARBORIZADORA,3.0,872125.0,apartamento,Kimberly ,******27026,180000000.0,57.0,5,0.0,0.0,8.0
 1230789,WEB,Bogota,SUBA,3.0,540090.0,apartamento,Jm ,******38936,250000000.0,72.0,15,1.0,2.0,10.0
-1230798,WEB,Bogota,EL RINCON,3.0,963864.0,apartamento,hernando ,******56665,Desconocido,66.0,8,1.0,2.0,2.0
+1230798,WEB,Bogota,EL RINCON,3.0,963864.0,apartamento,hernando ,******56665,234000.0,66.0,8,1.0,2.0,2.0
 1230802,WEB,Bogota,TIBABUYES,2.0,870705.0,apartamento,Luis ,******00983,135000000.0,54.0,4,0.0,0.0,23.0
 1230875,WEB,Bogota,SUBA,3.0,502931.0,apartamento,Pedro ,******97318,145000000.0,55.0,4,0.0,0.0,19.0
 1230877,WEB,Bogota,ISMAEL PERDOMO,2.0,867846.0,apartamento,Eduardo ,******16312,125000000.0,42.0,5,0.0,0.0,10.0
@@ -89,8 +89,8 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1232296,WEB,Valle de Aburra,itagui,4.0,1179756.0,apartamento,Paola ,******52058,285000000.0,70.0,28,1.0,3.0,1.0
 1232335,WEB,Bogota,FONTIBON,3.0,859854.0,apartamento,Alberto ,******63108,196000000.0,56.0,5,1.0,0.0,19.0
 1232339,WEB,Bogota,CASA BLANCA SUBA,4.0,520608.0,apartamento,Kristel ,******15210,465000000.0,105.0,4,2.0,1.0,17.0
-1232412,WEB,Bogota,DANUBIO,2.0,874379.0,apartamento,Rosa ,******69083,Desconocido,52.0,2,0.0,0.0,9.0
-1232543,WEB,Bogota,BRITALIA,4.0,26176.0,apartamento,Angelica ,******03759,Desconocido,90.0,16,1.0,2.0,11.0
+1232412,WEB,Bogota,DANUBIO,2.0,874379.0,apartamento,Rosa ,******69083,140000000.0,52.0,2,0.0,0.0,9.0
+1232543,WEB,Bogota,BRITALIA,4.0,26176.0,apartamento,Angelica ,******03759,450000000.0,90.0,16,1.0,2.0,11.0
 1232544,WEB,Valle de Aburra,itagui,4.0,1179756.0,apartamento,LUIS ,******44827,300000000.0,67.0,18,1.0,3.0,1.0
 1232632,WEB,Bogota,TINTAL SUR,2.0,865132.0,apartamento,Edwin ,******51917,95000000.0,42.0,5,0.0,0.0,9.0
 1232642,WEB,Bogota,CALANDAIMA,2.0,220071.0,apartamento,Angelica ,******41274,160000000.0,44.0,3,0.0,1.0,11.0
@@ -117,12 +117,12 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1233127,Ventana,Valle de Aburra,itagui,4.0,1179885.0,apartamento,Paola ,******97919,270000000.0,65.0,1,1.0,2.0,2.0
 1233166,WEB,Bogota,TIBABUYES,3.0,870585.0,apartamento,Maria ,******98991,160000000.0,49.0,5,0.0,0.0,7.0
 1233192,WEB,Valle de Aburra,bello,4.0,1179691.0,apartamento,Adriana ,******29536,260000000.0,67.0,22,1.0,3.0,5.0
-1233270,WEB,Bogota,SUBA,3.0,615396.0,apartamento,Monica ,******62792,Desconocido,73.0,5,1.0,0.0,12.0
+1233270,WEB,Bogota,SUBA,3.0,615396.0,apartamento,Monica ,******62792,240000.0,73.0,5,1.0,0.0,12.0
 1233275,WEB,Bogota,BOSA OCCIDENTAL,2.0,175106.0,apartamento,Diana ,******95298,150000000.0,56.0,6,0.0,1.0,7.0
 1233315,WEB,Bogota,ENGATIVA,2.0,860933.0,apartamento,Carlos ,******87402,155000000.0,44.0,5,0.0,0.0,Desconocido
 1233350,Ventana,Valle de Aburra,itagui,4.0,1179756.0,apartamento,Angel ,******62991,260000000.0,59.0,11,1.0,3.0,3.0
 1233367,Ventana,Bogota,VERBENAL,4.0,859876.0,apartamento,Marcia ,******83699,280000000.0,72.0,9,1.0,1.0,12.0
-1233376,WEB,Bogota,LAS MARGARITAS,2.0,875817.0,apartamento,Maria ,******56956,Desconocido,50.0,5,0.0,0.0,8.0
+1233376,WEB,Bogota,LAS MARGARITAS,2.0,875817.0,apartamento,Maria ,******56956,135000.0,50.0,5,0.0,0.0,8.0
 1233401,WEB,Bogota,SUBA,3.0,450817.0,apartamento,Jose ,******12296,160000000.0,61.0,8,1.0,1.0,25.0
 1233417,WEB,Bogota,EL PORVENIR,2.0,874568.0,apartamento,Natalia ,******68600,130000000.0,41.0,3,0.0,0.0,8.0
 1233438,Ventana,Bogota,VERBENAL,3.0,468211.0,apartamento,Teresa ,******65002,165000000.0,50.0,2,0.0,0.0,10.0
@@ -136,11 +136,11 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1233600,Ventana,Bogota,VERBENAL,3.0,859850.0,apartamento,Felipe ,******04361,390000000.0,78.0,15,1.0,1.0,4.0
 1233633,WEB,Bogota,BAVARIA,4.0,870576.0,apartamento,Diana ,******56925,240000000.0,55.0,3,0.0,0.0,13.0
 1233682,WEB,Bogota,CASTILLA,3.0,870749.0,apartamento,Maria ,******99737,250000000.0,74.0,7,1.0,1.0,10.0
-1233746,Ventana,Bogota,LOS CEDROS,4.0,9024.0,Desconocido,carlos,******30387,420000000.0,64.0,6,1.0,Desconocido,Desconocido
+1233746,Ventana,Bogota,LOS CEDROS,4.0,9024.0,apartamento,carlos,******30387,420000000.0,64.0,6,1.0,Desconocido,Desconocido
 1233750,WEB,Valle de Aburra,bello,4.0,1180854.0,apartamento,Isabel ,******87414,200000000.0,52.0,20,1.0,2.0,2.0
 1233787,WEB,Valle de Aburra,bello,3.0,1180808.0,apartamento,Amparo ,******53471,185000000.0,54.0,17,1.0,2.0,3.0
 1233803,WEB,Valle de Aburra,bello,2.0,1180132.0,apartamento,Maria,******65099,135000000.0,41.0,22,0.0,2.0,4.0
-1233845,WEB,Valle de Aburra,bello,3.0,1180283.0,apartamento,Luz ,******91325,178000000.0,63.0,Desconocido,1.0,2.0,Desconocido
+1233845,WEB,Valle de Aburra,bello,3.0,1180283.0,apartamento,Luz ,******91325,178000000.0,63.0,50,1.0,2.0,Desconocido
 1233860,WEB,Bogota,AMERICAS,3.0,1179984.0,apartamento,Douglas ,******12776,280000000.0,67.0,4,1.0,0.0,20.0
 1233869,Ventana,Bogota,VERBENAL,3.0,859712.0,apartamento,Luis,******59026,140000000.0,51.0,1,0.0,0.0,9.0
 1233870,Ventana,Bogota,VERBENAL,3.0,859712.0,apartamento,juan ,******19621,135000000.0,50.0,1,0.0,0.0,9.0
@@ -163,7 +163,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1234175,WEB,Bogota,VERBENAL,3.0,466781.0,apartamento,Alejandro ,******30598,220000000.0,67.0,11,0.0,1.0,13.0
 1234191,WEB,Bogota,BOSA CENTRAL,2.0,274860.0,apartamento,Milena ,******58921,130000000.0,42.0,6,0.0,1.0,2.0
 1234222,WEB,Bogota,SUBA,3.0,871227.0,apartamento,Alfredo ,******22998,190000000.0,60.0,1,1.0,0.0,24.0
-1234237,WEB,Bogota,SUBA,3.0,187786.0,apartamento,Luz ,******12287,Desconocido,48.0,6,0.0,2.0,9.0
+1234237,WEB,Bogota,SUBA,3.0,187786.0,apartamento,Luz ,******12287,150000000.0,48.0,6,0.0,2.0,9.0
 1234242,Ventana,Bogota,VERBENAL,3.0,466773.0,apartamento,Hector/juan ,******19487,160000000.0,52.0,4,0.0,0.0,18.0
 1234256,WEB,Bogota,CASTILLA,3.0,518671.0,apartamento,Victor ,******90619,240000000.0,60.0,1,1.0,1.0,11.0
 1234257,Ventana,Bogota,VERBENAL,3.0,466773.0,apartamento,Angela ,******77935,155000000.0,46.0,1,0.0,0.0,18.0
@@ -181,13 +181,13 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1234521,WEB,Bogota,VERBENAL,3.0,466773.0,apartamento,Patricia ,******86080,180000000.0,51.0,3,0.0,0.0,18.0
 1234523,WEB,Bogota,ENGATIVA,2.0,860827.0,apartamento,Yohany ,******71980,140000000.0,48.0,3,0.0,0.0,12.0
 1234548,Ventana,Bogota,LOS CEDROS,5.0,2436.0,apartamento,Desconocido,******95394,340000000.0,84.0,7,1.0,1.0,Desconocido
-1234565,WEB,Bogota,KENNEDY CENTRAL,3.0,788781.0,apartamento,Ines ,******18676,Desconocido,64.0,3,0.0,0.0,27.0
+1234565,WEB,Bogota,KENNEDY CENTRAL,3.0,788781.0,apartamento,Ines ,******18676,180000.0,64.0,3,0.0,0.0,27.0
 1234566,Ventana,Bogota,VERBENAL,3.0,479155.0,apartamento,maria ,******13440,150000000.0,43.0,1,0.0,0.0,8.0
 1234569,Ventana,Bogota,VERBENAL,3.0,479155.0,apartamento,DIANA ,******47052,145000000.0,42.0,3,0.0,0.0,8.0
 1234588,Ventana,Bogota,VERBENAL,3.0,869879.0,apartamento,GONZALO,******37193,138000000.0,42.0,3,1.0,0.0,17.0
 1234605,Ventana,Bogota,VERBENAL,3.0,869879.0,apartamento,Pablo ,******29119,120000000.0,37.0,1,0.0,0.0,17.0
 1234614,Ventana,Bogota,VERBENAL,3.0,869879.0,apartamento,Katalina,******26405,110000000.0,36.0,1,0.0,0.0,17.0
-1234637,WEB,Bogota,SUBA,2.0,524175.0,apartamento,Patricia ,******24136,Desconocido,49.0,4,0.0,1.0,10.0
+1234637,WEB,Bogota,SUBA,2.0,524175.0,apartamento,Patricia ,******24136,190000.0,49.0,4,0.0,1.0,10.0
 1234640,Ventana,Bogota,VERBENAL,3.0,3966.0,apartamento,freddy,******86737,110000000.0,42.0,1,0.0,0.0,Desconocido
 1234641,Ventana,Bogota,VERBENAL,3.0,3966.0,apartamento,Fernando,******65891,130000000.0,50.0,3,0.0,0.0,10.0
 1234643,Ventana,Bogota,VERBENAL,3.0,3966.0,apartamento,jhon,******70940,117000000.0,42.0,3,0.0,0.0,8.0
@@ -199,7 +199,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1234757,Ventana,Bogota,VERBENAL,3.0,479358.0,apartamento,Antonio,******17442,170000000.0,45.0,4,0.0,1.0,7.0
 1234802,WEB,Bogota,FONTIBON,3.0,5001.0,apartamento,Jhon ,******25119,220000000.0,55.0,3,1.0,0.0,9.0
 1234829,WEB,Bogota,CARVAJAL,2.0,261268.0,apartamento,Daniel ,******43780,165000000.0,45.0,5,0.0,2.0,8.0
-1234830,WEB,Bogota,EL RINCON,3.0,870859.0,apartamento,Oscar ,******22332,Desconocido,54.0,4,0.0,0.0,23.0
+1234830,WEB,Bogota,EL RINCON,3.0,870859.0,apartamento,Oscar ,******22332,180000.0,54.0,4,0.0,0.0,23.0
 1234877,WEB,Bogota,CALANDAIMA,3.0,864568.0,apartamento,Kelly ,******78686,180000000.0,52.0,2,0.0,0.0,7.0
 1234886,WEB,Bogota,AMERICAS,4.0,863345.0,apartamento,Sandra ,******73150,420000000.0,84.0,11,1.0,1.0,12.0
 1234893,WEB,Bogota,BRITALIA,4.0,860281.0,apartamento,Pilar ,******69988,265000000.0,62.0,3,1.0,2.0,11.0
@@ -228,9 +228,9 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1235160,Ventana,Valle de Aburra,bello,4.0,1180511.0,apartamento,WILSON,******48669,270000000.0,59.0,13,1.0,2.0,1.0
 1235173,Ventana,Valle de Aburra,bello,3.0,1180908.0,apartamento,Camilo ,******98568,290000000.0,82.0,24,1.0,2.0,6.0
 1235184,WEB,Bogota,ARBORIZADORA,3.0,872115.0,apartamento,Luis ,******48119,150000000.0,40.0,7,0.0,1.0,2.0
-1235223,WEB,Bogota,ENGATIVA,2.0,349863.0,apartamento,"Sonia, ",******76311,Desconocido,43.0,3,0.0,0.0,14.0
-1235227,WEB,Bogota,CALANDAIMA,2.0,523921.0,apartamento,Amparo ,******18400,Desconocido,50.0,2,0.0,0.0,22.0
-1235244,WEB,Valle de Aburra,bello,3.0,1179710.0,apartamento,Juan ,******07107,Desconocido,57.0,14,0.0,1.0,7.0
+1235223,WEB,Bogota,ENGATIVA,2.0,349863.0,apartamento,"Sonia, ",******76311,140000.0,43.0,3,0.0,0.0,14.0
+1235227,WEB,Bogota,CALANDAIMA,2.0,523921.0,apartamento,Amparo ,******18400,150000000.0,50.0,2,0.0,0.0,22.0
+1235244,WEB,Valle de Aburra,bello,3.0,1179710.0,apartamento,Juan ,******07107,150000000.0,57.0,14,0.0,1.0,7.0
 1235249,WEB,Bogota,TINTAL NORTE,2.0,865119.0,apartamento,Diana ,******21262,135000000.0,39.0,1,0.0,0.0,11.0
 1235282,WEB,Bogota,EL PORVENIR,2.0,212827.0,apartamento,Any ,******56835,130000000.0,54.0,1,0.0,0.0,13.0
 1235340,WEB,Bogota,ISMAEL PERDOMO,2.0,867844.0,apartamento,Ruth ,******83408,120000000.0,38.0,4,0.0,0.0,10.0
@@ -255,13 +255,13 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1235747,WEB,Bogota,SUBA,3.0,871226.0,apartamento,Martha ,******85847,150000000.0,48.0,1,0.0,0.0,20.0
 1235758,WEB,Bogota,CIUDAD MONTES,3.0,875415.0,apartamento,Gonzalo ,******55305,200000000.0,50.0,9,0.0,2.0,23.0
 1235767,WEB,Bogota,CASA BLANCA SUBA,3.0,963839.0,apartamento,andrea ,******69547,210000000.0,53.0,2,0.0,0.0,10.0
-1235768,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,Martha ,******48737,Desconocido,65.0,15,1.0,2.0,4.0
-1235769,WEB,Valle de Aburra,bello,4.0,1180855.0,apartamento,Leidy ,******42381,Desconocido,72.0,25,1.0,2.0,5.0
+1235768,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,Martha ,******48737,260000000.0,65.0,15,1.0,2.0,4.0
+1235769,WEB,Valle de Aburra,bello,4.0,1180855.0,apartamento,Leidy ,******42381,250000000.0,72.0,25,1.0,2.0,5.0
 1235770,WEB,Bogota,EL PRADO,4.0,867194.0,apartamento,andrea ,******69547,320000000.0,80.0,5,1.0,0.0,16.0
 1235772,WEB,Bogota,EL PRADO,4.0,377037.0,apartamento,Maria ,******88655,300000000.0,80.0,4,1.0,0.0,29.0
 1235777,WEB,Bogota,ZONA FRANCA,2.0,864754.0,apartamento,Paola ,******56188,170000000.0,54.0,11,0.0,1.0,6.0
 1235791,WEB,Bogota,GARCES NAVAS,4.0,864148.0,apartamento,Helbert ,******21824,300000000.0,70.0,6,1.0,1.0,8.0
-1235809,WEB,Bogota,FONTIBON,3.0,864890.0,apartamento,Stella ,******45543,Desconocido,59.0,4,1.0,0.0,25.0
+1235809,WEB,Bogota,FONTIBON,3.0,864890.0,apartamento,Stella ,******45543,220000.0,59.0,4,1.0,0.0,25.0
 1235819,WEB,Bogota,CARVAJAL,3.0,863545.0,apartamento,Olga ,******09730,155000000.0,45.0,3,0.0,0.0,21.0
 1235824,WEB,Bogota,TINTAL NORTE,2.0,864278.0,apartamento,Alba ,******97250,140000000.0,55.0,1,0.0,0.0,9.0
 1235841,WEB,Bogota,TINTAL NORTE,3.0,964062.0,apartamento,Karol ,******67892,145000000.0,38.0,15,0.0,2.0,1.0
@@ -277,7 +277,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1235939,WEB,Valle de Aburra,bello,3.0,1180913.0,apartamento,Monica ,******40673,190000000.0,67.0,19,1.0,2.0,6.0
 1235979,WEB,Bogota,GRANJAS DE TECHO,3.0,7719.0,apartamento,Andres ,******56061,240000000.0,54.0,3,0.0,1.0,9.0
 1235981,WEB,Bogota,TIBABUYES,2.0,964060.0,apartamento,Diego ,******23411,135000000.0,58.0,3,0.0,0.0,10.0
-1235983,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,Vanessa ,******49620,Desconocido,70.0,29,1.0,2.0,8.0
+1235983,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,Vanessa ,******49620,260000000.0,70.0,29,1.0,2.0,8.0
 1236001,WEB,Valle de Aburra,bello,4.0,1179691.0,apartamento,Juan ,******35965,300000000.0,76.0,20,1.0,2.0,6.0
 1236005,Ventana,Bogota,SANTA CECILIA,3.0,1181394.0,apartamento,Alberto ,******09485,220000000.0,57.0,5,1.0,Desconocido,12.0
 1236032,WEB,Valle de Aburra,bello,3.0,Desconocido,apartamento,DIANA ,******60203,180000000.0,54.0,23,1.0,2.0,Desconocido
@@ -285,25 +285,25 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1236044,WEB,Bogota,CALANDAIMA,3.0,864533.0,apartamento,Carolina ,******57021,310000000.0,88.0,3,1.0,1.0,1.0
 1236150,WEB,Bogota,TINTAL NORTE,2.0,865119.0,apartamento,Constructora ,******53746,150000000.0,58.0,1,0.0,0.0,11.0
 1236151,WEB,Bogota,TIBABUYES,3.0,221121.0,apartamento,Jacqueline ,******66658,155000000.0,53.0,8,0.0,2.0,4.0
-1236187,WEB,Bogota,BOSA OCCIDENTAL,2.0,171369.0,apartamento,Juan ,******89150,Desconocido,49.0,4,0.0,1.0,7.0
+1236187,WEB,Bogota,BOSA OCCIDENTAL,2.0,171369.0,apartamento,Juan ,******89150,120000.0,49.0,4,0.0,1.0,7.0
 1236194,WEB,Bogota,GRANJAS DE TECHO,3.0,859923.0,apartamento,juan ,******10633,245000000.0,59.0,12,0.0,1.0,10.0
 1236214,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,MARIA ,******33601,290000000.0,71.0,24,1.0,2.0,2.0
 1236248,WEB,Bogota,EL RINCON,3.0,870479.0,apartamento,Giana ,******36738,135000000.0,35.0,4,0.0,1.0,20.0
 1236284,WEB,Bogota,VERBENAL,3.0,466773.0,apartamento,DARIO ,******18480,185000000.0,52.0,5,0.0,0.0,18.0
 1236288,WEB,Bogota,GARCES NAVAS,3.0,860941.0,apartamento,Ana ,******81358,185000000.0,48.0,4,0.0,0.0,16.0
-1236325,WEB,Valle de Aburra,itagui,3.0,1182251.0,apartamento,Heli ,******44189,Desconocido,73.0,1,1.0,Desconocido,5.0
+1236325,WEB,Valle de Aburra,itagui,3.0,1182251.0,apartamento,Heli ,******44189,210000.0,73.0,1,1.0,Desconocido,5.0
 1236333,WEB,Bogota,CALANDAIMA,2.0,534455.0,apartamento,Criatian ,******77851,156000000.0,52.0,7,0.0,2.0,1.0
 1236341,WEB,Valle de Aburra,bello,3.0,1179691.0,apartamento,Mauricio ,******70515,320000000.0,91.0,26,1.0,1.0,3.0
 1236350,Ventana,Bogota,TIMIZA,3.0,846282.0,apartamento,Rocio ,******00988,175000000.0,70.0,5,Desconocido,Desconocido,30.0
 1236375,WEB,Valle de Aburra,bello,1.0,1180132.0,apartamento,Mateo ,******08781,115000000.0,41.0,19,1.0,2.0,3.0
-1236468,WEB,Bogota,SUBA,3.0,502202.0,apartamento,Diosa,******79523,Desconocido,76.0,Desconocido,1.0,2.0,6.0
+1236468,WEB,Bogota,SUBA,3.0,502202.0,apartamento,Diosa,******79523,300000000.0,76.0,50,1.0,2.0,6.0
 1236474,WEB,Valle de Aburra,robledo,3.0,1180848.0,apartamento,Jorge ,******40015,120000000.0,46.0,11,0.0,2.0,7.0
 1236476,WEB,Bogota,SUBA,3.0,871200.0,apartamento,Sonia ,******66527,140000000.0,42.0,1,0.0,0.0,13.0
 1236487,WEB,Bogota,ISMAEL PERDOMO,2.0,869666.0,apartamento,Jose ,******01145,170000000.0,52.0,2,0.0,0.0,18.0
 1236514,WEB,Bogota,SUBA,3.0,617207.0,apartamento,Ana ,******67699,240000000.0,68.0,1,1.0,0.0,12.0
 1236552,WEB,Bogota,TIBABUYES,3.0,963843.0,apartamento,Juan ,******46323,175000000.0,68.0,5,1.0,0.0,21.0
 1236585,WEB,Bogota,CALANDAIMA,2.0,871071.0,apartamento,Leidy ,******31326,135000000.0,53.0,3,0.0,2.0,4.0
-1236592,WEB,Bogota,BAVARIA,4.0,870554.0,apartamento,Sergio ,******43807,Desconocido,64.0,11,1.0,1.0,12.0
+1236592,WEB,Bogota,BAVARIA,4.0,870554.0,apartamento,Sergio ,******43807,240000.0,64.0,11,1.0,1.0,12.0
 1236606,WEB,Bogota,VERBENAL,3.0,875710.0,apartamento,Andres ,******44079,180000000.0,54.0,2,0.0,0.0,10.0
 1236657,WEB,Bogota,VERBENAL,4.0,416511.0,apartamento,Andrea ,******05629,250000000.0,61.0,6,1.0,2.0,13.0
 1236658,WEB,Bogota,CASTILLA,3.0,918338.0,apartamento,Claudia ,******89211,175000000.0,50.0,10,0.0,2.0,9.0
@@ -333,7 +333,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1237190,Ventana,Bogota,ISMAEL PERDOMO,3.0,320664.0,apartamento,dagoberto,******71870,150000000.0,47.0,1,0.0,0.0,6.0
 1237191,Ventana,Bogota,ISMAEL PERDOMO,3.0,320664.0,apartamento,Martha ,******52293,140000000.0,46.0,3,0.0,0.0,6.0
 1237195,Ventana,Bogota,ISMAEL PERDOMO,3.0,320664.0,apartamento,hector,******95802,145000000.0,48.0,4,0.0,0.0,6.0
-1237222,WEB,Bogota,CASTILLA,3.0,870749.0,apartamento,Diana ,******09295,Desconocido,65.0,7,1.0,1.0,10.0
+1237222,WEB,Bogota,CASTILLA,3.0,870749.0,apartamento,Diana ,******09295,220000000.0,65.0,7,1.0,1.0,10.0
 1237316,WEB,Bogota,EL PORVENIR,2.0,230706.0,apartamento,Lorena ,******30015,120000000.0,44.0,1,0.0,0.0,10.0
 1237356,WEB,Bogota,EL RINCON,3.0,870859.0,apartamento,Soraida ,******39100,140000000.0,54.0,5,0.0,0.0,23.0
 1237361,WEB,Bogota,CASTILLA,3.0,506699.0,apartamento,Lina ,******80942,170000000.0,55.0,1,0.0,0.0,25.0
@@ -358,7 +358,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1237675,WEB,Bogota,CASTILLA,3.0,518671.0,apartamento,Maria ,******27254,220000000.0,52.0,8,1.0,1.0,11.0
 1237722,Ventana,Bogota,ISMAEL PERDOMO,3.0,865962.0,apartamento,David ,******25880,150000000.0,60.0,24,0.0,3.0,6.0
 1237733,Ventana,Bogota,ISMAEL PERDOMO,3.0,865962.0,apartamento,Maribel ,******11553,150000000.0,59.0,15,0.0,2.0,6.0
-1237757,WEB,Bogota,CASTILLA,3.0,918338.0,apartamento,Jessica ,******68326,Desconocido,45.0,13,0.0,2.0,9.0
+1237757,WEB,Bogota,CASTILLA,3.0,918338.0,apartamento,Jessica ,******68326,160000000.0,45.0,13,0.0,2.0,9.0
 1237812,Ventana,Bogota,ISMAEL PERDOMO,2.0,867844.0,apartamento,maribel,******74932,130000000.0,50.0,5,0.0,0.0,10.0
 1237816,WEB,Bogota,SUBA,3.0,207980.0,apartamento,Marcos ,******91446,230000000.0,84.0,3,1.0,1.0,25.0
 1237830,Ventana,Bogota,ISMAEL PERDOMO,2.0,867844.0,apartamento,german,******24341,130000000.0,58.0,3,0.0,0.0,10.0
@@ -551,7 +551,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1241390,Ventana,Bogota,APOGEO,3.0,876085.0,apartamento,elsa,******96396,180000000.0,57.0,2,0.0,0.0,18.0
 1241425,WEB,Valle de Aburra,bello,4.0,1180912.0,apartamento,Jaime ,******18988,190000000.0,55.0,6,1.0,2.0,5.0
 1241455,WEB,Bogota,TIBABUYES,3.0,870565.0,apartamento,Carlos ,******01208,150000000.0,57.0,4,0.0,0.0,10.0
-1241484,Ventana,Valle de Aburra,bello,Desconocido,1179689.0,apartamento,Juliana ,******09225,290000000.0,160.0,3,1.0,Desconocido,Desconocido
+1241484,Ventana,Valle de Aburra,bello,,1179689.0,apartamento,Juliana ,******09225,290000000.0,160.0,3,1.0,Desconocido,Desconocido
 1241586,WEB,Bogota,SANTA ISABEL,3.0,1184401.0,apartamento,Nelson ,******22856,260000000.0,65.0,5,1.0,2.0,3.0
 1241598,Ventana,Bogota,ARBORIZADORA,3.0,600118.0,casa,Carlos,******93524,150000000.0,53.0,16,0.0,2.0,9.0
 1241634,WEB,Bogota,VERBENAL,4.0,6836.0,apartamento,Ana ,******88453,280000000.0,70.0,7,1.0,2.0,21.0
@@ -734,7 +734,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1244526,Ventana,Bogota,SUBA,3.0,540230.0,apartamento,hector,******52664,180000000.0,61.0,1,1.0,0.0,23.0
 1244577,Ventana,Bogota,SUBA,3.0,540100.0,apartamento,Luz ,******44036,195000000.0,53.0,4,0.0,1.0,12.0
 1244635,Ventana,Bogota,SUBA,3.0,540243.0,apartamento,Lorena,******36016,220000000.0,60.0,5,1.0,2.0,5.0
-1244666,WEB,Bogota,BRITALIA,4.0,1184407.0,apartamento,Liliana ,******97710,Desconocido,66.0,7,1.0,1.0,9.0
+1244666,WEB,Bogota,BRITALIA,4.0,1184407.0,apartamento,Liliana ,******97710,330000000.0,66.0,7,1.0,1.0,9.0
 1244690,Ventana,Bogota,SUBA,3.0,540243.0,apartamento,PATRCIA ,******71821,220000000.0,59.0,2,1.0,2.0,6.0
 1244691,WEB,Bogota,BOLIVIA,3.0,481441.0,apartamento,Diego ,******06459,155000000.0,49.0,3,0.0,0.0,21.0
 1244700,WEB,Bogota,SUBA,3.0,871226.0,apartamento,Yaneth ,******57634,140000000.0,49.0,4,0.0,0.0,20.0
@@ -1260,7 +1260,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1254256,WEB,Bogota,CASTILLA,3.0,520509.0,apartamento,Alexandra ,******82172,152000000.0,44.0,8,0.0,1.0,6.0
 1254272,WEB,Bogota,EL PRADO,4.0,379746.0,apartamento,Juanita ,******86534,250000000.0,53.0,5,1.0,0.0,17.0
 1254281,WEB,Bogota,CASTILLA,3.0,918338.0,apartamento,Carlos ,******01396,200000000.0,52.0,13,0.0,2.0,9.0
-1254289,WEB,Bogota,ISMAEL PERDOMO,2.0,869675.0,apartamento,Yackeline,******29173,Desconocido,47.0,1,0.0,0.0,11.0
+1254289,WEB,Bogota,ISMAEL PERDOMO,2.0,869675.0,apartamento,Yackeline,******29173,140000000.0,47.0,1,0.0,0.0,11.0
 1254314,WEB,Bogota,EL PORVENIR,2.0,230706.0,apartamento,Diego ,******85461,98000000.0,46.0,2,0.0,0.0,10.0
 1254317,WEB,Valle de Aburra,bello,4.0,1179956.0,apartamento,Jessica ,******71389,260000000.0,68.0,13,1.0,1.0,Desconocido
 1254321,WEB,Bogota,GRANJAS DE TECHO,4.0,860094.0,apartamento,Pilar,******06548,280000000.0,59.0,7,1.0,1.0,17.0
@@ -1386,7 +1386,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1255662,WEB,Bogota,BOLIVIA,3.0,860639.0,apartamento,Azucena ,******21484,280000000.0,57.0,5,1.0,0.0,29.0
 1255685,Ventana,Bogota,EL PORVENIR,2.0,874635.0,apartamento,Yoli ,******46208,110000000.0,42.0,3,0.0,0.0,11.0
 1255687,Ventana,Bogota,EL PORVENIR,2.0,874635.0,apartamento,Ana ,******51168,95000000.0,42.0,4,0.0,0.0,11.0
-1255688,Ventana,Bogota,SOACHA CIUDAD VERDE,3.0,1182160.0,Desconocido,Cristina ,******54334,158000000.0,43.0,1,Desconocido,Desconocido,Desconocido
+1255688,Ventana,Bogota,SOACHA CIUDAD VERDE,3.0,1182160.0,apartamento,Cristina ,******54334,158000000.0,43.0,1,Desconocido,Desconocido,Desconocido
 1255692,Ventana,Bogota,EL PORVENIR,2.0,874635.0,apartamento,faidi,******22474,95000000.0,42.0,1,0.0,0.0,11.0
 1255696,Ventana,Bogota,EL PORVENIR,2.0,874635.0,apartamento,MARCO ,******82790,95000000.0,47.0,5,0.0,0.0,11.0
 1255700,Ventana,Bogota,EL PORVENIR,2.0,874635.0,apartamento,alberto,******73811,120000000.0,43.0,2,0.0,0.0,11.0
@@ -1470,13 +1470,13 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1256789,Ventana,Valle de Aburra,bello,2.0,1181149.0,apartamento,Cristian ,******21533,125000000.0,43.0,9,1.0,2.0,5.0
 1256792,Ventana,Valle de Aburra,bello,3.0,1181149.0,apartamento,GIRMA.....,******34148,100000000.0,45.0,25,0.0,2.0,5.0
 1256793,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,eduardo,******67068,120000000.0,45.0,4,0.0,0.0,7.0
-1256795,Ventana,Valle de Aburra,bello,Desconocido,1181149.0,apartamento,LUZ,******59621,118000000.0,52.0,23,Desconocido,Desconocido,Desconocido
+1256795,Ventana,Valle de Aburra,bello,,1181149.0,apartamento,LUZ,******59621,118000000.0,52.0,23,Desconocido,Desconocido,Desconocido
 1256799,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,Jhoana,******76574,120000000.0,45.0,5,0.0,0.0,10.0
 1256801,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,helena,******38329,125000000.0,52.0,4,0.0,0.0,6.0
 1256806,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,Mariluz,******62353,120000000.0,48.0,4,0.0,0.0,9.0
 1256808,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,Paola ,******61765,120000000.0,49.0,3,0.0,0.0,6.0
 1256810,Ventana,Bogota,BOSA OCCIDENTAL,2.0,171456.0,apartamento,Alcides,******92937,150000000.0,52.0,1,0.0,0.0,6.0
-1256817,Ventana,Bogota,BOSA OCCIDENTAL,Desconocido,171456.0,apartamento,Maria,******78278,125000000.0,47.0,3,Desconocido,Desconocido,8.0
+1256817,Ventana,Bogota,BOSA OCCIDENTAL,,171456.0,apartamento,Maria,******78278,125000000.0,47.0,3,Desconocido,Desconocido,8.0
 1256826,WEB,Bogota,TIBABUYES,3.0,221121.0,apartamento,Tatiana ,******18885,160000000.0,54.0,2,0.0,2.0,4.0
 1256830,Ventana,Bogota,BOSA OCCIDENTAL,2.0,864045.0,apartamento,claudia,******73658,140000000.0,53.0,11,0.0,1.0,4.0
 1256844,Ventana,Bogota,BOSA OCCIDENTAL,2.0,342589.0,apartamento,Viviana ,******89883,120000000.0,52.0,2,0.0,0.0,8.0
@@ -1674,7 +1674,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1259337,Ventana,Bogota,BOLIVIA,3.0,490613.0,apartamento,William ,******99995,160000000.0,44.0,1,0.0,0.0,25.0
 1259340,WEB,Bogota,CALANDAIMA,2.0,871077.0,apartamento,Estephania ,******49087,120000000.0,47.0,5,0.0,0.0,11.0
 1259348,Ventana,Bogota,GRANJAS DE TECHO,4.0,3.0,apartamento,cesar,******80032,440000000.0,85.0,5,1.0,1.0,7.0
-1259349,WEB,Bogota,VERBENAL,4.0,416320.0,apartamento,No ,******71155,Desconocido,72.0,6,1.0,1.0,10.0
+1259349,WEB,Bogota,VERBENAL,4.0,416320.0,apartamento,No ,******71155,200000.0,72.0,6,1.0,1.0,10.0
 1259354,WEB,Bogota,CALANDAIMA,3.0,219653.0,apartamento,Jorge ,******88246,200000000.0,62.0,3,1.0,1.0,5.0
 1259361,WEB,Bogota,TINTAL SUR,2.0,663371.0,apartamento,Yaneth ,******70412,140000000.0,50.0,4,0.0,0.0,11.0
 1259395,WEB,Bogota,GRANJAS DE TECHO,4.0,859619.0,apartamento,Monica ,******78863,350000000.0,82.0,8,1.0,1.0,9.0
@@ -1926,7 +1926,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1262146,Ventana,Bogota,SOACHA HOGARES,3.0,1184015.0,apartamento,SANDRA,******55693,90000000.0,47.0,3,1.0,0.0,7.0
 1262147,Ventana,Bogota,SOACHA HOGARES,3.0,1184015.0,apartamento,ALICIA,******10840,105000000.0,48.0,2,1.0,0.0,7.0
 1262163,Ventana,Bogota,SOACHA - SAN MATEO 1,3.0,1182417.0,apartamento,Cesar ,******69534,110000000.0,50.0,2,0.0,0.0,7.0
-1262170,Ventana,Bogota,SOACHA LA FRAGUA Y EL ALTICO,Desconocido,1182468.0,apartamento,mercedes,******24649,80000000.0,38.0,1,1.0,Desconocido,Desconocido
+1262170,Ventana,Bogota,SOACHA LA FRAGUA Y EL ALTICO,,1182468.0,apartamento,mercedes,******24649,80000000.0,38.0,1,1.0,Desconocido,Desconocido
 1262179,WEB,Bogota,CASTILLA,3.0,870335.0,apartamento,Giovanni ,******98166,310000000.0,68.0,12,1.0,1.0,8.0
 1262180,Ventana,Bogota,SOACHA - SAN MATEO 1,3.0,1182419.0,apartamento,andres,******87038,110000000.0,53.0,1,0.0,0.0,10.0
 1262215,Ventana,Bogota,SOACHA - SAN MATEO 1,3.0,1182422.0,apartamento,Angelica ,******52060,100000000.0,50.0,1,0.0,0.0,9.0
@@ -2286,7 +2286,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1268524,WEB,Bogota,ISMAEL PERDOMO,3.0,320664.0,apartamento,Luz ,******82957,140000000.0,42.0,3,0.0,0.0,6.0
 1268533,WEB,Bogota,ISMAEL PERDOMO,3.0,1179992.0,apartamento,Sandra ,******65323,175000000.0,62.0,15,1.0,1.0,5.0
 1268553,WEB,Bogota,AMERICAS,3.0,139890.0,apartamento,Patricia ,******34330,245000000.0,62.0,1,1.0,0.0,Desconocido
-1268597,WEB,Bogota,QUINTA PAREDES,4.0,26782.0,apartamento,Mari ,******62330,550000000.0,72.0,Desconocido,1.0,1.0,1.0
+1268597,WEB,Bogota,QUINTA PAREDES,4.0,26782.0,apartamento,Mari ,******62330,550000000.0,72.0,50,1.0,1.0,1.0
 1268626,WEB,Bogota,CASTILLA,3.0,506699.0,apartamento,Angelica ,******99860,160000000.0,50.0,3,0.0,0.0,25.0
 1268670,WEB,Bogota,BOSA OCCIDENTAL,2.0,864005.0,apartamento,pinilla,******15200,125000000.0,48.0,6,0.0,1.0,6.0
 1268698,Ventana,Valle de Aburra,itagui,4.0,1180512.0,apartamento,Natalia ,******00373,210000000.0,48.0,23,1.0,2.0,3.0
@@ -2474,7 +2474,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1271479,WEB,Bogota,TINTAL NORTE,2.0,865122.0,apartamento,Natalia ,******40023,160000000.0,60.0,5,0.0,0.0,9.0
 1271514,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182895.0,apartamento,Ruby ,******35159,104000000.0,58.0,5,0.0,0.0,6.0
 1271553,Ventana,Bogota,EL RINCON,3.0,871290.0,apartamento,OSCAR ,******08176,178000000.0,60.0,3,1.0,0.0,21.0
-1271621,WEB,Bogota,LA FLORESTA,Desconocido,606721.0,apartamento,Elliot ,******23104,240000000.0,55.0,1,1.0,0.0,16.0
+1271621,WEB,Bogota,LA FLORESTA,,606721.0,apartamento,Elliot ,******23104,240000000.0,55.0,1,1.0,0.0,16.0
 1271652,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182169.0,apartamento,Manuel ,******81403,118000000.0,56.0,5,0.0,0.0,9.0
 1271655,WEB,Bogota,SOACHA - SAN MATEO 3,3.0,1184013.0,apartamento,Manuela ,******77902,120000000.0,57.0,1,0.0,1.0,8.0
 1271690,WEB,Bogota,CALANDAIMA,2.0,523922.0,apartamento,Maria ,******11439,180000000.0,50.0,5,0.0,0.0,22.0
@@ -2538,7 +2538,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1272442,Ventana,Bogota,TINTAL NORTE,2.0,235184.0,apartamento,Jaime ,******18264,130000000.0,56.0,1,0.0,0.0,16.0
 1272456,WEB,Bogota,TOBERIN,4.0,584814.0,apartamento,Carlos ,******67454,325000000.0,86.0,1,1.0,2.0,10.0
 1272466,WEB,Bogota,ZONA FRANCA,2.0,864754.0,apartamento,ROCIO ,******80251,160000000.0,55.0,6,0.0,1.0,6.0
-1272511,Ventana,Valle de Aburra,sabaneta,Desconocido,1181627.0,apartamento,Isabel,******43687,250000000.0,74.0,15,1.0,2.0,Desconocido
+1272511,Ventana,Valle de Aburra,sabaneta,,1181627.0,apartamento,Isabel,******43687,250000000.0,74.0,15,1.0,2.0,Desconocido
 1272607,Ventana,Bogota,TINTAL NORTE,2.0,864280.0,apartamento,elizabeth ,******50709,129000000.0,38.0,3,0.0,0.0,11.0
 1272615,Ventana,Bogota,TINTAL NORTE,2.0,194489.0,apartamento,Juan ,******58658,120000000.0,42.0,4,0.0,0.0,12.0
 1272633,WEB,Bogota,FONTIBON,4.0,135041.0,apartamento,Sandra ,******16637,398000000.0,85.0,12,1.0,2.0,2.0
@@ -2822,10 +2822,10 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1278120,WEB,Valle de Aburra,envigado,4.0,Desconocido,apartamento,Gladys ,******22531,300000000.0,73.0,6,1.0,1.0,11.0
 1278135,Ventana,Valle de Aburra,bello,3.0,1180225.0,apartamento,Luz,******69575,143000000.0,49.0,13,0.0,2.0,8.0
 1278139,Ventana,Valle de Aburra,bello,3.0,1180225.0,apartamento,Juliana ,******09225,155000000.0,50.0,9,0.0,2.0,6.0
-1278173,Ventana,Valle de Aburra,bello,Desconocido,1180855.0,apartamento,Martha ,******94282,240000000.0,76.0,16,Desconocido,Desconocido,Desconocido
+1278173,Ventana,Valle de Aburra,bello,,1180855.0,apartamento,Martha ,******94282,240000000.0,76.0,16,Desconocido,Desconocido,Desconocido
 1278348,Ventana,Bogota,CARVAJAL,3.0,863545.0,apartamento,Ofelia ,******66595,205000000.0,49.0,2,1.0,0.0,21.0
 1278369,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182170.0,apartamento,Franky ,******41256,100000000.0,49.0,2,0.0,0.0,5.0
-1278419,Ventana,Bogota,MADRID H CASABLANCA,Desconocido,1185634.0,apartamento,Desconocido,******23155,210000000.0,60.0,2,1.0,Desconocido,6.0
+1278419,Ventana,Bogota,MADRID H CASABLANCA,,1185634.0,apartamento,Desconocido,******23155,210000000.0,60.0,2,1.0,Desconocido,6.0
 1278455,WEB,Bogota,GRANJAS DE TECHO,4.0,859885.0,apartamento,Natalia ,******97853,320000000.0,70.0,3,1.0,0.0,16.0
 1278478,Ventana,Bogota,CARVAJAL,3.0,872728.0,apartamento,antonio,******21769,210000000.0,58.0,3,0.0,0.0,25.0
 1278614,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182234.0,apartamento,Alexandra ,******10958,120000000.0,68.0,3,0.0,0.0,2.0
@@ -3212,7 +3212,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1289595,WEB,Bogota,BOLIVIA,3.0,869870.0,apartamento,Edwin ,******56916,210000000.0,68.0,3,0.0,0.0,19.0
 1289596,Ventana,Bogota,GARCES NAVAS,3.0,860648.0,apartamento,Consuelo,******17322,225000000.0,64.0,3,1.0,0.0,19.0
 1289597,Ventana,Bogota,GARCES NAVAS,3.0,860648.0,apartamento,PATRICIA ,******32311,220000000.0,66.0,4,1.0,0.0,15.0
-1289601,Ventana,Bogota,GARCES NAVAS,Desconocido,860648.0,Desconocido,Wilson ,******40468,320000000.0,76.0,2,Desconocido,Desconocido,Desconocido
+1289601,Ventana,Bogota,GARCES NAVAS,,860648.0,apartamento,Wilson ,******40468,320000000.0,76.0,2,Desconocido,Desconocido,Desconocido
 1289602,Ventana,Bogota,GARCES NAVAS,3.0,860648.0,apartamento,OLIVA ,******23881,210000000.0,64.0,5,1.0,0.0,20.0
 1289654,Ventana,Bogota,GARCES NAVAS,3.0,471045.0,apartamento,EDERSON ,******55747,310000000.0,84.0,5,1.0,1.0,11.0
 1289667,WEB,Bogota,SUBA,3.0,864428.0,apartamento,Mario ,******95688,225000000.0,50.0,1,1.0,1.0,9.0
@@ -3252,7 +3252,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1290255,WEB,Bogota,LA ALHAMBRA,5.0,867123.0,apartamento,Ana ,******82175,360000000.0,70.0,3,1.0,1.0,7.0
 1290257,WEB,Bogota,CAPELLANIA,4.0,6713.0,apartamento,Lola,******10000,280000000.0,65.0,4,1.0,0.0,18.0
 1290278,Ventana,Valle de Aburra,itagui,4.0,1180522.0,apartamento,camila,******42177,315000000.0,74.0,14,1.0,2.0,5.0
-1290419,Ventana,Bogota,FUNZA VILLAS Y EL LAGO,Desconocido,1185931.0,apartamento,jasmin,******65824,170000000.0,65.0,1,1.0,Desconocido,Desconocido
+1290419,Ventana,Bogota,FUNZA VILLAS Y EL LAGO,,1185931.0,apartamento,jasmin,******65824,170000000.0,65.0,1,1.0,Desconocido,Desconocido
 1290439,WEB,Bogota,ISMAEL PERDOMO,2.0,Desconocido,apartamento,Alvaro ,******92470,200000000.0,58.0,19,1.0,1.0,5.0
 1290473,WEB,Bogota,ZONA FRANCA,2.0,864754.0,apartamento,MARTHA ,******45951,150000000.0,51.0,6,0.0,1.0,7.0
 1290533,WEB,Bogota,GRANJAS DE TECHO,4.0,860094.0,apartamento,Diana ,******52932,290000000.0,61.0,3,1.0,1.0,18.0
@@ -3335,9 +3335,9 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1292491,WEB,Bogota,GRANJAS DE TECHO,4.0,863544.0,apartamento,IC ,******65525,470000000.0,74.0,1,1.0,1.0,7.0
 1292552,WEB,Bogota,GRANJAS DE TECHO,4.0,859619.0,apartamento,Johanna ,******90400,330000000.0,72.0,4,1.0,1.0,10.0
 1292621,WEB,Valle de Aburra,sabaneta,3.0,1208684.0,apartamento,hernan ,******75206,250000000.0,61.0,14,1.0,1.0,4.0
-1292656,Ventana,Valle de Aburra,bello,4.0,1179956.0,Desconocido,Leidy,******43106,227600000.0,75.0,7,1.0,2.0,Desconocido
+1292656,Ventana,Valle de Aburra,bello,4.0,1179956.0,apartamento,Leidy,******43106,227600000.0,75.0,7,1.0,2.0,Desconocido
 1292673,WEB,Bogota,SOACHA - SAN MATEO 1,3.0,1184009.0,apartamento,Eliana ,******59807,145000000.0,56.0,5,0.0,1.0,9.0
-1292685,Ventana,Valle de Aburra,robledo,4.0,1179658.0,Desconocido,MAURICIO ,******86411,265000000.0,53.0,25,1.0,1.0,Desconocido
+1292685,Ventana,Valle de Aburra,robledo,4.0,1179658.0,apartamento,MAURICIO ,******86411,265000000.0,53.0,25,1.0,1.0,Desconocido
 1292756,WEB,Bogota,MOSQUERA CENTRO Y EL TREBOL,3.0,1185596.0,apartamento,pedro ,******73717,125000000.0,45.0,5,0.0,0.0,8.0
 1292772,WEB,Bogota,CASTILLA,3.0,523951.0,apartamento,pedro ,******73717,375000000.0,70.0,15,1.0,1.0,10.0
 1292830,Ventana,Bogota,LA ALHAMBRA,5.0,536127.0,apartamento,Luciana ,******53575,330000000.0,58.0,2,1.0,1.0,25.0
@@ -3505,7 +3505,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1296339,WEB,Bogota,AMERICAS,4.0,1179680.0,apartamento,rocio ,******36792,320000000.0,68.0,3,1.0,1.0,7.0
 1296389,Ventana,Bogota,MODELIA,4.0,6628.0,apartamento,Manuel,******75805,275000000.0,60.0,3,1.0,0.0,8.0
 1296420,Ventana,Bogota,MODELIA,4.0,1193684.0,apartamento,CALISTO,******16930,520000000.0,98.0,4,1.0,2.0,8.0
-1296422,Ventana,Bogota,MODELIA,4.0,1193684.0,Desconocido,nanci,******95343,490000000.0,90.0,1,1.0,1.0,10.0
+1296422,Ventana,Bogota,MODELIA,4.0,1193684.0,apartamento,nanci,******95343,490000000.0,90.0,1,1.0,1.0,10.0
 1296425,Ventana,Bogota,MODELIA,4.0,1193684.0,apartamento,LINA,******27488,515000000.0,98.0,6,1.0,2.0,7.0
 1296430,Ventana,Bogota,MODELIA,4.0,1193684.0,apartamento,Rafael,******88862,430000000.0,93.0,7,1.0,2.0,8.0
 1296438,Ventana,Bogota,MODELIA,4.0,861408.0,apartamento,Andres ,******18056,690000000.0,118.0,2,2.0,2.0,9.0
@@ -3577,7 +3577,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1297737,Ventana,Bogota,EL PRADO,4.0,376978.0,apartamento,Samuel ,******70473,270000000.0,61.0,5,1.0,0.0,19.0
 1297742,WEB,Bogota,FONTIBON,3.0,860010.0,apartamento,Maribel ,******99128,195000000.0,50.0,5,0.0,0.0,13.0
 1297745,Ventana,Bogota,LA ALHAMBRA,5.0,871089.0,apartamento,Mauricio,******43786,570000000.0,85.0,10,2.0,2.0,4.0
-1297753,Ventana,Bogota,EL PRADO,4.0,379554.0,Desconocido,nestor,******09681,350000000.0,86.0,4,1.0,Desconocido,25.0
+1297753,Ventana,Bogota,EL PRADO,4.0,379554.0,apartamento,nestor,******09681,350000000.0,86.0,4,1.0,Desconocido,25.0
 1297784,Ventana,Bogota,EL PRADO,4.0,406347.0,apartamento,isaac,******21792,375000000.0,70.0,7,1.0,1.0,14.0
 1297791,Ventana,Bogota,EL PRADO,4.0,394088.0,apartamento,Maria ,******82413,325000000.0,79.0,1,1.0,0.0,17.0
 1297792,WEB,Bogota,ARBORIZADORA,3.0,600551.0,apartamento,Teresa ,******31419,300000000.0,65.0,8,1.0,1.0,6.0
@@ -3594,7 +3594,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1297951,Ventana,Bogota,EL PRADO,4.0,376841.0,apartamento,andres,******34681,700000000.0,101.0,10,2.0,2.0,3.0
 1297955,Ventana,Bogota,EL PRADO,4.0,17479.0,apartamento,Monica,******07854,395000000.0,88.0,7,1.0,1.0,13.0
 1297973,WEB,Bogota,VERBENAL,3.0,875710.0,apartamento,Teresa ,******26430,165000000.0,50.0,2,0.0,0.0,11.0
-1297990,Ventana,Bogota,EL PRADO,Desconocido,508359.0,apartamento,marifer,******55639,310000000.0,48.0,5,Desconocido,Desconocido,Desconocido
+1297990,Ventana,Bogota,EL PRADO,,508359.0,apartamento,marifer,******55639,310000000.0,48.0,5,Desconocido,Desconocido,Desconocido
 1297999,Ventana,Bogota,EL PRADO,4.0,376895.0,apartamento,Martha ,******80394,460000000.0,97.0,3,1.0,1.0,13.0
 1298042,Ventana,Bogota,EL PRADO,4.0,406753.0,apartamento,catherine,******04260,370000000.0,80.0,4,1.0,2.0,6.0
 1298044,Ventana,Bogota,EL PRADO,4.0,406753.0,apartamento,yurani,******15403,350000000.0,80.0,9,1.0,2.0,6.0
@@ -3729,7 +3729,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1299814,WEB,Bogota,MADRID LA PROSPERIDAD,4.0,1192843.0,apartamento,Cristian ,******03941,130000000.0,52.0,10,0.0,1.0,2.0
 1299841,WEB,Valle de Aburra,bello,4.0,1180806.0,apartamento,JULIAN ,******11615,260000000.0,70.0,14,1.0,1.0,6.0
 1299898,Ventana,Bogota,SUBA,3.0,870344.0,apartamento,CECILIA,******41044,148000000.0,49.0,5,0.0,0.0,23.0
-1299960,Ventana,Valle de Aburra,sabaneta,Desconocido,1181624.0,Desconocido,Tatiana,******62676,400000000.0,87.0,26,1.0,1.0,1.0
+1299960,Ventana,Valle de Aburra,sabaneta,,1181624.0,apartamento,Tatiana,******62676,400000000.0,87.0,26,1.0,1.0,1.0
 1300018,WEB,Valle de Aburra,bello,4.0,1179691.0,apartamento,Silvia ,******43204,250000000.0,72.0,28,1.0,2.0,6.0
 1300032,WEB,Valle de Aburra,itagui,4.0,1179886.0,apartamento,Monica ,******36970,240000000.0,63.0,6,1.0,2.0,12.0
 1300040,WEB,Bogota,CASA BLANCA SUBA,4.0,519046.0,apartamento,Oma ,******82385,420000000.0,79.0,1,1.0,1.0,4.0
@@ -3746,7 +3746,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1300354,Ventana,Bogota,SUBA,3.0,871224.0,apartamento,ERIKA,******77650,185000000.0,54.0,12,0.0,1.0,10.0
 1300368,WEB,Valle de Aburra,sabaneta,3.0,1208936.0,apartamento,Irma ,******21394,320000000.0,67.0,15,1.0,1.0,5.0
 1300372,Ventana,Bogota,SUBA,3.0,872455.0,apartamento,Elida,******29006,170000000.0,59.0,3,1.0,0.0,11.0
-1300389,Ventana,Bogota,LAS FERIAS,Desconocido,414135.0,apartamento,hernan ,******63545,180000000.0,51.0,3,Desconocido,1.0,8.0
+1300389,Ventana,Bogota,LAS FERIAS,,414135.0,apartamento,hernan ,******63545,180000000.0,51.0,3,Desconocido,1.0,8.0
 1300440,WEB,Bogota,EL PORVENIR,2.0,864152.0,apartamento,Tatiana ,******29974,120000000.0,47.0,5,0.0,0.0,11.0
 1300451,Ventana,Bogota,SUBA,3.0,187786.0,apartamento,Patricia ,******90920,150000000.0,45.0,4,0.0,2.0,10.0
 1300456,Ventana,Bogota,SUBA,3.0,187786.0,apartamento,Teresa,******78498,155000000.0,44.0,3,0.0,1.0,10.0
@@ -4850,7 +4850,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1321873,Ventana,Bogota,ISMAEL PERDOMO,3.0,707605.0,apartamento,miryam,******37359,135000000.0,46.0,3,0.0,0.0,14.0
 1321883,Ventana,Bogota,ISMAEL PERDOMO,3.0,872836.0,apartamento,fernando,******81984,150000000.0,54.0,2,0.0,0.0,15.0
 1321927,WEB,Bogota,TINTAL SUR,2.0,865132.0,apartamento,Alvaro ,******76970,100000000.0,42.0,3,0.0,0.0,10.0
-1321939,Ventana,Bogota,ISMAEL PERDOMO,Desconocido,466721.0,apartamento,Desconocido,******12282,140000000.0,56.0,4,0.0,0.0,Desconocido
+1321939,Ventana,Bogota,ISMAEL PERDOMO,,466721.0,apartamento,Desconocido,******12282,140000000.0,56.0,4,0.0,0.0,Desconocido
 1321949,WEB,Bogota,CALANDAIMA,2.0,871071.0,apartamento,sonia ,******60418,140000000.0,55.0,11,0.0,1.0,5.0
 1321975,Ventana,Bogota,BOSA CENTRAL,2.0,866295.0,apartamento,Leidy,******71089,130000000.0,53.0,2,0.0,0.0,5.0
 1322003,Ventana,Bogota,BOYACA REAL,3.0,25829.0,apartamento,Giovanny,******94601,200000000.0,67.0,5,1.0,0.0,26.0
@@ -4881,7 +4881,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1322477,Ventana,Valle de Aburra,rionegro,4.0,1201221.0,apartamento,Jaime ,******96496,185000000.0,52.0,6,1.0,1.0,10.0
 1322478,Ventana,Valle de Aburra,rionegro,3.0,1201221.0,apartamento,tatiana,******87863,203000000.0,55.0,4,1.0,1.0,5.0
 1322523,WEB,Bogota,SUBA,3.0,864202.0,apartamento,Claudia ,******59991,300000000.0,73.0,4,1.0,1.0,5.0
-1322565,Ventana,Valle de Aburra,belen,Desconocido,1153378.0,apartamento,Maribel,******80577,260000000.0,75.0,1,1.0,Desconocido,Desconocido
+1322565,Ventana,Valle de Aburra,belen,,1153378.0,apartamento,Maribel,******80577,260000000.0,75.0,1,1.0,Desconocido,Desconocido
 1322704,WEB,Bogota,VERBENAL,4.0,416320.0,apartamento,Aura ,******58587,268000000.0,59.0,8,1.0,1.0,11.0
 1322732,WEB,Bogota,CIUDAD MONTES,3.0,875415.0,apartamento,Alejandrina ,******78673,215000000.0,49.0,7,0.0,1.0,24.0
 1322800,WEB,Valle de Aburra,bello,4.0,1179843.0,apartamento,Santiago ,******78829,250000000.0,65.0,9,1.0,2.0,4.0
@@ -4913,7 +4913,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1323624,WEB,Bogota,ARBORIZADORA,3.0,600550.0,apartamento,Luis ,******12057,160000000.0,48.0,1,0.0,0.0,6.0
 1323628,WEB,Bogota,CASTILLA,2.0,870695.0,apartamento,Diana ,******79889,220000000.0,62.0,6,1.0,1.0,11.0
 1323653,Ventana,Bogota,BAVARIA,3.0,514191.0,apartamento,jairo,******68822,235000000.0,60.0,4,0.0,0.0,14.0
-1323657,Ventana,Valle de Aburra,rionegro,Desconocido,1202878.0,apartamento,Juan ,******50207,280000000.0,42.0,1,Desconocido,Desconocido,Desconocido
+1323657,Ventana,Valle de Aburra,rionegro,,1202878.0,apartamento,Juan ,******50207,280000000.0,42.0,1,Desconocido,Desconocido,Desconocido
 1323666,Ventana,Bogota,BAVARIA,4.0,526512.0,apartamento,julio,******01704,355000000.0,75.0,2,1.0,1.0,14.0
 1323735,Ventana,Bogota,BAVARIA,4.0,870547.0,apartamento,Felipe ,******26930,390000000.0,90.0,3,1.0,1.0,13.0
 1323740,Ventana,Bogota,BAVARIA,4.0,870547.0,apartamento,William ,******21491,430000000.0,93.0,4,1.0,1.0,13.0
@@ -5213,7 +5213,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1328257,Ventana,Cali,zona_cali_adicional,4.0,1201453.0,apartamento,Cielo ,******71022,150000000.0,62.0,3,0.0,0.0,10.0
 1328264,Ventana,Cali,Comuna 17,4.0,1206958.0,apartamento,claudia,******01502,160000000.0,61.0,2,0.0,0.0,8.0
 1328280,Ventana,Bogota,TOBERIN,4.0,859625.0,apartamento,Nicolas,******13671,270000000.0,64.0,12,1.0,1.0,18.0
-1328282,Ventana,Cali,zona_cali_adicional,2.0,1201416.0,Desconocido,Monica ,******61831,121000000.0,50.0,2,Desconocido,Desconocido,Desconocido
+1328282,Ventana,Cali,zona_cali_adicional,2.0,1201416.0,apartamento,Monica ,******61831,121000000.0,50.0,2,Desconocido,Desconocido,Desconocido
 1328286,Ventana,Bogota,TOBERIN,4.0,2136.0,apartamento,Maria ,******90302,260000000.0,64.0,5,1.0,0.0,28.0
 1328328,WEB,Bogota,CASTILLA,3.0,519014.0,apartamento,Henry ,******82474,320000000.0,75.0,9,1.0,1.0,5.0
 1328383,WEB,Bogota,CASA BLANCA SUBA,4.0,593980.0,apartamento,Hilda ,******92816,360000000.0,76.0,6,1.0,1.0,10.0
@@ -5313,7 +5313,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1329681,Ventana,Bogota,CIUDAD SALITRE ORIENTAL,4.0,71576.0,apartamento,Jorge ,******71465,430000000.0,68.0,1,1.0,1.0,19.0
 1329687,Ventana,Bogota,CIUDAD SALITRE ORIENTAL,4.0,71576.0,apartamento,Ana ,******95993,420000000.0,64.0,8,1.0,1.0,16.0
 1329690,WEB,Valle de Aburra,bello,4.0,1179691.0,apartamento,Juan ,******79638,250000000.0,79.0,3,1.0,2.0,5.0
-1329703,Ventana,Bogota,CIUDAD SALITRE ORIENTAL,Desconocido,861149.0,Desconocido,Desconocido,******59987,880000000.0,118.0,5,Desconocido,Desconocido,Desconocido
+1329703,Ventana,Bogota,CIUDAD SALITRE ORIENTAL,,861149.0,apartamento,Desconocido,******59987,880000000.0,118.0,5,Desconocido,Desconocido,Desconocido
 1329743,Ventana,Bogota,TIMIZA,3.0,1179897.0,apartamento,Carolina,******77434,185000000.0,56.0,5,1.0,1.0,6.0
 1329773,WEB,Bogota,EL RINCON,5.0,Desconocido,apartamento,Juliana ,******65789,480000000.0,108.0,3,2.0,1.0,24.0
 1329776,WEB,Bogota,FUNZA VILLAS Y EL LAGO,3.0,Desconocido,apartamento,Andres ,******99116,158000000.0,78.0,3,1.0,1.0,13.0
@@ -5398,7 +5398,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1331287,WEB,Bogota,QUINTA PAREDES,4.0,27213.0,apartamento,Geraldine ,******25998,315000000.0,56.0,4,1.0,0.0,28.0
 1331312,WEB,Valle de Aburra,bello,4.0,1181118.0,apartamento,Victor ,******13483,295000000.0,71.0,6,1.0,2.0,6.0
 1331335,WEB,Bogota,SUBA,3.0,871201.0,apartamento,Andres ,******33011,210000000.0,59.0,3,1.0,0.0,25.0
-1331347,Ventana,Valle de Aburra,san_cristobal,Desconocido,1167722.0,apartamento,Yeni ,******84015,150000000.0,52.0,24,Desconocido,2.0,2.0
+1331347,Ventana,Valle de Aburra,san_cristobal,,1167722.0,apartamento,Yeni ,******84015,150000000.0,52.0,24,Desconocido,2.0,2.0
 1331382,WEB,Bogota,EL PORVENIR,2.0,864459.0,apartamento,Sergio ,******37644,125000000.0,46.0,3,0.0,0.0,13.0
 1331412,WEB,Bogota,BOSA OCCIDENTAL,3.0,964117.0,apartamento,David ,******12312,145000000.0,46.0,3,0.0,0.0,9.0
 1331430,WEB,Bogota,EL RINCON,3.0,523882.0,apartamento,Paola ,******15675,220000000.0,55.0,8,1.0,1.0,5.0
@@ -6017,7 +6017,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1344713,WEB,Bogota,AMERICAS,4.0,863345.0,apartamento,Luis ,******01201,380000000.0,84.0,11,1.0,1.0,13.0
 1344718,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182183.0,apartamento,JANETH ,******36613,158000000.0,62.0,12,0.0,1.0,3.0
 1344736,WEB,Bogota,CALANDAIMA,2.0,523921.0,apartamento,Miguel ,******11009,127000000.0,48.0,2,0.0,0.0,23.0
-1344742,WEB,Valle de Aburra,bello,4.0,1179841.0,apartamento,Jhonatan ,******07365,250000000.0,72.0,Desconocido,1.0,2.0,3.0
+1344742,WEB,Valle de Aburra,bello,4.0,1179841.0,apartamento,Jhonatan ,******07365,250000000.0,72.0,50,1.0,2.0,3.0
 1344746,Ventana,Bogota,AMERICAS,4.0,1179680.0,apartamento,Neiser,******76165,360000000.0,78.0,16,1.0,1.0,8.0
 1344752,WEB,Bogota,SUBA,3.0,871224.0,apartamento,Andres ,******91545,190000000.0,57.0,2,0.0,1.0,10.0
 1344775,WEB,Bogota,SUBA,3.0,186121.0,apartamento,Milena ,******40019,162000000.0,45.0,7,0.0,1.0,4.0
@@ -6038,7 +6038,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1345236,Ventana,Bogota,AMERICAS,3.0,863143.0,apartamento,Alejandro,******73954,270000000.0,64.0,8,1.0,1.0,22.0
 1345237,WEB,Bogota,ZONA FRANCA,3.0,223232.0,apartamento,Edgar ,******32916,158000000.0,48.0,16,0.0,1.0,3.0
 1345273,Ventana,Desconocido,Desconocido,3.0,Desconocido,apartamento,Mabel,******08995,280000000.0,75.0,5,0.0,0.0,40.0
-1345285,WEB,Bogota,NIZA,6.0,Desconocido,apartamento,Tierra ,******56890,1000000000.0,1.0,7,1.0,1.0,8.0
+1345285,WEB,Bogota,NIZA,6.0,Desconocido,apartamento,Tierra ,******56890,1000000000.0,10.0,7,1.0,1.0,8.0
 1345306,Ventana,Bogota,AMERICAS,3.0,863290.0,apartamento,Andres,******43211,340000000.0,72.0,3,1.0,1.0,11.0
 1345332,WEB,Bogota,CALANDAIMA,2.0,258502.0,apartamento,Jeimmy ,******06287,135000000.0,49.0,11,0.0,1.0,10.0
 1345418,Ventana,Bogota,AMERICAS,3.0,621627.0,apartamento,yadira,******15904,220000000.0,51.0,3,1.0,0.0,22.0
@@ -6992,7 +6992,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1362071,WEB,Valle de Aburra,bello,3.0,1181120.0,apartamento,Deisy ,******70679,170000000.0,55.0,1,0.0,2.0,7.0
 1362077,Ventana,Bogota,QUIROGA,3.0,421902.0,apartamento,Arturo,******97577,230000000.0,67.0,3,1.0,1.0,5.0
 1362091,Ventana,Bogota,BOSA CENTRAL,2.0,168036.0,apartamento,Gregorio,******04498,110000000.0,47.0,5,0.0,0.0,22.0
-1362127,Ventana,Valle de Aburra,la_estrella,Desconocido,1194873.0,apartamento,Jhon ,******24068,145000000.0,60.0,3,0.0,Desconocido,Desconocido
+1362127,Ventana,Valle de Aburra,la_estrella,,1194873.0,apartamento,Jhon ,******24068,145000000.0,60.0,3,0.0,Desconocido,Desconocido
 1362142,WEB,Bogota,BRITALIA,4.0,860287.0,apartamento,Mauricio ,******59562,420000000.0,70.0,12,1.0,1.0,6.0
 1362187,WEB,Bogota,TOBERIN,4.0,859680.0,apartamento,Miguel ,******96109,260000000.0,69.0,1,1.0,0.0,19.0
 1362228,Ventana,Bogota,SOACHA - SAN MATEO 3,3.0,1184013.0,apartamento,Wilson ,******11422,120000000.0,54.0,1,0.0,1.0,5.0
@@ -7175,7 +7175,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1365412,Ventana,Cali,Comuna 17,5.0,1199599.0,apartamento,Olga,******47288,375000000.0,87.0,2,1.0,1.0,8.0
 1365516,WEB,Bogota,SAN JOSE DE BAVARIA,4.0,297466.0,apartamento,Carlos ,******63941,360000000.0,78.0,12,1.0,1.0,16.0
 1365645,WEB,Bogota,CALANDAIMA,2.0,871084.0,apartamento,Luz ,******54413,140000000.0,55.0,5,0.0,0.0,13.0
-1365657,Ventana,Bogota,LA URIBE,Desconocido,584811.0,apartamento,Gloria ,******22512,280000000.0,72.0,1,Desconocido,0.0,Desconocido
+1365657,Ventana,Bogota,LA URIBE,,584811.0,apartamento,Gloria ,******22512,280000000.0,72.0,1,Desconocido,0.0,Desconocido
 1365804,WEB,Cali,zona_cali_adicional,4.0,1201425.0,apartamento,Katerine ,******18017,155000000.0,60.0,4,0.0,0.0,3.0
 1365871,WEB,Bogota,MADRID VARIANTE Y P FLORES,3.0,1185621.0,apartamento,Juan ,******10457,120000000.0,53.0,5,0.0,0.0,6.0
 1365873,WEB,Cali,zona_cali_adicional,4.0,1201498.0,apartamento,Elizabeth ,******26906,260000000.0,80.0,4,1.0,1.0,4.0
@@ -7206,7 +7206,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1366352,Ventana,Cali,Comuna 5,4.0,1223249.0,apartamento,luz ,******42986,149000000.0,55.0,7,0.0,1.0,10.0
 1366353,Ventana,Cali,Comuna 5,4.0,1223249.0,apartamento,Adriana,******57065,163000000.0,55.0,8,0.0,1.0,10.0
 1366354,Ventana,Cali,Comuna 5,4.0,1223249.0,apartamento,Carolina,******27074,155000000.0,54.0,6,0.0,1.0,11.0
-1366463,Ventana,Valle de Aburra,sabaneta,Desconocido,1208694.0,apartamento,Claudia ,******82753,330000000.0,72.0,21,Desconocido,Desconocido,Desconocido
+1366463,Ventana,Valle de Aburra,sabaneta,,1208694.0,apartamento,Claudia ,******82753,330000000.0,72.0,21,Desconocido,Desconocido,Desconocido
 1366535,WEB,Bogota,BRITALIA,4.0,864649.0,apartamento,Diana ,******01858,185000000.0,52.0,5,0.0,0.0,12.0
 1366558,WEB,Bogota,SUBA,3.0,871224.0,apartamento,David ,******43829,180000000.0,60.0,8,0.0,1.0,10.0
 1366564,Ventana,Bogota,TOBERIN,4.0,2581.0,apartamento,mara ,******65520,350000000.0,102.0,2,2.0,1.0,25.0
@@ -7443,7 +7443,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1372198,WEB,Bogota,ARBORIZADORA,3.0,600551.0,apartamento,Manuel ,******28381,300000000.0,64.0,7,1.0,1.0,6.0
 1372224,Ventana,Bogota,NIZA,5.0,963840.0,apartamento,JUAN ,******14141,350000000.0,48.0,12,1.0,3.0,0.0
 1372281,WEB,Bogota,BOSA OCCIDENTAL,2.0,1181317.0,apartamento,Cristian ,******93705,145000000.0,49.0,6,0.0,1.0,5.0
-1372320,WEB,Bogota,ARBORIZADORA,3.0,Desconocido,apartamento,Carlos ,******91667,300000000.0,3.0,3,0.0,0.0,0.0
+1372320,WEB,Bogota,ARBORIZADORA,3.0,Desconocido,apartamento,Carlos ,******91667,300000000.0,10.0,3,0.0,0.0,0.0
 1372335,WEB,Bogota,BRITALIA,5.0,18013.0,apartamento,Alejandro ,******44792,320000000.0,48.0,5,1.0,1.0,6.0
 1372341,WEB,Bogota,GARCES NAVAS,4.0,233934.0,apartamento,Oscar ,******04755,200000000.0,60.0,8,1.0,2.0,9.0
 1372359,Ventana,Bogota,CASA BLANCA SUBA,4.0,593980.0,apartamento,Laura ,******93063,415000000.0,78.0,2,2.0,1.0,10.0
@@ -7458,7 +7458,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1372590,WEB,Bogota,ISMAEL PERDOMO,3.0,1179992.0,apartamento,Flor ,******12447,180000000.0,62.0,3,1.0,1.0,6.0
 1372603,Ventana,Bogota,CASA BLANCA SUBA,5.0,297238.0,apartamento,ASTRID ,******23208,360000000.0,77.0,6,1.0,1.0,23.0
 1372622,Ventana,Bogota,EL PRADO,4.0,867990.0,apartamento,Lilia ,******58035,430000000.0,97.0,10,1.0,1.0,17.0
-1372646,Ventana,Valle de Aburra,itagui,Desconocido,1209425.0,apartamento,Sandra ,******41216,280000000.0,67.0,15,1.0,2.0,Desconocido
+1372646,Ventana,Valle de Aburra,itagui,,1209425.0,apartamento,Sandra ,******41216,280000000.0,67.0,15,1.0,2.0,Desconocido
 1372675,Ventana,Bogota,EL PRADO,5.0,871411.0,apartamento,Fredy,******63600,600000000.0,108.0,10,2.0,1.0,15.0
 1372680,Ventana,Bogota,EL PRADO,5.0,871411.0,apartamento,Angie,******54427,440000000.0,88.0,3,1.0,1.0,15.0
 1372694,Ventana,Bogota,CASA BLANCA SUBA,5.0,594425.0,apartamento,Elizabeth ,******33647,800000000.0,142.0,7,2.0,1.0,13.0
@@ -7605,7 +7605,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1375962,WEB,Valle de Aburra,bello,4.0,1180912.0,apartamento,CARLOS ,******24730,240000000.0,61.0,21,1.0,1.0,8.0
 1376043,Ventana,Bogota,EL PRADO,4.0,17588.0,apartamento,aura ,******60464,265000000.0,68.0,5,1.0,0.0,25.0
 1376095,WEB,Bogota,MADRID LA PROSPERIDAD,4.0,1192845.0,apartamento,Bibiana,******02966,150000000.0,63.0,5,0.0,1.0,0.0
-1376181,Ventana,Bogota,EL PRADO,Desconocido,17670.0,apartamento,BETSY ,******40295,410000000.0,93.0,7,1.0,Desconocido,Desconocido
+1376181,Ventana,Bogota,EL PRADO,,17670.0,apartamento,BETSY ,******40295,410000000.0,93.0,7,1.0,Desconocido,Desconocido
 1376213,Ventana,Bogota,EL PRADO,4.0,379554.0,apartamento,RICARDO ,******71857,340000000.0,84.0,4,1.0,0.0,25.0
 1376228,Ventana,Bogota,SUBA,3.0,540160.0,apartamento,Belinda,******07635,160000000.0,57.0,4,0.0,0.0,21.0
 1376254,WEB,Bogota,CIUDAD SALITRE OCCIDENTAL,5.0,Desconocido,apartamento,NATAN ,******17718,1100000000.0,139.0,8,1.0,1.0,5.0
@@ -7765,7 +7765,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1381403,WEB,Bogota,SUBA,3.0,870382.0,apartamento,Cesar ,******86814,225000000.0,66.0,4,1.0,1.0,16.0
 1381439,WEB,Bogota,ISMAEL PERDOMO,3.0,865962.0,apartamento,ofelia ,******44522,140000000.0,59.0,2,0.0,1.0,7.0
 1381526,WEB,Bogota,VENECIA,3.0,238428.0,apartamento,Jhon ,******59192,170000000.0,62.0,4,0.0,0.0,25.0
-1381607,WEB,Bogota,ZONA FRANCA,2.0,Desconocido,apartamento,juan ,******19436,100000000.0,3.0,3,1.0,0.0,30.0
+1381607,WEB,Bogota,ZONA FRANCA,2.0,Desconocido,apartamento,juan ,******19436,100000000.0,10.0,3,1.0,0.0,30.0
 1382248,WEB,Bogota,EL PORVENIR,2.0,703179.0,apartamento,Andrea ,******44390,105000000.0,42.0,1,0.0,0.0,13.0
 1382302,Ventana,Bogota,AMERICAS,3.0,863151.0,apartamento,Aurora,******65781,220000000.0,63.0,5,0.0,1.0,17.0
 1382305,Ventana,Bogota,AMERICAS,3.0,863151.0,apartamento,Alexandra ,******79129,230000000.0,64.0,8,0.0,2.0,17.0
@@ -7781,7 +7781,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1382539,WEB,Bogota,CALANDAIMA,2.0,864576.0,apartamento,Lucy ,******82301,110000000.0,43.0,3,0.0,0.0,13.0
 1382615,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,Desconocido,apartamento,LUZ ,******25346,120000000.0,54.0,3,0.0,0.0,5.0
 1382683,Ventana,Bogota,LOS CEDROS,4.0,28422.0,apartamento,Mauricio,******31351,605000000.0,94.0,9,2.0,1.0,3.0
-1382780,Ventana,Bogota,CARVAJAL,3.0,865511.0,Desconocido,luz ,******51106,200000000.0,54.0,4,0.0,0.0,14.0
+1382780,Ventana,Bogota,CARVAJAL,3.0,865511.0,apartamento,luz ,******51106,200000000.0,54.0,4,0.0,0.0,14.0
 1382808,WEB,Bogota,ISMAEL PERDOMO,2.0,466727.0,apartamento,Jose ,******76037,135000000.0,47.0,2,0.0,0.0,22.0
 1382826,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182219.0,apartamento,Diana ,******80964,130000000.0,49.0,4,0.0,0.0,4.0
 1382845,WEB,Bogota,SOACHA CIUDAD VERDE,3.0,1182176.0,apartamento,juan ,******76506,145000000.0,61.0,4,0.0,0.0,6.0
@@ -7882,7 +7882,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1385110,WEB,Bogota,EL PORVENIR,2.0,212752.0,apartamento,Gledys ,******24288,120000000.0,45.0,1,0.0,0.0,12.0
 1385122,WEB,Bogota,TINTAL NORTE,3.0,234053.0,apartamento,Alvaro ,******03602,170000000.0,51.0,2,1.0,0.0,9.0
 1385151,WEB,Bogota,CASA BLANCA SUBA,4.0,594318.0,apartamento,Juan ,******78296,260000000.0,58.0,2,1.0,0.0,19.0
-1385163,WEB,Bogota,MADRID VARIANTE Y P FLORES,2.0,Desconocido,apartamento,Andres ,******65777,250000000.0,6.0,1,0.0,0.0,7.0
+1385163,WEB,Bogota,MADRID VARIANTE Y P FLORES,2.0,Desconocido,apartamento,Andres ,******65777,250000000.0,10.0,1,0.0,0.0,7.0
 1385210,WEB,Bogota,BRITALIA,5.0,18013.0,apartamento,Miguel ,******26088,342000000.0,65.0,2,1.0,1.0,6.0
 1385262,WEB,Bogota,MADRID LA PROSPERIDAD,3.0,1192844.0,apartamento,John ,******60858,155000000.0,60.0,12,0.0,1.0,3.0
 1385264,WEB,Bogota,SUBA,3.0,187786.0,apartamento,CAROLINA ,******27676,170000000.0,42.0,5,0.0,1.0,10.0
@@ -8099,7 +8099,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1390039,Ventana,Bogota,BRITALIA,4.0,864649.0,apartamento,KATHERIN ,******16140,215000000.0,54.0,3,0.0,0.0,12.0
 1390058,Ventana,Bogota,EL RINCON,3.0,870480.0,apartamento,Angie ,******64899,155000000.0,60.0,2,0.0,1.0,19.0
 1390150,Ventana,Bogota,EL RINCON,3.0,871290.0,apartamento,Nora ,******27824,160000000.0,60.0,5,0.0,0.0,22.0
-1390152,WEB,Bogota,NIZA,3.0,Desconocido,apartamento,Camila ,******42697,60000000.0,2.0,4,0.0,0.0,0.0
+1390152,WEB,Bogota,NIZA,3.0,Desconocido,apartamento,Camila ,******42697,60000000.0,10.0,4,0.0,0.0,0.0
 1390209,Ventana,Bogota,EL RINCON,4.0,864422.0,apartamento,HENRY ,******33703,180000000.0,50.0,3,1.0,1.0,10.0
 1390210,Ventana,Bogota,EL RINCON,4.0,864422.0,apartamento,PAOLA ,******07354,218000000.0,58.0,7,1.0,1.0,10.0
 1390215,Ventana,Bogota,BRITALIA,4.0,222733.0,apartamento,CAMILO,******21934,315000000.0,77.0,10,1.0,1.0,17.0
@@ -8297,7 +8297,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1393384,Ventana,Bogota,LA ALHAMBRA,5.0,607452.0,apartamento,OMAIRA,******13689,415000000.0,87.0,4,1.0,1.0,12.0
 1393398,Ventana,Bogota,LA ALHAMBRA,5.0,606515.0,apartamento,BEISY ,******47177,490000000.0,80.0,2,1.0,1.0,6.0
 1393412,Ventana,Bogota,LA ALHAMBRA,5.0,609271.0,apartamento,GLORIA ,******01190,690000000.0,126.0,2,1.0,1.0,10.0
-1393423,Ventana,Bogota,LA ALHAMBRA,Desconocido,538047.0,apartamento,LINA ,******97761,450000000.0,98.0,5,2.0,Desconocido,Desconocido
+1393423,Ventana,Bogota,LA ALHAMBRA,,538047.0,apartamento,LINA ,******97761,450000000.0,98.0,5,2.0,Desconocido,Desconocido
 1393434,Ventana,Bogota,LA ALHAMBRA,5.0,714735.0,apartamento,Liliana ,******56121,470000000.0,106.0,5,1.0,1.0,19.0
 1393447,Ventana,Bogota,LA ALHAMBRA,5.0,297184.0,apartamento,LIZHET,******82219,290000000.0,50.0,2,1.0,1.0,6.0
 1393484,Ventana,Bogota,LA ALHAMBRA,5.0,535490.0,apartamento,JHONATAN ,******75914,730000000.0,125.0,2,2.0,1.0,24.0
@@ -8533,7 +8533,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1396540,WEB,Bogota,BRITALIA,3.0,425245.0,apartamento,juan ,******44977,220000000.0,60.0,5,0.0,0.0,15.0
 1396559,Ventana,Bogota,FONTIBON,3.0,862461.0,apartamento,NORA ,******77672,200000000.0,60.0,4,1.0,0.0,26.0
 1396563,WEB,Bogota,ISMAEL PERDOMO,2.0,1195183.0,apartamento,ASENETH ,******79397,135000000.0,40.0,4,0.0,0.0,9.0
-1396584,WEB,Valle de Aburra,rionegro,4.0,1201221.0,apartamento,juan ,******47616,190000000.0,55.0,Desconocido,1.0,1.0,5.0
+1396584,WEB,Valle de Aburra,rionegro,4.0,1201221.0,apartamento,juan ,******47616,190000000.0,55.0,-3,1.0,1.0,5.0
 1396601,WEB,Bogota,CIUDAD SALITRE ORIENTAL,4.0,56298.0,apartamento,viviana ,******99073,450000000.0,70.0,5,1.0,1.0,19.0
 1396605,Ventana,Bogota,FONTIBON,3.0,863370.0,apartamento,Yomara,******50592,180000000.0,52.0,1,0.0,0.0,22.0
 1396609,WEB,Bogota,BAVARIA,3.0,870545.0,apartamento,John ,******05827,180000000.0,47.0,5,0.0,0.0,12.0
@@ -9149,7 +9149,7 @@ Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Con
 1405561,Ventana,Cali,Comuna 17,4.0,1199809.0,apartamento,Martha ,******30836,240000000.0,82.0,3,1.0,1.0,10.0
 1405594,Ventana,Cali,Comuna 17,5.0,1199395.0,apartamento,Jackelin,******06369,320000000.0,82.0,3,1.0,1.0,22.0
 1405602,WEB,Bogota,AMERICAS,3.0,141049.0,apartamento,Ricardo ,******08164,310000000.0,67.0,2,1.0,0.0,25.0
-1405623,WEB,Bogota,AMERICAS,3.0,865135.0,apartamento,Eugenio ,******60720,360000000.0,68.0,Desconocido,1.0,1.0,6.0
+1405623,WEB,Bogota,AMERICAS,3.0,865135.0,apartamento,Eugenio ,******60720,360000000.0,68.0,50,1.0,1.0,6.0
 1405627,WEB,Bogota,TIBABUYES,3.0,870478.0,apartamento,Carol ,******66683,150000000.0,54.0,5,0.0,1.0,8.0
 1405656,WEB,Bogota,TIMIZA,3.0,214058.0,apartamento,David ,******12312,136000000.0,39.0,21,0.0,1.0,4.0
 1405663,WEB,Bogota,LAS FERIAS,3.0,414135.0,apartamento,Jacqueline ,******42299,220000000.0,60.0,4,0.0,1.0,7.0

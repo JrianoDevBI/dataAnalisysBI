@@ -11,6 +11,7 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 - `dataBackup/`: Respaldos automáticos de datos con timestamp
 - `scripts/`: Obtención de datos, limpieza, carga a SQL y análisis exploratorio
   - `analisis_pre_limpieza.py`: **NUEVO** - Análisis de inconsistencias antes de limpieza
+  - `tratamiento_inconsistencias.py`: **NUEVO** - Tratamiento estadístico avanzado de inconsistencias
   - `clean_muestra.py`: **MEJORADO** - Validación y corrección automática de datos
   - `analisis_exploratorio.py`: **MEJORADO** - Indicadores clave y correlaciones
   - `generar_informe_ejecutivo.py`: **MEJORADO** - Reportes PDF/Word con manejo de errores
@@ -36,6 +37,15 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 - **Validación de estratos** (1-6) con corrección automática
 - **Manejo inteligente** de pisos y áreas fuera de rango
 - **Backup automático** antes de realizar cambios
+
+### 📈 Tratamiento Avanzado de Inconsistencias
+
+- **Eliminación inteligente de duplicados** con múltiples criterios y umbrales de similitud
+- **Imputación de precios faltantes por mediana zonal** para preservar patrones geográficos
+- **Winsorización de outliers al 1%** para manejo robusto sin distorsionar distribuciones
+- **Validación de mejoras en calidad** con métricas before/after automatizadas
+- **Backup específico y logging detallado** de todas las transformaciones aplicadas
+- **Integración seamless** con el pipeline sin afectar el flujo existente
 
 ### 📊 Análisis Exploratorio Mejorado
 
@@ -88,6 +98,7 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 
    - El script activará el entorno virtual, ejecutará `main.py` y te guiará paso a paso:
      - **Análisis pre-limpieza**: Detecta inconsistencias antes de procesar
+     - **Tratamiento avanzado de inconsistencias**: Aplica técnicas estadísticas (duplicados, imputación zonal, winsorización)
      - **Limpieza inteligente y backup** de datos con corrección automática
      - **Obtención y procesamiento** de datos
      - **Limpieza mejorada** de muestra y estados con validación
