@@ -59,13 +59,6 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 - **Detección de inconsistencias específicas**
 - **Resultados mostrados por consola** para revisión inmediata
 
-### 📄 Generación de Reportes Ejecutivos
-
-- **Informes PDF** usando LaTeX con manejo robusto de errores
-- **Fallback a archivos .tex** si LaTeX no está disponible
-- **Informes Word** como alternativa
-- **Gráficos integrados** y análisis estadísticos
-
 ## Ejecución rápida del pipeline
 
 1. **Instala las dependencias:**
