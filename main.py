@@ -15,7 +15,6 @@
 #   6. Carga de datos a base de datos SQL con verificación
 #   7. Exportación de resultados de análisis a Excel
 #   8. Análisis exploratorio con indicadores clave y correlaciones
-#   9. Opción de generar informes ejecutivos (PDF/Word)
 #
 #   El pipeline es completamente modular y automatizado, permitiendo
 #   la ejecución paso a paso o completa según las necesidades del usuario.
