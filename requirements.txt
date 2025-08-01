@@ -1,0 +1,7 @@
+numpy
+pandas
+sqlalchemy==1.4.49
+openpyxl==3.1.2
+mysql-connector-python==8.3.0  # Conexión con MySQL
+python-dotenv==1.0.1           # Manejo seguro de credenciales
+plotly==5.20.0                 # Visualizaciones interactivas
