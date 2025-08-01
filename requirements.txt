@@ -1,6 +1,9 @@
+pymysql==1.1.0  # Alternativa robusta para conexión MySQL con pandas y SQLAlchemy
+mysqlclient==2.2.4  # Driver nativo MySQL para máxima compatibilidad
 numpy
 pandas
 sqlalchemy==1.4.49
+pymysql==1.1.0  # Alternativa robusta para conexión MySQL con pandas y SQLAlchemy
 openpyxl==3.1.2
 mysql-connector-python==8.3.0  # Conexión con MySQL
 python-dotenv==1.0.1           # Manejo seguro de credenciales

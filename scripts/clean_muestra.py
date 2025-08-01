@@ -1,13 +1,16 @@
+import pandas as pd
+import os
+import re
+
 """
--------------------------------------------------------------
 clean_muestra.py
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
 Script para limpiar y validar la calidad de los datos de muestra según reglas específicas.
 
-Autor: Juan Camilo Riaño
-Fecha: 2025-07-31
-
 Descripción:
-    Este script toma un archivo CSV de datos de muestra y realiza un proceso de limpieza basado en reglas de negocio específicas:
+    Este script toma un archivo CSV de datos y realiza un proceso de limpieza basado en reglas específicas:
     - Imputación de valores nulos o vacíos.
     - Validación de campos clave según criterios definidos.
     - Generación de archivo limpio para análisis posterior.
@@ -21,20 +24,13 @@ Buenas prácticas:
 """
 
 
-
-# Librerías principales
-import pandas as pd
-import os
-import re
-
-
 def imputar_vacios(df):
     """
     Imputa todos los valores vacíos o nulos en cualquier columna a 'Desconocido'.
     Esto ayuda a evitar errores en análisis posteriores y mantiene la consistencia de los datos.
     """
-    df = df.fillna('Desconocido')
-    df = df.replace('', 'Desconocido')
+    df = df.fillna("Desconocido")
+    df = df.replace("", "Desconocido")
     return df
 
 
@@ -44,11 +40,11 @@ def validar_nombre_contacto(valor):
     Si el campo contiene únicamente caracteres especiales o números, se imputa a 'Desconocido'.
     Esto previene registros con nombres inválidos o no informativos.
     """
-    if valor == 'Desconocido':
+    if valor == "Desconocido":
         return valor
     # Si solo tiene caracteres especiales o números
-    if re.fullmatch(r'[^a-zA-ZáéíóúÁÉÍÓÚñÑ]+', str(valor)):
-        return 'Desconocido'
+    if re.fullmatch(r"[^a-zA-ZáéíóúÁÉÍÓÚñÑ]+", str(valor)):
+        return "Desconocido"
     return valor
 
 
@@ -58,16 +54,16 @@ def validar_telefono_contacto(valor):
     El campo solo es válido si contiene tanto números como asteriscos (*).
     Si solo tiene números o solo asteriscos, se imputa a 'Desconocido'.
     """
-    if valor == 'Desconocido':
+    if valor == "Desconocido":
         return valor
     tel_str = str(valor)
-    tiene_num = bool(re.search(r'\d', tel_str))
-    tiene_ast = '*' in tel_str
+    tiene_num = bool(re.search(r"\d", tel_str))
+    tiene_ast = "*" in tel_str
     # Solo válido si tiene ambos: números y asteriscos
-    if (tiene_num and tiene_ast):
+    if tiene_num and tiene_ast:
         return valor
     else:
-        return 'Desconocido'
+        return "Desconocido"
 
 
 def validar_precio_solicitado(valor):
@@ -77,9 +73,9 @@ def validar_precio_solicitado(valor):
     Esto ayuda a filtrar registros con precios atípicos o erróneos.
     """
     try:
-        return valor if float(valor) >= 50000000 else 'Desconocido'
-    except:
-        return 'Desconocido'
+        return valor if float(valor) >= 50000000 else "Desconocido"
+    except BaseException:
+        return "Desconocido"
 
 
 def validar_piso(valor):
@@ -90,9 +86,9 @@ def validar_piso(valor):
     """
     try:
         piso = int(float(valor))
-        return valor if 1 <= piso <= 67 else 'Desconocido'
-    except:
-        return 'Desconocido'
+        return valor if 1 <= piso <= 67 else "Desconocido"
+    except BaseException:
+        return "Desconocido"
 
 
 def validar_antiguedad(valor):
@@ -102,9 +98,9 @@ def validar_antiguedad(valor):
     Esto ayuda a evitar antigüedades poco realistas en los registros.
     """
     try:
-        return valor if float(valor) <= 100 else 'Desconocido'
-    except:
-        return 'Desconocido'
+        return valor if float(valor) <= 100 else "Desconocido"
+    except BaseException:
+        return "Desconocido"
 
 
 def clean_muestra(input_path, output_path, outliers_log_path=None):
@@ -132,9 +128,21 @@ def clean_muestra(input_path, output_path, outliers_log_path=None):
     # 3. Validar columnas clave
 
     columnas_requeridas = [
-        'Id', 'Telefono_Contacto', 'Precio_Solicitado', 'Zona', 'Tipo_Inmueble', 'Fuente',
-        'Area', 'Nombre_Contacto', 'Piso', 'Antiguedad_Annos', 'Ciudad', 'Lote_Id',
-        'Garajes', 'Ascensores', 'Estrato'
+        "Id",
+        "Telefono_Contacto",
+        "Precio_Solicitado",
+        "Zona",
+        "Tipo_Inmueble",
+        "Fuente",
+        "Area",
+        "Nombre_Contacto",
+        "Piso",
+        "Antiguedad_Annos",
+        "Ciudad",
+        "Lote_Id",
+        "Garajes",
+        "Ascensores",
+        "Estrato",
     ]
     for col in columnas_requeridas:
         if col not in df.columns:
@@ -143,51 +151,58 @@ def clean_muestra(input_path, output_path, outliers_log_path=None):
     # 4. Imputar vacíos o nulos
     df = imputar_vacios(df)
 
-
     # 5. Validar y limpiar columnas según reglas de negocio
     # Reemplazar Ñ/ñ por N/n en Nombre_Contacto
-    df['Nombre_Contacto'] = df['Nombre_Contacto'].apply(lambda x: x.replace('Ñ', 'N').replace('ñ', 'n') if isinstance(x, str) else x)
+    df["Nombre_Contacto"] = df["Nombre_Contacto"].apply(
+        lambda x: x.replace("Ñ", "N").replace("ñ", "n") if isinstance(x, str) else x
+    )
     # Validar Nombre_Contacto
-    df['Nombre_Contacto'] = df['Nombre_Contacto'].apply(validar_nombre_contacto)
-    df['Telefono_Contacto'] = df['Telefono_Contacto'].apply(validar_telefono_contacto)
-    df['Precio_Solicitado'] = df['Precio_Solicitado'].apply(validar_precio_solicitado)
-    df['Piso'] = df['Piso'].apply(validar_piso)
-    df['Antiguedad_Annos'] = df['Antiguedad_Annos'].apply(validar_antiguedad)
+    df["Nombre_Contacto"] = df["Nombre_Contacto"].apply(validar_nombre_contacto)
+    df["Telefono_Contacto"] = df["Telefono_Contacto"].apply(validar_telefono_contacto)
+    df["Precio_Solicitado"] = df["Precio_Solicitado"].apply(validar_precio_solicitado)
+    df["Piso"] = df["Piso"].apply(validar_piso)
+    df["Antiguedad_Annos"] = df["Antiguedad_Annos"].apply(validar_antiguedad)
 
     # Reemplazar tildes por vocales simples en Zona, Ciudad y Nombre_Contacto para evitar errores de codificación
     def quitar_tildes(texto):
         if not isinstance(texto, str):
             return texto
         reemplazos = (
-            ("á", "a"), ("é", "e"), ("í", "i"), ("ó", "o"), ("ú", "u"),
-            ("Á", "A"), ("É", "E"), ("Í", "I"), ("Ó", "O"), ("Ú", "U")
+            ("á", "a"),
+            ("é", "e"),
+            ("í", "i"),
+            ("ó", "o"),
+            ("ú", "u"),
+            ("Á", "A"),
+            ("É", "E"),
+            ("Í", "I"),
+            ("Ó", "O"),
+            ("Ú", "U"),
         )
         for orig, repl in reemplazos:
             texto = texto.replace(orig, repl)
         return texto
 
-    for col in ['Zona', 'Ciudad', 'Nombre_Contacto']:
+    for col in ["Zona", "Ciudad", "Nombre_Contacto"]:
         if col in df.columns:
             df[col] = df[col].apply(quitar_tildes)
 
-
-
     # Reportar cantidad de imputaciones por columna
-    print('\nResumen de imputaciones por columna:')
+    print("\nResumen de imputaciones por columna:")
     for col in df.columns:
-        imputados = (df[col] == 'Desconocido').sum()
+        imputados = (df[col] == "Desconocido").sum()
         if imputados > 0:
-            print(f'  {col}: {imputados} imputaciones')
+            print(f"  {col}: {imputados} imputaciones")
 
     # Reportar cantidad de registros totales y registros con 1 o más imputaciones
     total_registros = len(df)
-    registros_con_imputacion = (df == 'Desconocido').any(axis=1).sum()
-    print(f'\nTotal de registros: {total_registros}')
+    registros_con_imputacion = (df == "Desconocido").any(axis=1).sum()
+    print(f"\nTotal de registros: {total_registros}")
     if total_registros > 0:
         porcentaje = (registros_con_imputacion / total_registros) * 100
     else:
         porcentaje = 0
-    print(f'Registros con 1 o más imputaciones: {registros_con_imputacion} lo cual representa el {porcentaje:.2f}%')
+    print(f"Registros con 1 o más imputaciones: {registros_con_imputacion} " f"lo cual representa el {porcentaje:.2f}%")
 
     # Guardar el archivo limpio en la ruta de salida indicada
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -196,9 +211,6 @@ def clean_muestra(input_path, output_path, outliers_log_path=None):
 
 
 # Punto de entrada del script
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Rutas de entrada y salida (ajustar según sea necesario)
-    clean_muestra(
-        '../data/processedData/muestra.csv',
-        '../data/processedData/muestra.csv'
-    )
+    clean_muestra("../data/processedData/muestra.csv", "../data/processedData/muestra.csv")
