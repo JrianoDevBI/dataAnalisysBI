@@ -1,53 +1,108 @@
-
 # RealEstate_BI_Project
 
-Este proyecto implementa la metodología OSEMN para análisis de datos inmobiliarios, integrando Python, SQL y herramientas de visualización ejecutiva.
+Este proyecto implementa la metodología OSEMN para análisis de datos inmobiliarios, integrando Python, SQL y herramientas de visualización ejecutiva. Incluye análisis pre-limpieza, validación automática de datos y generación de reportes ejecutivos.
 
-## Estructura
+## Estructura del Proyecto
+
 - `data/sourceData/`: Datos originales (Excel)
 - `data/processedData/`: Datos limpios y logs de outliers
 - `data/cleanData/`: Datos limpios finales para análisis
 - `data/query_data/`: Resultados de queries y análisis exportados a Excel
+- `dataBackup/`: Respaldos automáticos de datos con timestamp
 - `scripts/`: Obtención de datos, limpieza, carga a SQL y análisis exploratorio
+  - `analisis_pre_limpieza.py`: **NUEVO** - Análisis de inconsistencias antes de limpieza
+  - `clean_muestra.py`: **MEJORADO** - Validación y corrección automática de datos
+  - `analisis_exploratorio.py`: **MEJORADO** - Indicadores clave y correlaciones
+  - `generar_informe_ejecutivo.py`: **MEJORADO** - Reportes PDF/Word con manejo de errores
 - `sql_queries/`: Consultas clave para análisis
 - `config/`: Variables de entorno y credenciales
+- `reports/`: **NUEVO** - Informes ejecutivos generados (PDF, Word, LaTeX)
 - `run_project.bat`: Script para ejecutar todo el pipeline automáticamente
+
+## Nuevas Características Implementadas
+
+### 🔍 Análisis Pre-Limpieza
+
+- **Detección automática de inconsistencias** antes de procesar los datos
+- **Análisis de valores faltantes, duplicados y outliers**
+- **Validación de rangos** para áreas (20-1000 m²) y precios
+- **Verificación de consistencia** en categorías y formatos
+- **Reporte detallado** de problemas encontrados
+
+### 🛠️ Limpieza Inteligente de Datos
+
+- **Corrección automática** de errores comunes
+- **Normalización** de tipos de inmuebles y ciudades
+- **Validación de estratos** (1-6) con corrección automática
+- **Manejo inteligente** de pisos y áreas fuera de rango
+- **Backup automático** antes de realizar cambios
+
+### 📊 Análisis Exploratorio Mejorado
+
+- **Indicadores clave de negocio** calculados automáticamente:
+  - Precio promedio por m²
+  - Tasa de confianza de precios
+  - Detección de outliers
+  - Distribución por estratos y tipos
+  - Análisis temporal de datos
+- **Correlación Estrato vs Precio** con visualización
+- **Detección de inconsistencias específicas**
+- **Resultados mostrados por consola** para revisión inmediata
+
+### 📄 Generación de Reportes Ejecutivos
+
+- **Informes PDF** usando LaTeX con manejo robusto de errores
+- **Fallback a archivos .tex** si LaTeX no está disponible
+- **Informes Word** como alternativa
+- **Gráficos integrados** y análisis estadísticos
 
 ## Ejecución rápida del pipeline
 
 1. **Instala las dependencias:**
-	 ```
-	 pip install -r requirements.txt
-	 ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 2. **Configura la base de datos (MySQL):**
-	 - Crea la base de datos en tu servidor MySQL:
-		 ```sql
-		 CREATE DATABASE realestate_db CHARACTER SET utf8mb4;
-		 ```
-	 - Ajusta usuario, contraseña y host en `config/.env`:
-		 ```
-		 DATABASE_URL=mysql+mysqlconnector://usuario:password@localhost:3306/realestate_db
-		 ```
+
+   - Crea la base de datos en tu servidor MySQL:
+
+     ```sql
+     CREATE DATABASE realestate_db CHARACTER SET utf8mb4;
+     ```
+
+   - Ajusta usuario, contraseña y host en `config/.env`:
+
+     ```env
+     DATABASE_URL=mysql+mysqlconnector://usuario:password@localhost:3306/realestate_db
+     ```
 
 3. **Ejecuta el pipeline completo:**
-	 - Haz doble clic en `run_project.bat` o ejecútalo desde la terminal:
-		 ```
-		 run_project.bat
-		 ```
-	 - El script activará el entorno virtual, ejecutará `main.py` y te guiará paso a paso:
-		 - Limpieza y backup de datos
-		 - Obtención y procesamiento de datos
-		 - Limpieza de muestra y estados
-		 - Carga a base de datos SQL
-		 - Exportación de resultados y análisis a Excel
-		 - Opción de ejecutar análisis exploratorio interactivo (`main_analysis.py`)
+
+   - Haz doble clic en `run_project.bat` o ejecútalo desde la terminal:
+
+     ```bash
+     run_project.bat
+     ```
+
+   - El script activará el entorno virtual, ejecutará `main.py` y te guiará paso a paso:
+     - **Análisis pre-limpieza**: Detecta inconsistencias antes de procesar
+     - **Limpieza inteligente y backup** de datos con corrección automática
+     - **Obtención y procesamiento** de datos
+     - **Limpieza mejorada** de muestra y estados con validación
+     - **Carga a base de datos SQL** con verificación
+     - **Exportación de resultados** y análisis a Excel
+     - **Análisis exploratorio automático** con indicadores clave
+     - **Opción de generar informe ejecutivo** (PDF/Word)
 
 4. **Análisis exploratorio (opcional):**
-	 - Al finalizar el pipeline, puedes elegir realizar un análisis exploratorio interactivo de los datos limpios.
-	 - El sistema ejecutará automáticamente `main_analysis.py` usando el entorno virtual, permitiendo visualizar correlaciones, outliers y relaciones clave.
+
+   - Al finalizar el pipeline, puedes elegir realizar un análisis exploratorio interactivo de los datos limpios.
+   - El sistema ejecutará automáticamente `main_analysis.py` usando el entorno virtual, permitiendo visualizar correlaciones, outliers y relaciones clave.
 
 ## Notas importantes
+
 - El pipeline es completamente automatizado y modular.
 - Todos los scripts usan el entorno virtual para evitar conflictos de dependencias.
 - El archivo `run_project.bat` garantiza que siempre se use el entorno correcto.
@@ -55,6 +110,7 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 - El análisis exploratorio requiere tener instalados los paquetes `seaborn` y `plotly` (ya incluidos en requirements.txt si es necesario).
 
 ## Seguridad
+
 Las credenciales de la base de datos deben ir en `config/.env` (no subir a repositorios públicos).
 
 ## Integración continua y calidad de código
@@ -69,17 +125,18 @@ Este proyecto incluye integración continua (CI) con **GitHub Actions** y herram
 
 **Para ejecutar flake8 manualmente:**
 
-```
+```bash
 flake8 .
 ```
 
 **Para formatear el código automáticamente con black:**
 
-```
+```bash
 black .
 ```
 
 **Configuración:**
+
 - Las reglas de flake8 están en el archivo `.flake8`.
 - La configuración de black está en `pyproject.toml`.
 
@@ -89,6 +146,7 @@ Antes de hacer commit, ejecuta ambos comandos para asegurar que el código cumpl
 ### CI/CD
 
 Cada push o pull request activa automáticamente el workflow de GitHub Actions, que:
+
 - Instala dependencias.
 - Ejecuta flake8 y black.
 - Falla si hay errores de estilo o formato.

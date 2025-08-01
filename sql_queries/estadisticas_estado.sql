@@ -1,5 +1,29 @@
-
+-- Consulta SQL para análisis exhaustivo de estados y estadísticas del pipeline inmobiliario
 -- -------------------------------------------------------------
+-- estadisticas_estado.sql
+-- Análisis detallado de etapas, transiciones y métricas de estados inmobiliarios.
+--
+-- Autor: Juan Camilo Riaño Molano
+-- Fecha de creación: 01/08/2025
+-- Descripción:
+--   Esta consulta SQL realiza un análisis comprensivo del flujo de estados
+--   de inmuebles basado en el histórico de cambios, incluyendo:
+--   - Análisis de leads en estado "Revisar Dirección" y tiempo promedio de permanencia
+--   - Cálculo de porcentaje de registros descartados en el pipeline
+--   - Identificación del primer estado más frecuente al que llegan los inmuebles
+--   - Detección de inconsistencias temporales y secuenciales en los datos
+--   - Validación de integridad de campos obligatorios
+--
+--   Cada sección está optimizada para MySQL y puede ejecutarse independientemente
+--   para análisis específicos o como parte del pipeline automatizado.
+--
+-- Funcionalidades principales:
+--   - Métricas de conversión y tiempo de permanencia por estado
+--   - Análisis de flujos de estados y patrones de transición
+--   - Detección automática de anomalías y datos inconsistentes
+--   - Validación de calidad de datos temporales y secuenciales
+--   - Generación de KPIs ejecutivos del pipeline inmobiliario
+-- -------------------------------------------------------------------------------------------------------------------
 -- Análisis de etapas y estados en el histórico de inmuebles
 --
 -- Este script realiza un análisis detallado de los estados de los inmuebles a partir del histórico de cambios.

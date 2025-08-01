@@ -1,25 +1,34 @@
-"""
-clean_estados.py
-Script para limpiar y diagnosticar la calidad de los datos de estados históricos.
+# Script para limpieza y normalización de datos de estados históricos inmobiliarios
+# -------------------------------------------------------------
+# clean_estados.py
+# Limpiador especializado de datos de estados históricos con validación temporal.
+#
+# Autor: Juan Camilo Riaño Molano
+# Fecha de creación: 01/08/2025
+# Descripción:
+#   Este script realiza limpieza especializada de datos de estados históricos:
+#   - Normalización de encabezados (espacios → guion bajo)
+#   - División precisa de Fecha_Actualizacion en componentes Fecha y Hora
+#   - Imputación inteligente de valores vacíos con 'Desconocido'
+#   - Validación y detección de duplicados en Fecha_Actualizacion
+#   - Separación de registros con información incompleta (Fecha, Hora, Estado = 'Desconocido')
+#   - Generación de tres datasets: limpio, problemático y combinado
+#   - Validación de coherencia temporal y secuencias de estados
+#
+#   Mantiene la integridad temporal de los datos mientras separa
+#   registros problemáticos para análisis posterior.
+#
+# Funcionalidades principales:
+#   - Normalización de formatos de fecha y hora con validación
+#   - Detección de inconsistencias temporales y estados inválidos
+#   - Separación inteligente de registros con datos faltantes
+#   - Validación de secuencias lógicas de estados por inmueble
+#   - Generación de reportes de calidad de datos temporales
+# -------------------------------------------------------------
 
-Autor: Juan Camilo Riaño Molano
-Fecha: 01/08/2025
-
-Descripción:
-    - Normaliza encabezados (espacios → guion bajo)
-    - Divide Fecha_Actualizacion en Fecha y Hora
-    - Imputa vacíos con 'Desconocido'
-    - Valida duplicados en Fecha_Actualizacion
-    - Separa registros donde Fecha, Hora y Estado son 'Desconocido' simultáneamente
-    - Genera tres dataframes: limpio (sin registros totalmente desconocidos), solo desconocidos, y combinado
-
-Buenas prácticas:
-    - Documentar criterios de limpieza y cambios realizados.
-    - Mantener el código modular y funciones reutilizables.
-    - Validar la estructura y tipos de datos antes de procesar.
-    - Facilitar la trazabilidad y auditoría de los cambios.
-"""
-
+# =======================
+# Importación de librerías
+# =======================
 import pandas as pd
 import unicodedata
 

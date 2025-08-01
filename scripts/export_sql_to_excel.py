@@ -1,18 +1,29 @@
-# Script para ejecutar queries SQL y exportar los resultados a archivos Excel para su análisis o entrega.
+# Script para ejecución automatizada de queries SQL y exportación a Excel
 # -------------------------------------------------------------
 # export_sql_to_excel.py
-# Script para ejecutar queries SQL sobre una base de datos MySQL
-# y exportar los resultados a archivos Excel con el mismo nombre
-# que el query fuente.
+# Ejecutor automatizado de consultas SQL con exportación directa a Excel.
 #
 # Autor: Juan Camilo Riaño Molano
 # Fecha de creación: 01/08/2025
 # Descripción:
-#   Este script permite ejecutar archivos .sql sobre la base de datos
-#   definida en la variable de entorno DATABASE_URL y exportar los
-#   resultados a archivos Excel (.xlsx) para su análisis o entrega.
-#   Es útil para usuarios que no cuentan con MySQL Workbench y desean
-#   visualizar los resultados de queries complejos de manera sencilla.
+#   Este script automatiza la ejecución de archivos .sql y exporta los resultados
+#   a archivos Excel con formateo profesional:
+#   - Ejecución automática de todos los archivos .sql en sql_queries/
+#   - Conexión robusta a MySQL usando variables de entorno
+#   - Exportación directa a Excel (.xlsx) con nombres descriptivos
+#   - Formateo automático de columnas y tipos de datos
+#   - Manejo de errores y logging detallado de operaciones
+#   - Compatibilidad total con usuarios sin MySQL Workbench
+#
+#   Facilita el acceso a resultados de consultas complejas mediante
+#   archivos Excel listos para análisis y presentación.
+#
+# Funcionalidades principales:
+#   - Descubrimiento automático de archivos .sql en directorio
+#   - Ejecución secuencial con validación de sintaxis
+#   - Exportación con preservación de tipos de datos
+#   - Generación de logs de ejecución y errores
+#   - Compatibilidad cross-platform y multi-usuario
 # -------------------------------------------------------------
 
 # =======================
