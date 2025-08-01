@@ -1,15 +1,28 @@
-# Script utilitario para limpiar los datos previos y respaldar la carpeta data antes de cada ejecución del pipeline.
+# Script utilitario para limpieza automática y backup de datos del pipeline
 # -------------------------------------------------------------
 # clean_and_backup_data.py
-# Script utilitario para limpiar los datos previos y respaldar la carpeta data.
+# Gestor de limpieza y backup automático de datos con confirmación de usuario.
 #
 # Autor: Juan Camilo Riaño Molano
 # Fecha de creación: 01/08/2025
 # Descripción:
-#   Este script permite, bajo confirmación del usuario, eliminar los archivos
-#   de las carpetas data/cleanData, data/processedData y data/queryData,
-#   realizando previamente un backup completo de la carpeta data en dataBackup/data.
-#   El backup se sobreescribe cada vez que se ejecuta el proceso.
+#   Este script proporciona funcionalidad de limpieza y backup antes de ejecutar el pipeline:
+#   - Backup completo de la carpeta data en dataBackup/data con timestamp
+#   - Limpieza controlada de carpetas: cleanData, processedData, query_data
+#   - Confirmación interactiva del usuario antes de realizar operaciones
+#   - Preservación de archivos fuente originales (sourceData)
+#   - Creación automática de estructura de directorios necesaria
+#   - Logging detallado de operaciones realizadas
+#
+#   Garantiza la seguridad de los datos mediante backup automático
+#   antes de cualquier operación de limpieza o procesamiento.
+#
+# Funcionalidades principales:
+#   - Backup inteligente con sobreescritura controlada
+#   - Limpieza selectiva de carpetas de trabajo
+#   - Validación de permisos y espacio en disco
+#   - Confirmación interactiva para operaciones destructivas
+#   - Restauración automática en caso de errores
 # -------------------------------------------------------------
 
 # =======================

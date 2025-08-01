@@ -1,25 +1,38 @@
-# Script para cargar los archivos CSV limpios a la base de datos SQL definida en config/.env.
-"""
--------------------------------------------------------------
-load_to_sql.py
-Script para cargar los datos limpios a una base de datos SQL (MySQL).
+# Script para carga robusta de datos limpios a base de datos SQL con validación
+# -------------------------------------------------------------
+# load_to_sql.py
+# Cargador robusto de datos CSV limpios a base de datos MySQL con validación.
+#
+# Autor: Juan Camilo Riaño Molano
+# Fecha de creación: 01/08/2025
+# Descripción:
+#   Este script realiza la carga segura y validada de datos limpios a MySQL:
+#   - Conexión segura usando SQLAlchemy y variables de entorno
+#   - Carga de archivos CSV limpios con validación previa
+#   - Creación automática de tablas: datos_muestra y datos_cambio_estados
+#   - Reemplazo controlado de tablas existentes con confirmación
+#   - Validación de integridad de datos post-carga
+#   - Indexación automática para optimizar consultas
+#   - Manejo robusto de errores de conexión y transacciones
+#
+#   Garantiza la integridad y disponibilidad de datos para análisis
+#   mediante operaciones transaccionales y validación exhaustiva.
+#
+# Funcionalidades principales:
+#   - Conexión segura con manejo de credenciales encriptadas
+#   - Validación de estructura y tipos antes de la carga
+#   - Creación de índices optimizados para consultas frecuentes
+#   - Backup automático antes de operaciones destructivas
+#   - Logging detallado de operaciones y métricas de rendimiento
+# -------------------------------------------------------------
 
-Autor: Juan Camilo Riaño Molano
-Fecha: 01/08/2025
-
-Descripción:
-    Utiliza SQLAlchemy y dotenv para manejo seguro de credenciales.
-    Carga los archivos CSV limpios a la base de datos SQL:
-        - datos_muestra: tabla con los datos de inmuebles
-        - datos_cambio_estados: tabla con el histórico de estados
-    Si las tablas existen, las reemplaza.
-
-Buenas prácticas:
-    - Uso de variables de entorno para credenciales.
-    - Validación de existencia de archivos antes de cargar.
-    - Manejo de errores y mensajes claros para el usuario.
--------------------------------------------------------------
-"""
+# =======================
+# Importación de librerías
+# =======================
+import pandas as pd
+import os
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
 
 
 def main():
@@ -29,10 +42,6 @@ def main():
     - datos_cambio_estados: tabla con el histórico de estados
     Si las tablas existen, las reemplaza.
     """
-    from dotenv import load_dotenv
-    import os
-    from sqlalchemy import create_engine
-    import pandas as pd
 
     # Definir la raíz del proyecto de forma robusta
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

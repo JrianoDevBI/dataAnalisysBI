@@ -1,21 +1,35 @@
-"""
--------------------------------------------------------------
-main.py
-Script principal para orquestar el pipeline de procesamiento y análisis de datos.
+# Script principal para el pipeline completo de análisis de datos inmobiliarios
+# -------------------------------------------------------------
+# main.py
+# Orquestador principal del pipeline de procesamiento y análisis de datos inmobiliarios.
+#
+# Autor: Juan Camilo Riaño Molano
+# Fecha de creación: 01/08/2025
+# Descripción:
+#   Este script coordina la ejecución completa del pipeline de análisis de datos:
+#   1. Análisis pre-limpieza para detectar inconsistencias
+#   2. Limpieza inteligente de datos con backup automático
+#   3. Obtención y procesamiento de datos desde fuentes Excel
+#   4. Limpieza avanzada de muestra y estados con validación
+#   5. Carga de datos a base de datos SQL con verificación
+#   6. Exportación de resultados de análisis a Excel
+#   7. Análisis exploratorio con indicadores clave y correlaciones
+#   8. Opción de generar informes ejecutivos (PDF/Word)
+#
+#   El pipeline es completamente modular y automatizado, permitiendo
+#   la ejecución paso a paso o completa según las necesidades del usuario.
+#
+# Buenas prácticas implementadas:
+#   - Modularidad y reutilización de funciones
+#   - Validación de rutas, archivos y variables de entorno
+#   - Manejo robusto de errores con mensajes claros
+#   - Análisis pre-limpieza para garantizar calidad de datos
+#   - Backup automático antes de modificaciones
+# -------------------------------------------------------------
 
-Autor: Juan Camilo Riaño Molano
-Fecha: 01/08/2025
-
-Descripción:
-    Ejecuta el pipeline completo: limpieza, backup, carga, análisis y exportación de resultados.
-    Orquesta la ejecución de scripts modulares y asegura la correcta secuencia de pasos.
-
-Buenas prácticas:
-    - Modularidad y reutilización de funciones.
-    - Validación de rutas, archivos y variables de entorno.
-    - Manejo de errores y mensajes claros para el usuario.
--------------------------------------------------------------
-"""
+# =======================
+# Importación de librerías
+# =======================
 
 import os
 from scripts.clean_and_backup_data import clean_and_backup_data
@@ -26,6 +40,8 @@ from scripts.clean_estados import clean_estados
 from scripts.obtain_data import obtain_data
 from scripts.test_db_connection import probar_conexion_db
 from scripts.load_to_sql import main as load_to_sql_main
+from scripts.analisis_exploratorio import ejecutar_analisis_completo
+from scripts.analisis_pre_limpieza import ejecutar_analisis_pre_limpieza
 import subprocess
 import sys
 
@@ -80,6 +96,19 @@ def run_pipeline():
     else:
         print("[Datos ya importados: muestra.csv y estados.csv]")
 
+    # Paso 1.5: Análisis de inconsistencias PRE-limpieza
+    print("\n" + "=" * 70)
+    print("[1.5] ANÁLISIS DE INCONSISTENCIAS PRE-LIMPIEZA")
+    print("=" * 70)
+    print("Analizando datos RAW para identificar inconsistencias antes de limpiar...")
+    ejecutar_analisis_pre_limpieza()
+
+    print("\n¿Desea continuar con la limpieza después de revisar las inconsistencias?")
+    continuar = input('Escriba "Si" para continuar con la limpieza, o "No" para finalizar: ').strip().lower()
+    if continuar != "si":
+        print("Proceso detenido para revisar inconsistencias.")
+        return
+
     # Paso 2: Limpiar datos de muestra
     print("[2] Limpiando datos de muestra (muestra.csv)...")
     clean_muestra("./data/processedData/muestra.csv", "./data/cleanData/CLMUESTRA.csv", "./data/processedData/outliers_log.csv")
@@ -133,6 +162,13 @@ def run_pipeline():
                         print("Sin resultados.")
                 except Exception as e:
                     print(f"Error ejecutando consulta '{sheet}': {e}")
+
+            # Ejecutar análisis exploratorio automáticamente
+            print("\n" + "=" * 70)
+            print("EJECUTANDO ANÁLISIS EXPLORATORIO AUTOMÁTICO")
+            print("=" * 70)
+            print("Calculando indicadores clave e inconsistencias específicas...")
+            ejecutar_analisis_completo()
         else:
             print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
     else:

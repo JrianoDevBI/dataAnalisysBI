@@ -1,21 +1,34 @@
-# Script para exportar el análisis de estados a un archivo Excel con varias hojas, usando pandas y SQLAlchemy.
-"""
--------------------------------------------------------------
-export_estado_analysis.py
-Exporta el análisis de estados a un archivo Excel con varias hojas.
+# Script para exportación avanzada de análisis de estados a Excel con múltiples hojas
+# -------------------------------------------------------------
+# export_estado_analysis.py
+# Exportador especializado de análisis de estados con formateo Excel avanzado.
+#
+# Autor: Juan Camilo Riaño Molano
+# Fecha de creación: 01/08/2025
+# Descripción:
+#   Este script ejecuta análisis SQL especializados de estados inmobiliarios y exporta
+#   los resultados a archivos Excel multi-hoja con formateo profesional:
+#   - Ejecución de consultas SQL complejas desde archivos .sql
+#   - Exportación a Excel con múltiples hojas temáticas
+#   - Formateo automático de hojas con estilos profesionales
+#   - Análisis de estadísticas de estados, diferencias y rankings
+#   - Generación de reportes ejecutivos en formato Excel
+#   - Conexión robusta a base de datos con manejo de errores
+#
+#   Utiliza pandas y SQLAlchemy para operaciones optimizadas
+#   y genera reportes listos para presentación ejecutiva.
+#
+# Funcionalidades principales:
+#   - Ejecución automática de consultas SQL desde archivos externos
+#   - Exportación multi-hoja con nombres descriptivos y formateo
+#   - Validación de conexión a base de datos y consultas
+#   - Manejo robusto de errores con logging detallado
+#   - Generación de metadatos y resúmenes en Excel
+# -------------------------------------------------------------
 
-Autor: Juan Camilo Riaño Molano
-Fecha: 01/08/2025
-
-Descripción:
-        Ejecuta consultas SQL y exporta los resultados a un archivo Excel con varias hojas.
-        Utiliza pandas y SQLAlchemy para la conexión y manipulación de datos.
-
-Buenas prácticas:
-        - Modularidad y reutilización de funciones.
-        - Manejo de errores y mensajes claros para el usuario.
--------------------------------------------------------------
-"""
+# =======================
+# Importación de librerías
+# =======================
 
 import os
 import pandas as pd

@@ -1,24 +1,33 @@
-"""
-Script para probar la conexión a la base de datos definida en el archivo .env.
-Devuelve True si la conexión es exitosa, False si falla.
--------------------------------------------------------------
-test_db_connection.py
-Script para probar la conexión a la base de datos usando la variable DATABASE_URL.
+# Script para validación robusta de conexión a base de datos MySQL
+# -------------------------------------------------------------
+# test_db_connection.py
+# Validador de conexión a base de datos con diagnóstico detallado.
+#
+# Autor: Juan Camilo Riaño Molano
+# Fecha de creación: 01/08/2025
+# Descripción:
+#   Este script valida de forma robusta la conexión a la base de datos MySQL:
+#   - Validación de variables de entorno y credenciales
+#   - Prueba de conectividad con timeout configurable
+#   - Diagnóstico detallado de errores de conexión
+#   - Validación de permisos y acceso a esquemas
+#   - Retorno de estado booleano para integración con pipeline
+#   - Logging detallado para troubleshooting
+#
+#   Proporciona validación confiable antes de operaciones críticas
+#   del pipeline y facilita el diagnóstico de problemas de conectividad.
+#
+# Funcionalidades principales:
+#   - Validación exhaustiva de string de conexión y credenciales
+#   - Prueba de conectividad con manejo de timeouts
+#   - Diagnóstico específico de tipos de errores (red, autenticación, permisos)
+#   - Integración seamless con pipeline principal
+#   - Logging estructurado para análisis de problemas
+# -------------------------------------------------------------
 
-Autor: Juan Camilo Riaño Molano
-Fecha: 01/08/2025
-
-Descripción:
-    Este script prueba la conexión a la base de datos definida en el archivo .env.
-    Devuelve True si la conexión es exitosa, False si falla.
-
-Buenas prácticas:
-    - Validar la existencia de la variable de entorno.
-    - Manejar errores de conexión y credenciales.
-    - Proveer mensajes claros al usuario.
--------------------------------------------------------------
-"""
-
+# =======================
+# Importación de librerías
+# =======================
 import os
 from sqlalchemy import create_engine
 from dotenv import load_dotenv

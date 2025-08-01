@@ -1,15 +1,36 @@
 
+-- Consulta SQL para identificación del último estado de cada inmueble en el pipeline
 -- -------------------------------------------------------------
--- Query: Último Estado de Cada Inmueble
+-- ultimo_estado.sql
+-- Consulta optimizada para obtener el estado más reciente de cada inmueble.
+--
+-- Autor: Juan Camilo Riaño Molano
+-- Fecha de creación: 01/08/2025
 -- Descripción:
---   1. Devuelve el último estado registrado para cada inmueble según la fecha más reciente en el histórico.
---   2. Utiliza una subconsulta para identificar la fecha máxima de actualización por inmueble.
---   3. Une la tabla original con la subconsulta para obtener el estado correspondiente a esa fecha.
--- Buenas prácticas:
---   - Uso de subconsulta para claridad y compatibilidad con MySQL.
---   - Alias claros y consistentes.
---   - Comentarios explicativos en cada sección.
---   - Selección explícita de columnas relevantes.
+--   Esta consulta SQL identifica el último estado registrado para cada inmueble
+--   basado en el histórico de cambios de estados:
+--   - Obtención del estado más reciente por inmueble usando fecha máxima
+--   - Subconsulta optimizada para identificar fechas de última actualización
+--   - Join interno para relacionar estado con fecha correspondiente
+--   - Ordenamiento por fecha descendente para visualización cronológica
+--   - Compatibilidad total con MySQL sin funciones de ventana complejas
+--
+--   Proporciona una vista consolidada del estado actual de todos
+--   los inmuebles en el pipeline para monitoreo y toma de decisiones.
+--
+-- Funcionalidades principales:
+--   - Identificación precisa del último estado por inmueble
+--   - Manejo de múltiples actualizaciones en la misma fecha
+--   - Optimización de performance usando subconsultas indexadas
+--   - Ordenamiento cronológico para análisis temporal
+--   - Resultados listos para reportes ejecutivos y dashboards
+--
+-- Buenas prácticas implementadas:
+--   - Subconsulta clara y reutilizable para máxima fecha por inmueble
+--   - Alias descriptivos y consistentes en todas las tablas
+--   - Comentarios explicativos detallados en secciones críticas
+--   - Selección explícita de columnas relevantes sin asteriscos
+--   - Compatibilidad con versiones estándar de MySQL
 -- -------------------------------------------------------------
 
 -- Query compatible con MySQL para obtener el último estado de cada inmueble
