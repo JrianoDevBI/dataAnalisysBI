@@ -107,7 +107,7 @@ def obtain_data():
             if col != 'Antiguedad (Años)' else 'Antiguedad_Annos'
             for col in df.columns
         ]
-        # Si hay 'Antiguedad (Años)', renombrar explícitamente
+        # Si hay 'Antiguedad (Años)', renombrar
         df.columns = cols
         return df
 
