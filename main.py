@@ -1,27 +1,46 @@
-# main.py
-# Script principal para ejecutar los procesos del pipeline de datos.
-#
-# Buenas prácticas implementadas:
-# - Modularidad: cada proceso está en un script independiente.
-# - Validación de rutas y archivos antes de procesar.
-# - Claridad en el flujo de usuario y mensajes descriptivos.
-# - Uso de funciones y variables descriptivas.
-# - Comentarios detallados para facilitar el mantenimiento y la colaboración.
+"""
+-------------------------------------------------------------
+main.py
+Script principal para orquestar el pipeline de procesamiento y análisis de datos.
 
-import sys
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
+Descripción:
+    Ejecuta el pipeline completo: limpieza, backup, carga, análisis y exportación de resultados.
+    Orquesta la ejecución de scripts modulares y asegura la correcta secuencia de pasos.
+
+Buenas prácticas:
+    - Modularidad y reutilización de funciones.
+    - Validación de rutas, archivos y variables de entorno.
+    - Manejo de errores y mensajes claros para el usuario.
+-------------------------------------------------------------
+"""
+
+
 import os
-# Agregar la carpeta scripts al path para importar módulos personalizados
-sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
-
-# Importar funciones principales del pipeline
-from scripts.obtain_data import obtain_data
+from clean_and_backup_data import clean_and_backup_data
+from export_sql_to_excel import export_query_to_excel
+from export_estado_analysis import export_estado_analysis_xlsx
 from scripts.clean_muestra import clean_muestra
 from scripts.clean_estados import clean_estados
-
-from scripts.load_to_sql import main as load_to_sql_main
+from scripts.obtain_data import obtain_data
 from scripts.test_db_connection import probar_conexion_db
+from scripts.load_to_sql import main as load_to_sql_main
+from dotenv import load_dotenv
+import pandas as pd
+from sqlalchemy import create_engine
 
+# QUERIES para exportación múltiple
+QUERIES = [
+    ("Ultimo Estado", open('sql_queries/ultimo_estado.sql', encoding='utf-8').read()),
+    ("Diferencia Absoluta y Ranking", open('sql_queries/diferencia_absoluta_y_ranking.sql', encoding='utf-8').read()),
+    ("Estadisticas Estado", open('sql_queries/estadisticas_estado.sql', encoding='utf-8').read()),
+]
 
+# =======================
+# Función principal del pipeline
+# =======================
 def run_pipeline():
     """
     Ejecuta el pipeline de procesamiento de datos.
@@ -31,7 +50,26 @@ def run_pipeline():
       3. Limpiar datos de estados históricos.
       4. Cargar datos limpios a la base de datos SQL.
     El flujo es interactivo y asegura que los pasos previos se hayan realizado antes de continuar.
+
+    Proceso:
+    1. Solicita limpieza y backup de datos antes de iniciar el pipeline.
+    2. Ejecuta cada etapa del pipeline de forma secuencial y validada.
+    3. Exporta resultados y muestra resúmenes en consola.
+
+    Buenas prácticas:
+    - Modularidad: cada proceso está en un script independiente.
+    - Validación de rutas y archivos antes de procesar.
+    - Claridad en el flujo de usuario y mensajes descriptivos.
+    - Uso de funciones y variables descriptivas.
+    - Comentarios detallados para facilitar el mantenimiento y la colaboración.
+
+    Manejo de errores:
+        FileNotFoundError: Si algún archivo requerido no existe.
+        ValueError: Si faltan variables de entorno o parámetros críticos.
+        Exception: Si ocurre un error inesperado en alguna etapa.
     """
+    # Solicitar limpieza y backup de datos antes de iniciar el pipeline
+    clean_and_backup_data()
     processed_dir = os.path.join(os.getcwd(), 'data', 'processedData')
     muestra_path = os.path.join(processed_dir, 'muestra.csv')
     estados_path = os.path.join(processed_dir, 'estados.csv')
@@ -69,11 +107,47 @@ def run_pipeline():
         if probar_conexion_db():
             print("Cargando datos limpios a la base de datos SQL...")
             load_to_sql_main()
+            print("Datos cargados exitosamente a la base de datos.")
+            # Exportar resultados de queries a Excel
+            from dotenv import load_dotenv
+            load_dotenv()
+            db_url = os.getenv('DATABASE_URL')
+            if not db_url:
+                print('No se encontró la variable DATABASE_URL en el entorno. No se exportaron los resultados de queries.')
+                return
+            print("Exportando resultados de queries a archivos Excel...")
+            export_query_to_excel('sql_queries/ultimo_estado.sql', db_url)
+            print("[OK] Query 'ultimo_estado.sql' exportado correctamente.")
+            export_query_to_excel('sql_queries/diferencia_absoluta_y_ranking.sql', db_url)
+            print("[OK] Query 'diferencia_absoluta_y_ranking.sql' exportado correctamente.")
+
+            # Exportar análisis de estados a un solo Excel con varias hojas
+            print("Exportando análisis de estados a 'estado_analysis.xlsx'...")
+            export_estado_analysis_xlsx()
+            print("[OK] Análisis de estados exportado correctamente.")
+
+            # Mostrar resultados principales de cada consulta en consola
+            from sqlalchemy import create_engine
+            engine = create_engine(db_url)
+            import pandas as pd
+            print("\nResumen de análisis de estados:")
+            for sheet, query in QUERIES:
+                try:
+                    df = pd.read_sql(query, engine)
+                    print(f"\n[{sheet}]")
+                    if not df.empty:
+                        print(df.head(10).to_string(index=False))
+                    else:
+                        print("Sin resultados.")
+                except Exception as e:
+                    print(f"Error ejecutando consulta '{sheet}': {e}")
         else:
             print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
     else:
         print("Ejecución finalizada. No se cargaron los datos a la base de datos.")
 
+# =======================
 # Punto de entrada del script principal
+# =======================
 if __name__ == '__main__':
     run_pipeline()

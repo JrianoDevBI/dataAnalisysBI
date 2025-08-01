@@ -1,3 +1,23 @@
+
+"""
+-------------------------------------------------------------
+analisis_exploratorio.py
+Funciones para análisis exploratorio de datos limpios del proyecto inmobiliario.
+
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
+Descripción:
+    Este módulo contiene funciones para analizar relaciones, detectar inconsistencias y visualizar
+    datos limpios del pipeline. Incluye análisis de correlación, gráficos interactivos y detección de outliers.
+
+Buenas prácticas:
+    - Modularidad: cada análisis es una función independiente.
+    - Validación de columnas y tipos antes de procesar.
+    - Comentarios y docstrings detallados para facilitar el mantenimiento.
+-------------------------------------------------------------
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -47,75 +67,74 @@ def analizar_relaciones(df):
     if 'Area' in df.columns and 'Precio_Solicitado' in df.columns and 'Zona' in df.columns:
         try:
             import plotly.express as px
+            df = df.copy()
+            df['Area'] = pd.to_numeric(df['Area'], errors='coerce')
+            df['Precio_Solicitado'] = pd.to_numeric(df['Precio_Solicitado'], errors='coerce')
+            resumen = df.groupby('Zona').agg({'Area': 'mean', 'Precio_Solicitado': 'mean', 'Zona': 'count'}).rename(columns={'Zona': 'Cantidad'})
+            resumen = resumen.reset_index()
+            # Bubble plot vertical: eje x = Zona, eje y = Precio, tamaño = cantidad, color = Area promedio
+            fig = px.scatter(
+                resumen,
+                x='Zona',
+                y='Precio_Solicitado',
+                size='Cantidad',
+                color='Area',
+                hover_name='Zona',
+                hover_data={'Cantidad': True, 'Area': True, 'Precio_Solicitado': True},
+                size_max=60,
+                height=800,
+            )
+            fig.update_traces(marker=dict(line=dict(width=1, color='DarkSlateGrey')))
+            fig.update_layout(
+                title='Bubble plot interactivo: Precio Solicitado promedio por Zona (tamaño=frecuencia, color=Área promedio)',
+                xaxis_title='Zona',
+                yaxis_title='Precio Solicitado promedio',
+                xaxis_tickangle=45,
+                showlegend=True,
+                margin=dict(l=40, r=40, t=80, b=200),
+            )
+            fig.update_xaxes(tickfont=dict(size=10))
+            fig.show()
+            print(f"\n--- Bubble plot interactivo generado: Precio Solicitado promedio por Zona (tamaño=frecuencia, color=Área promedio) ---")
         except ImportError:
             print("Plotly no está instalado. Ejecuta 'pip install plotly' para gráficos interactivos.")
             return
-        df = df.copy()
-        df['Area'] = pd.to_numeric(df['Area'], errors='coerce')
-        df['Precio_Solicitado'] = pd.to_numeric(df['Precio_Solicitado'], errors='coerce')
-        resumen = df.groupby('Zona').agg({'Area': 'mean', 'Precio_Solicitado': 'mean', 'Zona': 'count'}).rename(columns={'Zona': 'Cantidad'})
-        resumen = resumen.reset_index()
-        # Bubble plot vertical: eje x = Zona, eje y = Precio, tamaño = cantidad, color = Area promedio
-        fig = px.scatter(
-            resumen,
-            x='Zona',
-            y='Precio_Solicitado',
-            size='Cantidad',
-            color='Area',
-            hover_name='Zona',
-            hover_data={'Cantidad': True, 'Area': True, 'Precio_Solicitado': True},
-            size_max=60,
-            height=800,
-        )
-        fig.update_traces(marker=dict(line=dict(width=1, color='DarkSlateGrey')))
-        fig.update_layout(
-            title='Bubble plot interactivo: Precio Solicitado promedio por Zona (tamaño=frecuencia, color=Área promedio)',
-            xaxis_title='Zona',
-            yaxis_title='Precio Solicitado promedio',
-            xaxis_tickangle=45,
-            showlegend=True,
-            margin=dict(l=40, r=40, t=80, b=200),
-        )
-        fig.update_xaxes(tickfont=dict(size=10))
-        fig.show()
-        print(f"\n--- Bubble plot interactivo generado: Precio Solicitado promedio por Zona (tamaño=frecuencia, color=Área promedio) ---")
-
 
     # Gráfico violin interactivo de precio por zona (ordenado de menor a mayor precio promedio)
     if 'Zona' in df.columns and 'Precio_Solicitado' in df.columns:
         try:
             import plotly.express as px
+            df = df.copy()
+            df['Precio_Solicitado'] = pd.to_numeric(df['Precio_Solicitado'], errors='coerce')
+            orden_zonas = df.groupby('Zona')['Precio_Solicitado'].mean().sort_values().index
+            fig = px.violin(
+                df,
+                x='Zona',
+                y='Precio_Solicitado',
+                category_orders={'Zona': list(orden_zonas)},
+                box=True,
+                points='all',
+                hover_data=['Zona', 'Precio_Solicitado'],
+                height=700,
+            )
+            fig.update_layout(
+                title='Distribución interactiva (Violin Plot) de Precio Solicitado por Zona (ordenado)',
+                xaxis_title='Zona',
+                yaxis_title='Precio Solicitado',
+                xaxis_tickangle=45,
+                margin=dict(l=40, r=40, t=80, b=200),
+            )
+            fig.update_xaxes(tickfont=dict(size=10))
+            fig.show()
+            # Conclusión automática para violin plot
+            print("\n--- Conclusión automática del violin plot Precio Solicitado por Zona ---")
+            zona_mas_cara = df.groupby('Zona')['Precio_Solicitado'].mean().idxmax()
+            zona_mas_barata = df.groupby('Zona')['Precio_Solicitado'].mean().idxmin()
+            print(f"La zona con mayor precio promedio es '{zona_mas_cara}'.")
+            print(f"La zona con menor precio promedio es '{zona_mas_barata}'.")
         except ImportError:
             print("Plotly no está instalado. Ejecuta 'pip install plotly' para gráficos interactivos.")
             return
-        df = df.copy()
-        df['Precio_Solicitado'] = pd.to_numeric(df['Precio_Solicitado'], errors='coerce')
-        orden_zonas = df.groupby('Zona')['Precio_Solicitado'].mean().sort_values().index
-        fig = px.violin(
-            df,
-            x='Zona',
-            y='Precio_Solicitado',
-            category_orders={'Zona': list(orden_zonas)},
-            box=True,
-            points='all',
-            hover_data=['Zona', 'Precio_Solicitado'],
-            height=700,
-        )
-        fig.update_layout(
-            title='Distribución interactiva (Violin Plot) de Precio Solicitado por Zona (ordenado)',
-            xaxis_title='Zona',
-            yaxis_title='Precio Solicitado',
-            xaxis_tickangle=45,
-            margin=dict(l=40, r=40, t=80, b=200),
-        )
-        fig.update_xaxes(tickfont=dict(size=10))
-        fig.show()
-        # Conclusión automática para violin plot
-        print("\n--- Conclusión automática del violin plot Precio Solicitado por Zona ---")
-        zona_mas_cara = df.groupby('Zona')['Precio_Solicitado'].mean().idxmax()
-        zona_mas_barata = df.groupby('Zona')['Precio_Solicitado'].mean().idxmin()
-        print(f"La zona con mayor precio promedio es '{zona_mas_cara}'.")
-        print(f"La zona con menor precio promedio es '{zona_mas_barata}'.")
 
     # Tabla resumen de precio promedio por tipo de inmueble (agrupando y normalizando nombres)
     if 'Tipo_Inmueble' in df.columns and 'Precio_Solicitado' in df.columns:

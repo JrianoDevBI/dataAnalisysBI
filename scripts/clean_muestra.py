@@ -1,10 +1,11 @@
+
 """
 -------------------------------------------------------------
 clean_muestra.py
 Script para limpiar y validar la calidad de los datos de muestra según reglas específicas.
 
-Autor: Juan Camilo Riaño
-Fecha: 2025-07-31
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
 
 Descripción:
     Este script toma un archivo CSV de datos de muestra y realiza un proceso de limpieza basado en reglas de negocio específicas:
@@ -19,6 +20,11 @@ Buenas prácticas:
     - Facilitar la trazabilidad y auditoría de los cambios.
 -------------------------------------------------------------
 """
+
+# Librerías principales
+import pandas as pd
+import os
+import re
 
 
 

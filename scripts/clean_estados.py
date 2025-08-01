@@ -1,13 +1,27 @@
-# -------------------------------------------------------------
-# clean_estados.py
-# Script para limpiar y diagnosticar la calidad de los datos de estados históricos.
-# - Normaliza encabezados (espacios → guion bajo)
-# - Divide Fecha_Actualizacion en Fecha y Hora
-# - Imputa vacíos con 'Desconocido'
-# - Valida duplicados en Fecha_Actualizacion
-# - Separa registros donde Fecha, Hora y Estado son 'Desconocido' simultáneamente
-# - Genera tres dataframes: limpio (sin registros totalmente desconocidos), solo desconocidos, y combinado
-# -------------------------------------------------------------
+
+"""
+-------------------------------------------------------------
+clean_estados.py
+Script para limpiar y diagnosticar la calidad de los datos de estados históricos.
+
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
+Descripción:
+    - Normaliza encabezados (espacios → guion bajo)
+    - Divide Fecha_Actualizacion en Fecha y Hora
+    - Imputa vacíos con 'Desconocido'
+    - Valida duplicados en Fecha_Actualizacion
+    - Separa registros donde Fecha, Hora y Estado son 'Desconocido' simultáneamente
+    - Genera tres dataframes: limpio (sin registros totalmente desconocidos), solo desconocidos, y combinado
+
+Buenas prácticas:
+    - Documentar criterios de limpieza y cambios realizados.
+    - Mantener el código modular y funciones reutilizables.
+    - Validar la estructura y tipos de datos antes de procesar.
+    - Facilitar la trazabilidad y auditoría de los cambios.
+-------------------------------------------------------------
+"""
 
 def clean_estados(input_path, output_path):
 

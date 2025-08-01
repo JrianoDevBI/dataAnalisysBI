@@ -23,5 +23,4 @@ INNER JOIN (
     GROUP BY Inmueble_ID
 ) ult
   ON t.Inmueble_ID = ult.Inmueble_ID AND t.Fecha_Actualizacion = ult.max_fecha
-ORDER BY t.Fecha_Actualizacion DESC
-LIMIT 10000;
+ORDER BY t.Fecha_Actualizacion DESC;

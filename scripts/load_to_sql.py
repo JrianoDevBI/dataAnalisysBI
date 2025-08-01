@@ -1,9 +1,25 @@
 
-# -------------------------------------------------------------
-# load_to_sql.py
-# Script para cargar los datos limpios a una base de datos SQL (MySQL).
-# Utiliza SQLAlchemy y dotenv para manejo seguro de credenciales.
-# -------------------------------------------------------------
+"""
+-------------------------------------------------------------
+load_to_sql.py
+Script para cargar los datos limpios a una base de datos SQL (MySQL).
+
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
+Descripción:
+    Utiliza SQLAlchemy y dotenv para manejo seguro de credenciales.
+    Carga los archivos CSV limpios a la base de datos SQL:
+        - datos_muestra: tabla con los datos de inmuebles
+        - datos_cambio_estados: tabla con el histórico de estados
+    Si las tablas existen, las reemplaza.
+
+Buenas prácticas:
+    - Uso de variables de entorno para credenciales.
+    - Validación de existencia de archivos antes de cargar.
+    - Manejo de errores y mensajes claros para el usuario.
+-------------------------------------------------------------
+"""
 
 
 def main():
@@ -43,9 +59,15 @@ def main():
     df_muestra = pd.read_csv(muestra_path)
     df_estados = pd.read_csv(estados_path, parse_dates=['Fecha_Actualizacion'])
     # Cargar los DataFrames a la base de datos como tablas
-    df_muestra.to_sql('datos_muestra', engine, if_exists='replace', index=False)
-    df_estados.to_sql('datos_cambio_estados', engine, if_exists='replace', index=False)
-    print('Datos cargados a SQL.')
+    try:
+        df_muestra.to_sql('datos_muestra', engine, if_exists='replace', index=False)
+        df_estados.to_sql('datos_cambio_estados', engine, if_exists='replace', index=False)
+        print('Datos cargados a SQL.')
+    except AttributeError as e:
+        print('Error al cargar datos a SQL:', e)
+        print('Si el error menciona "cursor" o "DBAPI2", pruebe instalar el paquete pymysql y/o use el dialecto mysql+pymysql en su DATABASE_URL.')
+        print('Ejecute: pip install pymysql')
+        raise
 
 if __name__ == '__main__':
     main()

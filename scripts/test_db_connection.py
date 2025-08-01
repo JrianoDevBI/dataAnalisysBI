@@ -1,3 +1,23 @@
+
+"""
+-------------------------------------------------------------
+test_db_connection.py
+Script para probar la conexión a la base de datos usando la variable DATABASE_URL.
+
+Autor: Juan Camilo Riaño Molano
+Fecha: 01/08/2025
+
+Descripción:
+    Este script prueba la conexión a la base de datos definida en el archivo .env.
+    Devuelve True si la conexión es exitosa, False si falla.
+
+Buenas prácticas:
+    - Validar la existencia de la variable de entorno.
+    - Manejar errores de conexión y credenciales.
+    - Proveer mensajes claros al usuario.
+-------------------------------------------------------------
+"""
+
 import os
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
