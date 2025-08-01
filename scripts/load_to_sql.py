@@ -18,8 +18,10 @@ def main():
     from sqlalchemy import create_engine
     import pandas as pd
 
-    # Cargar variables de entorno desde el archivo .env
-    load_dotenv('../config/.env')
+    # Definir la raíz del proyecto de forma robusta
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env_path = os.path.join(project_root, 'config', '.env')
+    load_dotenv(env_path)
     # Leer la URL de conexión a la base de datos desde la variable de entorno
     DB_URL = os.getenv('DATABASE_URL')
     if not DB_URL:
@@ -27,10 +29,19 @@ def main():
     # Crear el engine de SQLAlchemy para conectarse a MySQL
     engine = create_engine(DB_URL, echo=False, pool_pre_ping=True)
 
+    # Definir rutas absolutas a los archivos limpios
+    muestra_path = os.path.join(project_root, 'data', 'cleanData', 'CLMUESTRA.csv')
+    estados_path = os.path.join(project_root, 'data', 'cleanData', 'CLESTADOS.csv')
+
+    # Verificar existencia de archivos
+    if not os.path.exists(muestra_path):
+        raise FileNotFoundError(f'No se encontró el archivo de muestra limpio en: {muestra_path}')
+    if not os.path.exists(estados_path):
+        raise FileNotFoundError(f'No se encontró el archivo de estados limpio en: {estados_path}')
 
     # Leer los archivos limpios generados por los scripts de limpieza
-    df_muestra = pd.read_csv('../data/cleanData/CLMUESTRA.csv')
-    df_estados = pd.read_csv('../data/cleanData/CLESTADOS.csv', parse_dates=['Fecha_Actualizacion'])
+    df_muestra = pd.read_csv(muestra_path)
+    df_estados = pd.read_csv(estados_path, parse_dates=['Fecha_Actualizacion'])
     # Cargar los DataFrames a la base de datos como tablas
     df_muestra.to_sql('datos_muestra', engine, if_exists='replace', index=False)
     df_estados.to_sql('datos_cambio_estados', engine, if_exists='replace', index=False)

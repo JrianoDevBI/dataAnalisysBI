@@ -17,7 +17,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
 from scripts.obtain_data import obtain_data
 from scripts.clean_muestra import clean_muestra
 from scripts.clean_estados import clean_estados
+
 from scripts.load_to_sql import main as load_to_sql_main
+from scripts.test_db_connection import probar_conexion_db
+
 
 def run_pipeline():
     """
@@ -29,7 +32,6 @@ def run_pipeline():
       4. Cargar datos limpios a la base de datos SQL.
     El flujo es interactivo y asegura que los pasos previos se hayan realizado antes de continuar.
     """
-    # Definir rutas de archivos procesados y limpios
     processed_dir = os.path.join(os.getcwd(), 'data', 'processedData')
     muestra_path = os.path.join(processed_dir, 'muestra.csv')
     estados_path = os.path.join(processed_dir, 'estados.csv')
@@ -37,52 +39,40 @@ def run_pipeline():
     clmuestra_path = os.path.join(clean_dir, 'CLMUESTRA.csv')
     clestados_path = os.path.join(clean_dir, 'CLESTADOS.csv')
 
-    # Verificar si los archivos procesados existen
-    archivos_listos = os.path.exists(muestra_path) and os.path.exists(estados_path)
+    # Paso 1: Obtener datos si no existen
+    if not (os.path.exists(muestra_path) and os.path.exists(estados_path)):
+        print("[1] Obteniendo datos desde Excel y generando CSVs procesados...")
+        obtain_data()
+    else:
+        print("[Datos ya importados: muestra.csv y estados.csv]")
 
-    while True:
-        # Menú interactivo para el usuario
-        print("Seleccione el proceso que desea realizar:")
-        opciones = []
-        if not archivos_listos:
-            # Solo se permite obtener datos si aún no existen los archivos procesados
-            print("1. Obtener datos desde Excel y generar CSVs limpios")
-            opciones.append('1')
+    # Paso 2: Limpiar datos de muestra
+    print("[2] Limpiando datos de muestra (muestra.csv)...")
+    clean_muestra(
+        './data/processedData/muestra.csv',
+        './data/cleanData/CLMUESTRA.csv',
+        './data/processedData/outliers_log.csv'
+    )
+
+    # Paso 3: Limpiar datos de estados
+    print("[3] Limpiando datos de estados (estados.csv)...")
+    clean_estados(
+        './data/processedData/estados.csv',
+        './data/cleanData/CLESTADOS.csv'
+    )
+
+    # Confirmar antes de cargar a SQL
+    print("\n¿Los datos están listos para cargarse a la base de datos SQL?")
+    confirm = input('Escriba "Si" para continuar con la carga, o "No" para finalizar: ').strip().lower()
+    if confirm == 'si':
+        print("Probando conexión a la base de datos...")
+        if probar_conexion_db():
+            print("Cargando datos limpios a la base de datos SQL...")
+            load_to_sql_main()
         else:
-            print("[Datos ya importados: muestra.csv y estados.csv]")
-        print("2. Limpiar datos de muestra (muestra.csv)")
-        print("3. Limpiar datos de estados (estados.csv)")
-        print("4. Cargar datos limpios a la base de datos SQL")
-        opcion = input(f"Ingrese el número de la opción ({'/'.join(opciones + ['2','3','4'])}): ").strip()
-
-        # Ejecutar la opción seleccionada
-        match opcion:
-            case '1' if not archivos_listos:
-                # Obtención y procesamiento inicial de datos desde Excel
-                obtain_data()
-                archivos_listos = os.path.exists(muestra_path) and os.path.exists(estados_path)
-                break
-            case '2':
-                # Limpieza de datos de muestra y guardado en cleanData
-                clean_muestra(
-                    './data/processedData/muestra.csv',
-                    './data/cleanData/CLMUESTRA.csv',
-                    './data/processedData/outliers_log.csv'
-                )
-                break
-            case '3':
-                # Limpieza de datos de estados históricos y guardado en cleanData
-                clean_estados(
-                    './data/processedData/estados.csv',
-                    './data/cleanData/CLESTADOS.csv'
-                )
-                break
-            case '4':
-                # Carga de datos limpios a la base de datos SQL
-                load_to_sql_main()
-                break
-            case _:
-                print("Opción no válida. Intente de nuevo.")
+            print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
+    else:
+        print("Ejecución finalizada. No se cargaron los datos a la base de datos.")
 
 # Punto de entrada del script principal
 if __name__ == '__main__':
