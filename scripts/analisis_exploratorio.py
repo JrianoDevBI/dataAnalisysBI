@@ -90,8 +90,7 @@ def analizar_relaciones(df):
             fig.update_traces(marker=dict(line=dict(width=1, color="DarkSlateGrey")))
             fig.update_layout(
                 title=(
-                    "Bubble plot interactivo: Precio Solicitado promedio por Zona "
-                    "(tamaño=frecuencia, color=Área promedio)"
+                    "Bubble plot interactivo: Precio Solicitado promedio por Zona " "(tamaño=frecuencia, color=Área promedio)"
                 ),
                 xaxis_title="Zona",
                 yaxis_title="Precio Solicitado promedio",
@@ -128,9 +127,7 @@ def analizar_relaciones(df):
                 height=700,
             )
             fig.update_layout(
-                title=(
-                    "Distribución interactiva (Violin Plot) de Precio Solicitado por Zona (ordenado)"
-                ),
+                title=("Distribución interactiva (Violin Plot) de Precio Solicitado por Zona (ordenado)"),
                 xaxis_title="Zona",
                 yaxis_title="Precio Solicitado",
                 xaxis_tickangle=45,
@@ -217,8 +214,7 @@ def detectar_inconsistencias(df):
         stats = df.groupby("Zona")["Precio_Solicitado"].agg(["mean", "std"])
         df = df.join(stats, on="Zona", rsuffix="_zona")
         outliers = df[
-            (df["Precio_Solicitado"] > df["mean"] + 3 * df["std"])
-            | (df["Precio_Solicitado"] < df["mean"] - 3 * df["std"])
+            (df["Precio_Solicitado"] > df["mean"] + 3 * df["std"]) | (df["Precio_Solicitado"] < df["mean"] - 3 * df["std"])
         ]
         print(f"Registros con precio fuera de 3 desviaciones estándar por zona: {len(outliers)}")
         if not outliers.empty:

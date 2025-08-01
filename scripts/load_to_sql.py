@@ -67,7 +67,7 @@ def main():
         print("Error al cargar datos a SQL:", e)
         print(
             'Si el error menciona "cursor" o "DBAPI2", pruebe instalar el paquete pymysql '
-            'y/o use el dialecto mysql+pymysql en su DATABASE_URL.'
+            "y/o use el dialecto mysql+pymysql en su DATABASE_URL."
         )
         print("Ejecute: pip install pymysql")
         raise

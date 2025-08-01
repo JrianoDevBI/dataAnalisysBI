@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import re
+
 """
 clean_muestra.py
 Autor: Juan Camilo Riaño Molano
@@ -201,10 +202,7 @@ def clean_muestra(input_path, output_path, outliers_log_path=None):
         porcentaje = (registros_con_imputacion / total_registros) * 100
     else:
         porcentaje = 0
-    print(
-        f"Registros con 1 o más imputaciones: {registros_con_imputacion} "
-        f"lo cual representa el {porcentaje:.2f}%"
-    )
+    print(f"Registros con 1 o más imputaciones: {registros_con_imputacion} " f"lo cual representa el {porcentaje:.2f}%")
 
     # Guardar el archivo limpio en la ruta de salida indicada
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

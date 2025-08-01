@@ -31,6 +31,7 @@ def clean_estados(input_path, output_path):
             val = val.encode("ascii", "ignore").decode("utf-8")
             val = val.replace("ñ", "n").replace("Ñ", "N")
         return val
+
     # Leer el archivo de entrada
     df = pd.read_csv(input_path)
     # Normalizar tildes y ñ en todos los valores string
@@ -79,9 +80,7 @@ def clean_estados(input_path, output_path):
         df_limpio["Fecha_Actualizacion"] = pd.to_datetime(df_limpio["Fecha_Actualizacion"], errors="coerce")
         df_limpio["prev_fecha"] = df_limpio.groupby("Inmueble_ID")["Fecha_Actualizacion"].shift(1)
         df_limpio["prev_fecha"] = pd.to_datetime(df_limpio["prev_fecha"], errors="coerce")
-        mask_consistente = df_limpio["prev_fecha"].isna() | (
-            df_limpio["Fecha_Actualizacion"] >= df_limpio["prev_fecha"]
-        )
+        mask_consistente = df_limpio["prev_fecha"].isna() | (df_limpio["Fecha_Actualizacion"] >= df_limpio["prev_fecha"])
         registros_inconsistentes = df_limpio[~mask_consistente].copy()
         n_inconsistentes = len(registros_inconsistentes)
         if n_inconsistentes > 0:

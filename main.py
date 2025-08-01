@@ -82,9 +82,7 @@ def run_pipeline():
 
     # Paso 2: Limpiar datos de muestra
     print("[2] Limpiando datos de muestra (muestra.csv)...")
-    clean_muestra(
-        "./data/processedData/muestra.csv", "./data/cleanData/CLMUESTRA.csv", "./data/processedData/outliers_log.csv"
-    )
+    clean_muestra("./data/processedData/muestra.csv", "./data/cleanData/CLMUESTRA.csv", "./data/processedData/outliers_log.csv")
 
     # Paso 3: Limpiar datos de estados
     print("[3] Limpiando datos de estados (estados.csv)...")
@@ -101,6 +99,7 @@ def run_pipeline():
             print("Datos cargados exitosamente a la base de datos.")
             # Exportar resultados de queries a Excel
             from dotenv import load_dotenv
+
             load_dotenv()
             db_url = os.getenv("DATABASE_URL")
             if not db_url:
@@ -119,8 +118,10 @@ def run_pipeline():
 
             # Mostrar resultados principales de cada consulta en consola
             from sqlalchemy import create_engine
+
             engine = create_engine(db_url)
             import pandas as pd
+
             print("\nResumen de análisis de estados:")
             for sheet, query in QUERIES:
                 try:
@@ -131,9 +132,7 @@ def run_pipeline():
                     else:
                         print("Sin resultados.")
                 except Exception as e:
-                    print(
-                        f"Error ejecutando consulta '{sheet}': {e}"
-                    )
+                    print(f"Error ejecutando consulta '{sheet}': {e}")
         else:
             print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
     else:
