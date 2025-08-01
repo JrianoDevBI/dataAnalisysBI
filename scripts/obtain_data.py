@@ -1,4 +1,4 @@
-
+# Script para extraer datos desde un archivo Excel fuente y exportarlos a CSV para su posterior limpieza y análisis.
 # -------------------------------------------------------------
 # obtain_data.py
 # Script para la obtención inicial de datos desde un archivo Excel
@@ -16,8 +16,8 @@
 # =======================
 # Importación de librerías
 # =======================
-import pandas as pd 
-import os            
+import pandas as pd
+import os
 
 # =======================
 # Definición de rutas absolutas
@@ -25,29 +25,29 @@ import os
 # BASE_DIR apunta a la raíz del proyecto, independientemente de dónde se ejecute el script
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Ruta al archivo Excel fuente
-RAW_PATH = os.path.join(BASE_DIR, 'data', 'sourceData', 'Muestra_Prueba_BI_Jr_FW.xlsx')
+RAW_PATH = os.path.join(BASE_DIR, "data", "sourceData", "Muestra_Prueba_BI_Jr_FW.xlsx")
 # Carpeta donde se guardarán los archivos procesados
-PROCESSED_DIR = os.path.join(BASE_DIR, 'data', 'processedData')
+PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processedData")
 
 # =======================
 # Especificación de tipos de datos esperados para cada columna
 # =======================
 DTYPE_MAP = {
-    'Id': str,
-    'Fuente': str,
-    'Ciudad': str,
-    'Zona': str,
-    'Estrato': str,
-    'Lote Id': str,
-    'Tipo Inmueble': str,
-    'Nombre Contacto': str,
-    'Telefono Contacto': str,
-    'Precio Solicitado': float,
-    'Área': float,
-    'Piso': str,
-    'Garajes': str,
-    'Ascensores': str,
-    'Antiguedad (Años)': float
+    "Id": str,
+    "Fuente": str,
+    "Ciudad": str,
+    "Zona": str,
+    "Estrato": str,
+    "Lote Id": str,
+    "Tipo Inmueble": str,
+    "Nombre Contacto": str,
+    "Telefono Contacto": str,
+    "Precio Solicitado": float,
+    "Área": float,
+    "Piso": str,
+    "Garajes": str,
+    "Ascensores": str,
+    "Antiguedad (Años)": float,
 }
 
 
@@ -76,22 +76,14 @@ def obtain_data():
 
     # Leer la hoja 'Muestra' con los tipos de datos definidos
     try:
-        df_muestra = pd.read_excel(
-            RAW_PATH,
-            sheet_name='Muestra',
-            dtype=DTYPE_MAP,
-            engine='openpyxl'
-        )
+        df_muestra = pd.read_excel(RAW_PATH, sheet_name="Muestra", dtype=DTYPE_MAP, engine="openpyxl")
     except ValueError as e:
         raise ValueError("No se encontró la hoja 'Muestra' en el archivo Excel.") from e
 
     # Leer la hoja 'Historico_Estados' y convertir la columna de fechas
     try:
         df_estados = pd.read_excel(
-            RAW_PATH,
-            sheet_name='Historico_Estados',
-            parse_dates=['Fecha Actualización'],
-            engine='openpyxl'
+            RAW_PATH, sheet_name="Historico_Estados", parse_dates=["Fecha Actualización"], engine="openpyxl"
         )
     except ValueError as e:
         raise ValueError("No se encontró la hoja 'Historico_Estados' en el archivo Excel.") from e
@@ -99,12 +91,21 @@ def obtain_data():
     # Crear la carpeta de archivos procesados si no existe
     os.makedirs(PROCESSED_DIR, exist_ok=True)
 
-
     # Normalizar encabezados: reemplazar espacios por guion bajo y renombrar 'Antiguedad (Años)'
     def normalizar_columnas(df):
         cols = [
-            col.replace(' ', '_').replace('á', 'a').replace('Á', 'A').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u').replace('ñ', 'n')
-            if col != 'Antiguedad (Años)' else 'Antiguedad_Annos'
+            (
+                col.replace(" ", "_")
+                .replace("á", "a")
+                .replace("Á", "A")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u")
+                .replace("ñ", "n")
+                if col != "Antiguedad (Años)"
+                else "Antiguedad_Annos"
+            )
             for col in df.columns
         ]
         # Si hay 'Antiguedad (Años)', renombrar
@@ -115,9 +116,10 @@ def obtain_data():
     df_estados = normalizar_columnas(df_estados)
 
     # Guardar los DataFrames como CSV para su posterior limpieza y análisis
-    df_muestra.to_csv(os.path.join(PROCESSED_DIR, 'muestra.csv'), index=False)
-    df_estados.to_csv(os.path.join(PROCESSED_DIR, 'estados.csv'), index=False)
+    df_muestra.to_csv(os.path.join(PROCESSED_DIR, "muestra.csv"), index=False)
+    df_estados.to_csv(os.path.join(PROCESSED_DIR, "estados.csv"), index=False)
     print(f"Archivos procesados guardados en {PROCESSED_DIR} (muestra.csv, estados.csv)")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     obtain_data()

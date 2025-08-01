@@ -1,5 +1,4 @@
-
-
+# Script interactivo para ejecutar análisis exploratorio sobre los datos limpios del proyecto inmobiliario.
 # -------------------------------------------------------------
 # main_analysis.py
 # Script interactivo para ejecutar análisis exploratorio sobre los datos limpios del proyecto.
@@ -16,6 +15,7 @@
 # =======================
 # Importación de librerías
 # =======================
+from scripts.analisis_exploratorio import analizar_relaciones, detectar_inconsistencias
 import sys
 import os
 import pandas as pd
@@ -24,10 +24,10 @@ import pandas as pd
 # Configuración de rutas y módulos
 # =======================
 # Asegura que la carpeta scripts esté en el path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
-from scripts.analisis_exploratorio import analizar_relaciones, detectar_inconsistencias
+sys.path.append(os.path.join(os.path.dirname(__file__), "scripts"))
 
-default_path = os.path.join('data', 'cleanData', 'CLMUESTRA.csv')
+default_path = os.path.join("data", "cleanData", "CLMUESTRA.csv")
+
 
 # =======================
 # Función principal interactiva
@@ -67,22 +67,23 @@ def main():
         print("4. Salir")
         opcion = input("Opción: ").strip()
         match opcion:
-            case '1':
+            case "1":
                 analizar_relaciones(df)
                 input("Presione ENTER para volver al menú...")
-            case '2':
+            case "2":
                 detectar_inconsistencias(df)
                 input("Presione ENTER para volver al menú...")
-            case '3':
+            case "3":
                 analizar_relaciones(df)
                 input("Presione ENTER para continuar...")
                 detectar_inconsistencias(df)
                 input("Presione ENTER para volver al menú...")
-            case '4':
+            case "4":
                 print("Análisis finalizado.")
                 break
             case _:
                 print("Opción no válida. Intente de nuevo.")
+
 
 # =======================
 # Punto de entrada del script

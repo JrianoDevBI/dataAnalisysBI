@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 130
+exclude = '''
+/(
+    venv
+  | __pycache__
+  | data
+  | notebooks
+)/
+'''

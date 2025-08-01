@@ -8,7 +8,6 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 - `data/processedData/`: Datos limpios y logs de outliers
 - `data/cleanData/`: Datos limpios finales para análisis
 - `data/query_data/`: Resultados de queries y análisis exportados a Excel
-- `notebooks/`: Exploración y visualización
 - `scripts/`: Obtención de datos, limpieza, carga a SQL y análisis exploratorio
 - `sql_queries/`: Consultas clave para análisis
 - `config/`: Variables de entorno y credenciales
@@ -57,3 +56,41 @@ Este proyecto implementa la metodología OSEMN para análisis de datos inmobilia
 
 ## Seguridad
 Las credenciales de la base de datos deben ir en `config/.env` (no subir a repositorios públicos).
+
+## Integración continua y calidad de código
+
+Este proyecto incluye integración continua (CI) con **GitHub Actions** y herramientas de calidad de código (linters):
+
+- **GitHub Actions:** Ejecuta automáticamente los linters y verifica el formato del código en cada push o pull request.
+- **flake8:** Linter para detectar errores de estilo y código en Python.
+- **black:** Formateador automático de código Python.
+
+### Uso de linters y formateadores
+
+**Para ejecutar flake8 manualmente:**
+
+```
+flake8 .
+```
+
+**Para formatear el código automáticamente con black:**
+
+```
+black .
+```
+
+**Configuración:**
+- Las reglas de flake8 están en el archivo `.flake8`.
+- La configuración de black está en `pyproject.toml`.
+
+**Recomendación:**
+Antes de hacer commit, ejecuta ambos comandos para asegurar que el código cumple con los estándares del proyecto.
+
+### CI/CD
+
+Cada push o pull request activa automáticamente el workflow de GitHub Actions, que:
+- Instala dependencias.
+- Ejecuta flake8 y black.
+- Falla si hay errores de estilo o formato.
+
+Puedes ver la configuración en `.github/workflows/python-lint.yml`.

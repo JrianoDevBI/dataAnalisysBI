@@ -17,7 +17,6 @@ Buenas prácticas:
 -------------------------------------------------------------
 """
 
-
 import os
 from scripts.clean_and_backup_data import clean_and_backup_data
 from scripts.export_sql_to_excel import export_query_to_excel
@@ -27,19 +26,16 @@ from scripts.clean_estados import clean_estados
 from scripts.obtain_data import obtain_data
 from scripts.test_db_connection import probar_conexion_db
 from scripts.load_to_sql import main as load_to_sql_main
-from dotenv import load_dotenv
-
 import subprocess
 import sys
-import pandas as pd
-from sqlalchemy import create_engine
 
 # QUERIES para exportación múltiple
 QUERIES = [
-    ("Ultimo Estado", open('sql_queries/ultimo_estado.sql', encoding='utf-8').read()),
-    ("Diferencia Absoluta y Ranking", open('sql_queries/diferencia_absoluta_y_ranking.sql', encoding='utf-8').read()),
-    ("Estadisticas Estado", open('sql_queries/estadisticas_estado.sql', encoding='utf-8').read()),
+    ("Ultimo Estado", open("sql_queries/ultimo_estado.sql", encoding="utf-8").read()),
+    ("Diferencia Absoluta y Ranking", open("sql_queries/diferencia_absoluta_y_ranking.sql", encoding="utf-8").read()),
+    ("Estadisticas Estado", open("sql_queries/estadisticas_estado.sql", encoding="utf-8").read()),
 ]
+
 
 # =======================
 # Función principal del pipeline
@@ -73,12 +69,9 @@ def run_pipeline():
     """
     # Solicitar limpieza y backup de datos antes de iniciar el pipeline
     clean_and_backup_data()
-    processed_dir = os.path.join(os.getcwd(), 'data', 'processedData')
-    muestra_path = os.path.join(processed_dir, 'muestra.csv')
-    estados_path = os.path.join(processed_dir, 'estados.csv')
-    clean_dir = os.path.join(os.getcwd(), 'data', 'cleanData')
-    clmuestra_path = os.path.join(clean_dir, 'CLMUESTRA.csv')
-    clestados_path = os.path.join(clean_dir, 'CLESTADOS.csv')
+    processed_dir = os.path.join(os.getcwd(), "data", "processedData")
+    muestra_path = os.path.join(processed_dir, "muestra.csv")
+    estados_path = os.path.join(processed_dir, "estados.csv")
 
     # Paso 1: Obtener datos si no existen
     if not (os.path.exists(muestra_path) and os.path.exists(estados_path)):
@@ -90,22 +83,17 @@ def run_pipeline():
     # Paso 2: Limpiar datos de muestra
     print("[2] Limpiando datos de muestra (muestra.csv)...")
     clean_muestra(
-        './data/processedData/muestra.csv',
-        './data/cleanData/CLMUESTRA.csv',
-        './data/processedData/outliers_log.csv'
+        "./data/processedData/muestra.csv", "./data/cleanData/CLMUESTRA.csv", "./data/processedData/outliers_log.csv"
     )
 
     # Paso 3: Limpiar datos de estados
     print("[3] Limpiando datos de estados (estados.csv)...")
-    clean_estados(
-        './data/processedData/estados.csv',
-        './data/cleanData/CLESTADOS.csv'
-    )
+    clean_estados("./data/processedData/estados.csv", "./data/cleanData/CLESTADOS.csv")
 
     # Confirmar antes de cargar a SQL
     print("\n¿Los datos están listos para cargarse a la base de datos SQL?")
     confirm = input('Escriba "Si" para continuar con la carga, o "No" para finalizar: ').strip().lower()
-    if confirm == 'si':
+    if confirm == "si":
         print("Probando conexión a la base de datos...")
         if probar_conexion_db():
             print("Cargando datos limpios a la base de datos SQL...")
@@ -114,14 +102,14 @@ def run_pipeline():
             # Exportar resultados de queries a Excel
             from dotenv import load_dotenv
             load_dotenv()
-            db_url = os.getenv('DATABASE_URL')
+            db_url = os.getenv("DATABASE_URL")
             if not db_url:
-                print('No se encontró la variable DATABASE_URL en el entorno. No se exportaron los resultados de queries.')
+                print("No se encontró la variable DATABASE_URL. No se exportaron los resultados.")
                 return
             print("Exportando resultados de queries a archivos Excel...")
-            export_query_to_excel('sql_queries/ultimo_estado.sql', db_url)
+            export_query_to_excel("sql_queries/ultimo_estado.sql", db_url)
             print("[OK] Query 'ultimo_estado.sql' exportado correctamente.")
-            export_query_to_excel('sql_queries/diferencia_absoluta_y_ranking.sql', db_url)
+            export_query_to_excel("sql_queries/diferencia_absoluta_y_ranking.sql", db_url)
             print("[OK] Query 'diferencia_absoluta_y_ranking.sql' exportado correctamente.")
 
             # Exportar análisis de estados a un solo Excel con varias hojas
@@ -143,7 +131,9 @@ def run_pipeline():
                     else:
                         print("Sin resultados.")
                 except Exception as e:
-                    print(f"Error ejecutando consulta '{sheet}': {e}")
+                    print(
+                        f"Error ejecutando consulta '{sheet}': {e}"
+                    )
         else:
             print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
     else:
@@ -160,14 +150,15 @@ def preguntar_analisis_exploratorio():
     """
     print("\n¿Desea realizar un análisis exploratorio de los datos?")
     respuesta = input('Escriba "Si" para ejecutar el análisis, o cualquier otra tecla para finalizar: ').strip().lower()
-    if respuesta == 'si':
-        subprocess.run([sys.executable, 'main_analysis.py'])
+    if respuesta == "si":
+        subprocess.run([sys.executable, "main_analysis.py"])
     else:
         print("Ejecución finalizada.")
+
 
 # =======================
 # Punto de entrada del script principal
 # =======================
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_pipeline()
     preguntar_analisis_exploratorio()
