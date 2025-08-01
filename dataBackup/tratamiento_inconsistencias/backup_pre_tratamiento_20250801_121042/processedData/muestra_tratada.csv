@@ -1,0 +1,59 @@
+Id,Fuente,Ciudad,Zona,Estrato,Lote_Id,Tipo_Inmueble,Nombre_Contacto,Telefono_Contacto,Precio_Solicitado,Area,Piso,Garajes,Ascensores,Antiguedad_Annos
+1116578,Ventana,Bogotá,EL PRADO,4.0,376895.0,Apartamento,Margarita ,******44661,250000000.0,62.0,4,1.0,0.0,15.0
+1117262,Ventana,Bogotá,EL PRADO,5.0,871551.0,apartamento,vendido,******35458,370000000.0,36.0,4,2.0,1.0,26.0
+1229638,WEB,Bogotá,CIUDAD MONTES,3.0,754523.0,apartamento,Buen ,******02547,170000000.0,33.0,12,0.0,2.0,2.0
+1229674,WEB,Bogotá,SUBA,3.0,502202.0,apartamento,Juan,******89955,320000000.0,75.0,16,1.0,2.0,6.0
+1229740,WEB,Bogotá,ENGATIVA,2.0,349863.0,apartamento,Alejandro ,******56899,130000000.0,48.0,4,0.0,0.0,14.0
+1229892,WEB,Valle de Aburrá,bello,3.0,1180076.0,apartamento,Sebastian ,******08005,160000000.0,68.0,15,1.0,2.0,7.0
+1230589,WEB,Bogotá,TIBABUYES,3.0,221121.0,apartamento,Gerardo ,******88208,203.45,52.0,4,0.0,2.0,4.0
+1230949,Ventana,Valle de Aburrá,itagui,4.0,1179728.0,apartamento,Benjamin ,******19125,320000000.0,91.0,5,1.0,2.0,8.0
+1232339,WEB,Bogotá,CASA BLANCA SUBA,4.0,520608.0,apartamento,Kristel ,******15210,465000000.0,105.0,4,2.0,1.0,17.0
+1232543,WEB,Bogotá,BRITALIA,4.0,26176.0,apartamento,Angélica ,******03759,450000.0,90.0,16,1.0,2.0,11.0
+1233270,WEB,Bogotá,SUBA,3.0,615396.0,apartamento,Mónica ,******62792,240.0,73.0,5,1.0,0.0,12.0
+1233746,Ventana,Bogotá,LOS CEDROS,4.0,9024.0,,carlos,******30387,420000000.0,64.0,6,1.0,,
+1234886,WEB,Bogotá,AMERICAS,4.0,863345.0,apartamento,Sandra ,******73150,420000000.0,84.0,11,1.0,1.0,12.0
+1237816,WEB,Bogotá,SUBA,3.0,207980.0,apartamento,Marcos ,******91446,230000000.0,84.0,3,1.0,1.0,25.0
+1241484,Ventana,Valle de Aburrá,bello,,1179689.0,apartamento,Juliana ,******09225,290000000.0,160.0,3,1.0,,
+1242137,WEB,Bogotá,BRITALIA,5.0,26100.0,apartamento,Nelson ,******97235,600000000.0,106.0,8,2.0,2.0,4.0
+1244096,WEB,Valle de Aburrá,bello,3.0,,apartamento,Daniel ,******68378,249000000.0,145.0,4,,,
+1245216,WEB,Bogotá,NIZA,4.0,963840.0,apartamento,Andres ,******29247,300000000.0,46.0,8,1.0,4.0,1.0
+1245951,Ventana,Bogotá,EL PRADO,4.0,22129.0,apartamento,Andres ,******18056,590000000.0,134.0,4,2.0,1.0,15.0
+1264097,WEB,Bogotá,MODELIA,4.0,238421.0,apartamento,Aura ,******60328,600000000.0,85.0,2,1.0,1.0,8.0
+1268420,WEB,Bogotá,CIUDAD SALITRE ORIENTAL,4.0,,apartamento,Zulima ,******17147,750000000.0,116.0,13,2.0,1.0,8.0
+1268511,WEB,Bogotá,BAVARIA,4.0,513604.0,apartamento,Maribel ,******38187,500000000.0,91.0,10,1.0,1.0,9.0
+1268597,WEB,Bogotá,QUINTA PAREDES,4.0,26782.0,apartamento,Mari ,******62330,550000000.0,72.0,70,1.0,1.0,1.0
+1273085,WEB,Valle de Aburrá,envigado,3.0,,apartamento,Yaneth ,******72016,350000000.0,215.0,5,1.0,0.0,5.0
+1283847,WEB,Valle de Aburrá,envigado,5.0,1195090.0,apartamento,Andres ,******43200,990000000.0,181.0,8,2.0,1.0,5.0
+1286615,WEB,Valle de Aburrá,envigado,3.0,,apartamento,Maria ,******32094,300000000.0,125.0,5,2.0,0.0,22.0
+1288695,WEB,Valle de Aburrá,sabaneta,3.0,,apartamento,Catalina ,******22736,345000000.0,106.0,5,1.0,1.0,6.0
+1292098,Ventana,Bogotá,CASA BLANCA SUBA,5.0,594425.0,apartamento,juanita,******91361,680000000.0,136.0,2,2.0,1.0,13.0
+1295113,WEB,Bogotá,SAN JOSE DE BAVARIA,4.0,518740.0,casa,Orlando ,******08734,750000000.0,147.0,1,2.0,,25.0
+1295338,Ventana,Bogotá,CASA BLANCA SUBA,4.0,518706.0,apartamento,Miryam ,******91925,580000000.0,56.0,5,1.0,1.0,5.0
+1296231,Ventana,Bogotá,MODELIA,4.0,84771.0,apartamento,Edgard ,******87955,480000000.0,127.0,1,1.0,1.0,26.0
+1297951,Ventana,Bogotá,EL PRADO,4.0,376841.0,apartamento,andres,******34681,700000000.0,101.0,10,2.0,2.0,3.0
+1299646,WEB,Bogotá,TIMIZA,2.0,864457.0,apartamento,Adriana ,******61179,65000000.0,22.0,3,0.0,0.0,23.0
+1309799,WEB,Bogotá,SUBA,3.0,187786.0,apartamento,Las ,******61298,1000000000.0,40.0,9,0.0,1.0,10.0
+1311968,WEB,Bogotá,FONTIBON,6.0,123537.0,apartamento,edwin ,******05676,900000000.0,94.0,5,2.0,1.0,
+1327374,Ventana,Cali,Comuna 17,4.0,1201389.0,apartamento,ERIKA,******82536,235000000.0,100.0,5,1.0,1.0,
+1329000,Ventana,Bogotá,CIUDAD SALITRE ORIENTAL,4.0,56417.0,apartamento,Nelly ,******09658,850000000.0,155.0,1,2.0,1.0,
+1329703,Ventana,Bogotá,CIUDAD SALITRE ORIENTAL,,861149.0,,,******59987,880000000.0,118.0,5,,,
+1330555,Ventana,Bogotá,CIUDAD SALITRE OCCIDENTAL,5.0,98736.0,apartamento,Carlos ,******28458,1200000000.0,300.0,10,4.0,1.0,15.0
+1334874,WEB,Bogotá,FONTIBON,3.0,860010.0,apartamento,luis ,******27336,1543500000.0,55.0,2,0.0,0.0,13.0
+1345285,WEB,Bogotá,NIZA,6.0,,apartamento,Tierra ,******56890,1000000000.0,2.14,7,1.0,1.0,8.0
+1356796,WEB,Bogotá,PARDO RUBIO,6.0,,apartamento,Juan,******10381,1100000000.0,103.0,4,1.0,1.0,3.0
+1363856,WEB,Bogotá,SOACHA CIUDAD VERDE,3.0,1182134.0,apartamento,James ,******04971,1250000000.0,64.0,1,0.0,0.0,0.0
+1372320,WEB,Bogotá,ARBORIZADORA,3.0,,apartamento,Carlos ,******91667,300000000.0,3.0,3,0.0,0.0,0.0
+1376254,WEB,Bogotá,CIUDAD SALITRE OCCIDENTAL,5.0,,apartamento,NATAN ,******17718,1100000000.0,139.0,8,1.0,1.0,5.0
+1377859,WEB,Bogotá,CAPELLANIA,4.0,,apartamento,Amarillo,******29233,680000000.0,78.0,6,1.0,1.0,0.0
+1381607,WEB,Bogotá,ZONA FRANCA,2.0,,apartamento,juan ,******19436,100000000.0,3.0,3,1.0,0.0,30.0
+1384956,WEB,Bogotá,TOBERIN,4.0,,apartamento,Subasta ,******33763,200000000.0,300.0,4,1.0,1.0,15.0
+1387215,WEB,Valle de Aburrá,envigado,5.0,,apartamento,Daniela,******09522,67000000.0,135.0,7,1.0,1.0,17.0
+1394238,WEB,Bogotá,LA ALHAMBRA,5.0,297737.0,apartamento,Jose ,******79483,650000000.0,120.0,5,1.0,1.0,20.0
+1398990,WEB,Bogotá,NIZA,5.0,408879.0,apartamento,Iván ,******81845,800000000.0,132.0,2,1.0,1.0,12.0
+1404621,Ventana,Bogotá,SANTA BARBARA,5.0,556288.0,apartamento,.....,******08682,810000000.0,80.0,2,1.0,2.0,12.0
+1408912,Ventana,Valle de Aburrá,envigado,5.0,1278712.0,apartamento,Oscar,******99652,700000000.0,300.0,5,2.0,1.0,
+1411941,WEB,Bogotá,LA ALHAMBRA,5.0,,apartamento,hector ,******50827,1350000000.0,198.0,7,1.0,1.0,9.0
+1412514,Ventana,Bogotá,MADRID LA PROSPERIDAD,3.0,1192844.0,apartamento,Luis,******10291,700000000.0,60.0,7,0.0,2.0,3.0
+1415946,WEB,Bogotá,LA ALHAMBRA,5.0,537826.0,apartamento,Yuri ,******71721,260000000.0,32.0,2,1.0,1.0,6.0
+1417190,WEB,Bogotá,SOSIEGO,3.0,,apartamento,Sandra ,******59306,90000000.0,98.0,2,1.0,0.0,18.0
+1418861,WEB,Bogotá,SANTA BARBARA,6.0,557930.0,apartamento,GUILLERMO ,******88085,1000000000.0,130.0,4,1.0,1.0,8.0
