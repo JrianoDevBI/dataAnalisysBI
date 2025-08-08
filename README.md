@@ -1,9 +1,9 @@
 # 🏗️ Pipeline de Análisis de Datos Inmobiliarios
 
 **Autor:** Juan Camilo Riaño Molano  
-**Fecha:** 04 de Agosto de 2025  
-**Versión:** 4.1 - Pipeline Unificado Optimizado  
-**Repositorio:** dataAnalisysBI/Develop  
+**Fecha:** 08 de Agosto de 2025  
+**Versión:** 4.2 - Pipeline Unificado Optimizado + UX Mejorada  
+**Repositorio:** dataAnalisysBI/Prueba1  
 
 ---
 
@@ -46,9 +46,12 @@ pruebaHabiBI/
 ├── 📁 docs/                  # Documentación y diagramas
 │   ├── assets/              # Recursos CSS/JS
 │   ├── diagrama_flujo_interactivo.html  # Diagrama interactivo
-│   └── reporte_ejecutivo_completo.md    # Reporte ejecutivo
+│   ├── reporte_ejecutivo_completo.md    # Reporte ejecutivo
+│   ├── GLOSARIO_TECNICO.md  # Glosario completo (295+ términos)
+│   └── errores_solucionados.md         # Log de errores resueltos
 ├── 📁 reports/              # Reportes generados e informes
-├── 📁 legacy_files/         # Archivos de versiones anteriores
+├── 📁 utils/                # Utilidades del sistema (menú, métricas)
+├── 📁 core/                 # Módulos centrales del pipeline
 └── 📁 dataBackup/           # Backups automáticos
 ```
 
@@ -108,19 +111,30 @@ python main.py
 ```
 
 ### **Menú Interactivo**
-```
+```text
 ==========================================
 🏗️ PIPELINE DE ANÁLISIS DE DATOS INMOBILIARIOS 🏗️
 ==========================================
 
+⚠️ MENÚ REORGANIZADO PARA MAYOR CLARIDAD ⚠️
+
 Seleccione una opción:
 
-1. 🔄 Ejecutar Pipeline Unificado Completo
-2. 🔧 Modo Interactivo (Seleccionar módulos)
-3. 📊 Análisis y Reportería únicamente
-4. 🎯 Salir
+1. 🔄 Pipeline Completo Automático (Recomendado)
+   └── Ejecuta todo el proceso sin intervención
 
-Ingrese su opción [1-4]: 
+2. 🔍 Análisis Exploratorio únicamente
+   └── Análisis estadístico y reportes (datos ya procesados)
+
+3. 🧹 Limpieza y Procesamiento únicamente
+   └── Solo ETL sin análisis ni reportes
+
+4. 🔧 Modo Interactivo Avanzado
+   └── Selección manual de módulos individuales
+
+5. 🎯 Salir
+
+Ingrese su opción [1-5]: 
 ```
 
 ### **Ejecución Automatizada (Recomendada)**
@@ -155,6 +169,30 @@ Ingrese su opción [1-4]:
 ### **Documentación**
 - `docs/diagrama_flujo_interactivo.html` - Diagrama interactivo del pipeline
 - `docs/reporte_ejecutivo_completo.md` - Reporte ejecutivo completo
+- `docs/GLOSARIO_TECNICO.md` - **NUEVO:** Glosario completo con 295+ términos técnicos
+- `docs/errores_solucionados.md` - Log detallado de errores resueltos
+
+---
+
+## 🆕 NUEVAS FUNCIONALIDADES V4.2
+
+### **🎯 Mejoras de UX y Claridad**
+- **Menú reorganizado** con opciones más claras y específicas
+- **Clarificaciones automáticas** sobre datos pre/post-limpieza en consola
+- **Toggle de gráficos** en modo automático (usuario elige si ver visualizaciones)
+- **Reportes detallados** que incluyen tanto porcentaje como cantidad de registros descartados
+
+### **📊 Optimizaciones de Análisis**
+- **Gráficos mejorados:** Solo "casas" y "apartamentos" en títulos de precio promedio
+- **Reporte de desconocidos:** Cantidad y valor de inmuebles "desconocidos" en consola
+- **Indicadores robustos:** Corrección del bug de DataFrame truth value
+- **Análisis contextual:** Cada módulo especifica claramente el estado de los datos que procesa
+
+### **📚 Documentación Técnica**
+- **Glosario completo:** 295+ términos técnicos organizados alfabéticamente
+- **Definiciones especializadas:** Incluye términos de BI, inmobiliario, estadística y programación
+- **Referencias cruzadas:** Enlaces navegables entre conceptos relacionados
+- **Actualizaciones de versión:** Información unificada en todo el proyecto
 
 ---
 
@@ -249,17 +287,28 @@ python -c "from scripts.optimizacion_performance import DataCache; DataCache.cle
 
 **Desarrollador:** Juan Camilo Riaño Molano  
 **Repositorio:** https://github.com/JrianoDevBI/dataAnalisysBI  
-**Branch:** Develop  
+**Branch:** Prueba1  
 **Issues:** Reportar en GitHub Issues  
 
 ### **Documentación Adicional**
 - 📖 [Reporte Ejecutivo Completo](docs/reporte_ejecutivo_completo.md)
 - 🔄 [Diagrama Interactivo](docs/diagrama_flujo_interactivo.html)
-- 📊 [Análisis de Performance](docs/pipeline_unificado_v4_0.md)
+- � **[Glosario Técnico Completo](docs/GLOSARIO_TECNICO.md)** - 295+ términos
+- �📊 [Análisis de Performance](docs/pipeline_unificado_v4_0.md)
 
 ---
 
 ## 📜 LICENCIA Y CHANGELOG
+
+### **Versión 4.2 (08/08/2025) - ACTUAL**
+- ✅ **UX Mejorada:** Menú reorganizado con 5 opciones claras
+- ✅ **Clarificaciones automáticas:** Contexto pre/post-limpieza en consola
+- ✅ **Toggle de gráficos:** Usuario elige mostrar visualizaciones en modo automático
+- ✅ **Reportes detallados:** Porcentaje + cantidad de registros descartados
+- ✅ **Gráficos optimizados:** Solo casas/apartamentos en títulos de precio
+- ✅ **Bug fixes:** Corrección de DataFrame truth value error
+- ✅ **Documentación completa:** Glosario técnico con 295+ términos
+- ✅ **Comentarios en español:** Toda la documentación técnica unificada
 
 ### **Versión 4.1 (04/08/2025)**
 - ✅ Pipeline unificado optimizado
