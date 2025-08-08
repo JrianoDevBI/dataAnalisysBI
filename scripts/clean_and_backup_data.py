@@ -68,7 +68,18 @@ def clean_and_backup_data():
 
     print("¿Desea eliminar los archivos previos de cleanData, processedData y queryData?")
     print("Se realizará un backup de la carpeta 'data' en 'dataBackup/data' antes de eliminar.")
-    confirm = input('Escriba "Si" para eliminar y respaldar, o "No" para continuar sin borrar: ').strip().lower()
+    
+    # Detect if running in non-interactive mode
+    import sys
+    if not sys.stdin.isatty():
+        print("🤖 Modo no interactivo: omitiendo limpieza de archivos...")
+        confirm = "no"
+    else:
+        try:
+            confirm = input('Escriba "Si" para eliminar y respaldar, o "No" para continuar sin borrar: ').strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            print("❌ Error en backup de datos: EOF when reading a line")
+            confirm = "no"
     if confirm == "si":
         # Crear carpeta de backup si no existe
         os.makedirs(backup_dir, exist_ok=True)

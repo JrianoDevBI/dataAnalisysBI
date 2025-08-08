@@ -1,0 +1,621 @@
+/* 
+ * Pipeline de Análisis de Datos Inmobiliarios - Estilos CSS
+ * Autor: Juan Camilo Riaño Molano
+ * Fecha: 04/08/2025
+ */
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    color: white;
+    border-radius: 15px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Panel de métricas */
+.metrics-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.metric-card {
+    background: linear-gradient(45deg, #FF5722, #FF9800);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.metric-label {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Sección de fases */
+.phases-section {
+    margin: 40px 0;
+}
+
+.phases-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.phase-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid;
+    cursor: pointer;
+}
+
+.phase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Colores por tipo de fase */
+.phase-card.entrada { border-left-color: #2196F3; }
+.phase-card.preparacion { border-left-color: #FF9800; }
+.phase-card.analisis { border-left-color: #9C27B0; }
+.phase-card.tratamiento { border-left-color: #00BCD4; }
+.phase-card.limpieza { border-left-color: #4CAF50; }
+.phase-card.database { border-left-color: #795548; }
+.phase-card.reporteria { border-left-color: #FF5722; }
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.phase-icon {
+    font-size: 2em;
+    margin-right: 15px;
+}
+
+.phase-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+}
+
+.phase-detail {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.phase-detail strong {
+    color: #555;
+}
+
+.phase-detail span {
+    color: #777;
+}
+
+.phase-process-list {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.phase-process-list li {
+    margin: 5px 0;
+    color: #666;
+}
+
+.efficiency-badge {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Sección del diagrama */
+.diagram-section {
+    margin-top: 50px;
+    border-top: 3px solid #ddd;
+    padding-top: 40px;
+}
+
+.diagram-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.control-btn {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.diagram-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+#mermaid-diagram {
+    min-height: 600px;
+    text-align: center;
+}
+
+.mermaid {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .legend {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .metric-card {
+        padding: 15px;
+    }
+    
+    .metric-value {
+        font-size: 2em;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .phases-title, .diagram-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .phase-card {
+        min-width: 100%;
+    }
+    
+    .phase-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .phase-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estados de carga */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2196F3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Utilidades */
+.text-center { text-align: center; }
+.mb-20 { margin-bottom: 20px; }
+.mt-20 { margin-top: 20px; }
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+/* ===== SECCIÓN DE INDICADORES CLAVE Y RESULTADOS ===== */
+.results-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border: 2px solid #dee2e6;
+}
+
+.results-title {
+    color: #2c3e50;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Grid de Indicadores */
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.indicator-category {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 5px solid #2196F3;
+}
+
+.indicator-category h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.indicator-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.indicator-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #bdc3c7;
+}
+
+.indicator-item:last-child {
+    border-bottom: none;
+}
+
+.indicator-label {
+    font-weight: 600;
+    color: #34495e;
+    flex: 1;
+}
+
+.indicator-value {
+    font-weight: 700;
+    color: #27ae60;
+    background: #ecf87f;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+/* Sección de Gráficos */
+.analysis-charts {
+    margin: 40px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.analysis-charts h3 {
+    color: #2c3e50;
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.chart-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.chart-item h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.chart-preview {
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #dee2e6;
+}
+
+.chart-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.chart-image:hover {
+    transform: scale(1.05);
+}
+
+.chart-description {
+    color: #6c757d;
+    font-size: 0.95em;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.chart-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chart-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chart-link:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.chart-link.dynamic {
+    background: #28a745;
+}
+
+.chart-link.dynamic:hover {
+    background: #1e7e34;
+}
+
+/* Sección de Reportes */
+.reports-section {
+    margin: 40px 0;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.reports-section h3 {
+    color: #2c3e50;
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.report-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.report-item h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.report-item p {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin: 10px 0 15px 0;
+    line-height: 1.4;
+}
+
+.report-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.report-link:hover {
+    background: #138496;
+    transform: translateY(-2px);
+}
+
+/* Responsive para la sección de resultados */
+@media (max-width: 768px) {
+    .indicators-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-links {
+        justify-content: center;
+    }
+}

@@ -67,19 +67,24 @@ def main():
     # Leer los archivos limpios generados por los scripts de limpieza
     df_muestra = pd.read_csv(muestra_path)
     df_estados = pd.read_csv(estados_path, parse_dates=["Fecha_Actualizacion"])
-    # Cargar los DataFrames a la base de datos como tablas
+    # Cargar los DataFrames a la base de datos como tablas  
     try:
+        # Usar engine con SQLAlchemy 2.0
         df_muestra.to_sql("datos_muestra", engine, if_exists="replace", index=False)
         df_estados.to_sql("datos_cambio_estados", engine, if_exists="replace", index=False)
-        print("Datos cargados a SQL.")
-    except AttributeError as e:
-        print("Error al cargar datos a SQL:", e)
+        
+        print("✅ Datos cargados a SQL exitosamente.")
+        return True
+    except Exception as e:
+        print(f"❌ Error al cargar datos a SQL: {e}")
+        print("⚠️  Continuando sin carga SQL - los datos están disponibles en archivos CSV.")
         print(
-            'Si el error menciona "cursor" o "DBAPI2", pruebe instalar el paquete pymysql '
-            "y/o use el dialecto mysql+pymysql en su DATABASE_URL."
+            '💡 Si necesita la funcionalidad SQL, verifique que:\n'
+            '   1. El servidor MySQL esté funcionando\n'
+            '   2. Las credenciales en config/.env sean correctas\n'
+            '   3. La base de datos "viviendaHABI" exista'
         )
-        print("Ejecute: pip install pymysql")
-        raise
+        return False
 
 
 if __name__ == "__main__":

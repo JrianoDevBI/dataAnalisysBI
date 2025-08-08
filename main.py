@@ -1,216 +1,439 @@
-# Script principal para el pipeline completo de análisis de datos inmobiliarios
-# -------------------------------------------------------------
-# main.py
-# Orquestador principal del pipeline de procesamiento y análisis de datos inmobiliarios.
-#
-# Autor: Juan Camilo Riaño Molano
-# Fecha de creación: 01/08/2025
-# Descripción:
-#   Este script coordina la ejecución completa del pipeline de análisis de datos:
-#   1. Análisis pre-limpieza para detectar inconsistencias
-#   2. Tratamiento avanzado de inconsistencias con técnicas estadísticas
-#   3. Limpieza inteligente de datos con backup automático
-#   4. Obtención y procesamiento de datos desde fuentes Excel
-#   5. Limpieza avanzada de muestra y estados con validación
-#   6. Carga de datos a base de datos SQL con verificación
-#   7. Exportación de resultados de análisis a Excel
-#   8. Análisis exploratorio con indicadores clave y correlaciones
-#
-#   El pipeline es completamente modular y automatizado, permitiendo
-#   la ejecución paso a paso o completa según las necesidades del usuario.
-#
-# Buenas prácticas implementadas:
-#   - Modularidad y reutilización de funciones
-#   - Validación de rutas, archivos y variables de entorno
-#   - Manejo robusto de errores con mensajes claros
-#   - Análisis pre-limpieza para garantizar calidad de datos
-#   - Backup automático antes de modificaciones
-# -------------------------------------------------------------
+"""
+Main Application Entry Point - Modularized Version
 
-# =======================
-# Importación de librerías
-# =======================
+Pipeline Integrado Completo para Análisis de Datos Inmobiliarios
+==================================================================
 
-import os
-from scripts.clean_and_backup_data import clean_and_backup_data
-from scripts.export_sql_to_excel import export_query_to_excel
-from scripts.export_estado_analysis import export_estado_analysis_xlsx
-from scripts.clean_muestra import clean_muestra
-from scripts.clean_estados import clean_estados
-from scripts.obtain_data import obtain_data
-from scripts.test_db_connection import probar_conexion_db
-from scripts.load_to_sql import main as load_to_sql_main
-from scripts.analisis_exploratorio import ejecutar_analisis_completo
-from scripts.analisis_pre_limpieza import ejecutar_analisis_pre_limpieza
-from scripts.tratamiento_inconsistencias import ejecutar_tratamiento_inconsistencias
-import subprocess
+Este es el punto de entrada principal del sistema modularizado que orquesta
+todos los componentes del pipeline de procesamiento de datos inmobiliarios.
+
+Autor: Juan Camilo Riaño Molano
+Fecha de creación: 01/08/2025
+Fecha de modularización: 08/08/2025
+Versión: 4.1 - Pipeline Unificado Optimizado
+
+ARQUITECTURA MODULAR:
+====================
+• core/ - Lógica de negocio principal
+  - pipeline_orchestrator.py: Orquestación del pipeline
+  - execution_modes.py: Modos de ejecución (automático, interactivo, optimizado)
+  - indicators_calculator.py: Cálculo de indicadores clave
+  - executive_diagrams.py: Generación de diagramas ejecutivos
+
+• utils/ - Utilidades y herramientas
+  - performance_metrics.py: Métricas de rendimiento y monitoreo
+  - interactive_menu.py: Sistema de menús interactivos
+
+• scripts/ - Módulos de procesamiento específicos
+  - (Mantiene la misma estructura modular existente)
+
+BENEFICIOS DE LA MODULARIZACIÓN:
+===============================
+✓ Mantenibilidad: Código más fácil de entender y mantener
+✓ Escalabilidad: Fácil agregar nuevas funcionalidades
+✓ Testabilidad: Tests unitarios más específicos y rápidos
+✓ Reutilización: Componentes reutilizables en diferentes contextos
+✓ Colaboración: Múltiples desarrolladores pueden trabajar simultáneamente
+✓ Responsabilidad única: Cada módulo tiene una función específica
+
+MODOS DE EJECUCIÓN:
+==================
+• MODO UNIFICADO: Pipeline optimizado con control de calidad (RECOMENDADO)
+• MODO AUTOMÁTICO: Ejecuta todo el flujo sin intervención
+• MODO INTERACTIVO: Permite seleccionar módulos específicos
+• MODO OPTIMIZADO: Pipeline con mejoras de performance
+• MODO ANÁLISIS: Solo análisis e indicadores
+• MODO DIAGRAMAS: Solo generación de visualizaciones
+"""
+
 import sys
+import os
+import argparse
+from pathlib import Path
 
-# QUERIES para exportación múltiple
-QUERIES = [
-    ("Ultimo Estado", open("sql_queries/ultimo_estado.sql", encoding="utf-8").read()),
-    ("Diferencia Absoluta y Ranking", open("sql_queries/diferencia_absoluta_y_ranking.sql", encoding="utf-8").read()),
-    ("Estadisticas Estado", open("sql_queries/estadisticas_estado.sql", encoding="utf-8").read()),
-]
+# Agregar raíz del proyecto al path de Python para importaciones
+project_root = Path(__file__).parent
+sys.path.insert(0, str(project_root))
+
+# Importaciones principales
+from core.pipeline_orchestrator import PipelineOrchestrator
+from core.execution_modes import ExecutionModes
+from core.indicators_calculator import IndicatorsCalculator
+from core.executive_diagrams import ExecutiveDiagrams
+
+# Importaciones de utilidades
+from utils.performance_metrics import PerformanceMetrics
+from utils.interactive_menu import InteractiveMenu
+
+# Importaciones de scripts para funcionalidades específicas
+from scripts.analisis_exploratorio import ejecutar_analisis_completo
 
 
-# =======================
-# Función principal del pipeline
-# =======================
-def run_pipeline():
+class MainApplication:
     """
-    Ejecuta el pipeline de procesamiento de datos.
-    Permite al usuario seleccionar entre:
-      1. Obtener datos desde Excel y generar CSVs procesados.
-      2. Limpiar datos de muestra.
-      3. Limpiar datos de estados históricos.
-      4. Cargar datos limpios a la base de datos SQL.
-    El flujo es interactivo y asegura que los pasos previos se hayan realizado antes de continuar.
-
-    Proceso:
-    1. Solicita limpieza y backup de datos antes de iniciar el pipeline.
-    2. Ejecuta cada etapa del pipeline de forma secuencial y validada.
-    3. Exporta resultados y muestra resúmenes en consola.
-
-    Buenas prácticas:
-    - Modularidad: cada proceso está en un script independiente.
-    - Validación de rutas y archivos antes de procesar.
-    - Claridad en el flujo de usuario y mensajes descriptivos.
-    - Uso de funciones y variables descriptivas.
-    - Comentarios detallados para facilitar el mantenimiento y la colaboración.
-
-    Manejo de errores:
-        FileNotFoundError: Si algún archivo requerido no existe.
-        ValueError: Si faltan variables de entorno o parámetros críticos.
-        Exception: Si ocurre un error inesperado en alguna etapa.
+    Main application class that coordinates all pipeline components
     """
-    # Solicitar limpieza y backup de datos antes de iniciar el pipeline
-    clean_and_backup_data()
-    processed_dir = os.path.join(os.getcwd(), "data", "processedData")
-    muestra_path = os.path.join(processed_dir, "muestra.csv")
-    estados_path = os.path.join(processed_dir, "estados.csv")
-
-    # Paso 1: Obtener datos si no existen
-    if not (os.path.exists(muestra_path) and os.path.exists(estados_path)):
-        print("[1] Obteniendo datos desde Excel y generando CSVs procesados...")
-        obtain_data()
-    else:
-        print("[Datos ya importados: muestra.csv y estados.csv]")
-
-    # Paso 1.5: Análisis de inconsistencias PRE-limpieza
-    print("\n" + "=" * 70)
-    print("[1.5] ANÁLISIS DE INCONSISTENCIAS PRE-LIMPIEZA")
-    print("=" * 70)
-    print("Analizando datos RAW para identificar inconsistencias antes de limpiar...")
-    ejecutar_analisis_pre_limpieza()
-
-    print("\n¿Desea continuar con el tratamiento de inconsistencias después de revisar el análisis?")
-    continuar = input('Escriba "Si" para continuar con el tratamiento, o "No" para finalizar: ').strip().lower()
-    if continuar != "si":
-        print("Proceso detenido para revisar inconsistencias.")
-        return
-
-    # Paso 1.6: Tratamiento avanzado de inconsistencias
-    print("\n" + "=" * 70)
-    print("[1.6] TRATAMIENTO AVANZADO DE INCONSISTENCIAS")
-    print("=" * 70)
-    print("Aplicando técnicas estadísticas para tratar inconsistencias...")
-    if not ejecutar_tratamiento_inconsistencias():
-        print("⚠️ Error en el tratamiento de inconsistencias. Continuando con limpieza estándar...")
-    else:
-        print("✅ Tratamiento de inconsistencias completado exitosamente.")
-
-    print("\n¿Desea continuar con la limpieza final después del tratamiento?")
-    continuar_limpieza = input('Escriba "Si" para continuar con la limpieza, o "No" para finalizar: ').strip().lower()
-    if continuar_limpieza != "si":
-        print("Proceso detenido después del tratamiento de inconsistencias.")
-        return
-
-    # Paso 2: Limpiar datos de muestra
-    print("[2] Limpiando datos de muestra (muestra.csv)...")
-    clean_muestra("./data/processedData/muestra.csv", "./data/cleanData/CLMUESTRA.csv", "./data/processedData/outliers_log.csv")
-
-    # Paso 3: Limpiar datos de estados
-    print("[3] Limpiando datos de estados (estados.csv)...")
-    clean_estados("./data/processedData/estados.csv", "./data/cleanData/CLESTADOS.csv")
-
-    # Confirmar antes de cargar a SQL
-    print("\n¿Los datos están listos para cargarse a la base de datos SQL?")
-    confirm = input('Escriba "Si" para continuar con la carga, o "No" para finalizar: ').strip().lower()
-    if confirm == "si":
-        print("Probando conexión a la base de datos...")
-        if probar_conexion_db():
-            print("Cargando datos limpios a la base de datos SQL...")
-            load_to_sql_main()
-            print("Datos cargados exitosamente a la base de datos.")
-            # Exportar resultados de queries a Excel
-            from dotenv import load_dotenv
-
-            load_dotenv()
-            db_url = os.getenv("DATABASE_URL")
-            if not db_url:
-                print("No se encontró la variable DATABASE_URL. No se exportaron los resultados.")
+    
+    def __init__(self):
+        """Inicializar la aplicación principal"""
+        self.orchestrator = PipelineOrchestrator()
+        self.execution_modes = ExecutionModes()
+        self.indicators_calculator = IndicatorsCalculator()
+        self.executive_diagrams = ExecutiveDiagrams()
+        self.performance_metrics = PerformanceMetrics()
+        self.interactive_menu = InteractiveMenu()
+    
+    def run(self):
+        """Punto de entrada principal de la aplicación"""
+        try:
+            self.interactive_menu.show_header()
+            
+            while True:
+                selected_option = self.interactive_menu.show_main_menu()
+                
+                if selected_option == "salir":
+                    self._show_exit_message()
+                    break
+                
+                self._handle_menu_selection(selected_option)
+                
+        except KeyboardInterrupt:
+            print("\n\n👋 Programa interrumpido por el usuario.")
+            self._show_exit_message()
+        except Exception as e:
+            print(f"\n❌ Error inesperado en la aplicación: {e}")
+            print("🔧 Por favor, reporte este error al equipo de desarrollo.")
+    
+    def _handle_menu_selection(self, option: str):
+        """Manejar selección de menú del usuario"""
+        try:
+            if option == "pipeline_unificado":
+                self._execute_unified_pipeline()
+            elif option == "pipeline_optimizado":
+                self._execute_optimized_pipeline()
+            elif option == "modo_interactivo":
+                self._execute_interactive_mode()
+            elif option == "modo_automatico":
+                self._execute_automatic_mode()
+            elif option == "solo_analisis":
+                self._execute_analysis_only()
+            elif option == "solo_diagramas":
+                self._execute_diagrams_only()
+            elif option == "metricas":
+                self._show_performance_metrics()
+            elif option == "optimizaciones":
+                self._show_optimizations_analysis()
+            elif option == "ayuda":
+                self._show_help()
+            else:
+                print(f"❌ Opción no implementada: {option}")
+                
+        except Exception as e:
+            print(f"\n❌ Error ejecutando opción '{option}': {e}")
+            print("🔄 Volviendo al menú principal...")
+    
+    def _execute_unified_pipeline(self):
+        """Ejecutar pipeline unificado (recomendado)"""
+        print("\n🚀 Iniciando Pipeline Unificado...")
+        try:
+            # Establecer modo CLI si estamos en ejecución de línea de comandos
+            if hasattr(self, '_is_cli_mode') and self._is_cli_mode:
+                self.orchestrator.set_cli_mode(True)
+                
+            metrics = self.orchestrator.ejecutar_pipeline_unificado()
+            if metrics:
+                self.performance_metrics.metrics.update(metrics)
+                print("\n✅ Pipeline Unificado completado exitosamente!")
+        except Exception as e:
+            print(f"❌ Error en Pipeline Unificado: {e}")
+            print("🔄 Verifique la configuración y intente nuevamente.")
+    
+    def _execute_optimized_pipeline(self):
+        """Ejecutar pipeline optimizado"""
+        print("\n⚡ Iniciando Pipeline Optimizado...")
+        try:
+            # Establecer modo CLI si estamos en ejecución de línea de comandos
+            if hasattr(self, '_is_cli_mode') and self._is_cli_mode:
+                # Para pipeline optimizado, ejecutamos directamente sin interacción del usuario
+                from scripts.pipeline_optimizado import ejecutar_pipeline_optimizado
+                resultado = ejecutar_pipeline_optimizado()
+                if resultado:
+                    print("✅ Pipeline Optimizado completado exitosamente!")
+                else:
+                    print("⚠️ Pipeline Optimizado completado con advertencias.")
+            else:
+                self.execution_modes.ejecutar_pipeline_optimizado()
+        except Exception as e:
+            print(f"❌ Error en Pipeline Optimizado: {e}")
+    
+    def _execute_interactive_mode(self):
+        """Ejecutar modo interactivo"""
+        print("\n🛠️ Iniciando Modo Interactivo...")
+        try:
+            self.execution_modes.ejecutar_modo_interactivo()
+        except Exception as e:
+            print(f"❌ Error en Modo Interactivo: {e}")
+    
+    def _execute_automatic_mode(self):
+        """Ejecutar modo automático completo"""
+        print("\n🎯 Iniciando Modo Automático Completo...")
+        try:
+            # Establecer modo CLI si estamos en ejecución de línea de comandos
+            if hasattr(self, '_is_cli_mode') and self._is_cli_mode:
+                self.orchestrator.set_cli_mode(True)
+                
+            self.execution_modes.ejecutar_modo_automatico_completo()
+        except Exception as e:
+            print(f"❌ Error en Modo Automático: {e}")
+    
+    def _execute_analysis_only(self):
+        """Ejecutar solo análisis exploratorio"""
+        print("\n🔬 Ejecutando Solo Análisis Exploratorio...")
+        try:
+            # Verificar primero datos limpios, luego datos procesados como respaldo
+            if os.path.exists("data/cleanData/CLMUESTRA.csv"):
+                data_source = "cleanData"
+                print("📂 Usando datos limpios para análisis...")
+            elif os.path.exists("data/processedData/muestra.csv"):
+                data_source = "processedData"
+                print("📂 Usando datos procesados para análisis (fallback)...")
+            else:
+                print("❌ No se encontraron datos para análisis.")
+                print("💡 Ejecute primero el pipeline de procesamiento.")
                 return
-            print("Exportando resultados de queries a archivos Excel...")
-            export_query_to_excel("sql_queries/ultimo_estado.sql", db_url)
-            print("[OK] Query 'ultimo_estado.sql' exportado correctamente.")
-            export_query_to_excel("sql_queries/diferencia_absoluta_y_ranking.sql", db_url)
-            print("[OK] Query 'diferencia_absoluta_y_ranking.sql' exportado correctamente.")
+            
+            # Para ejecución de línea de comandos, por defecto no mostrar gráficos
+            if hasattr(self, '_is_cli_mode') and self._is_cli_mode:
+                show_graphics = False
+                print("🖥️ Modo línea de comandos: gráficos deshabilitados")
+            else:
+                show_graphics = self.interactive_menu.confirm_action(
+                    "¿Desea mostrar gráficos interactivos?", default=True
+                )
+            
+            ejecutar_analisis_completo(mostrar_graficos=show_graphics)
+            
+            # Calcular indicadores después del análisis
+            calculate_indicators = True
+            if not (hasattr(self, '_is_cli_mode') and self._is_cli_mode):
+                calculate_indicators = self.interactive_menu.confirm_action(
+                    "¿Desea calcular también los indicadores clave?", default=True
+                )
+            
+            if calculate_indicators:
+                print("📊 Calculando indicadores clave...")
+                self.indicators_calculator.calcular_indicadores_clave()
+                
+        except Exception as e:
+            print(f"❌ Error en análisis exploratorio: {e}")
+            import traceback
+            traceback.print_exc()
+    
+    def _execute_diagrams_only(self):
+        """Ejecutar solo generación de diagramas ejecutivos"""
+        print("\n🎨 Generando Solo Diagramas Ejecutivos...")
+        try:
+            self.executive_diagrams.generar_todos_los_diagramas()
+        except Exception as e:
+            print(f"❌ Error generando diagramas: {e}")
+    
+    def _show_performance_metrics(self):
+        """Mostrar métricas de rendimiento actuales"""
+        print("\n📊 Mostrando Métricas de Performance...")
+        try:
+            self.performance_metrics.show_current_metrics()
+            
+            # Ofrecer exportar métricas
+            if self.interactive_menu.confirm_action(
+                "¿Desea exportar las métricas a un archivo?", default=False
+            ):
+                report_path = self.performance_metrics.export_metrics_report()
+                print(f"✅ Métricas exportadas a: {report_path}")
+                
+        except Exception as e:
+            print(f"❌ Error mostrando métricas: {e}")
+    
+    def _show_optimizations_analysis(self):
+        """Mostrar análisis de optimizaciones"""
+        self.interactive_menu.show_optimizations_analysis()
+    
+    def _show_help(self):
+        """Mostrar ayuda y documentación"""
+        self.interactive_menu.show_help()
+    
+    def _show_exit_message(self):
+        """Mostrar mensaje de salida"""
+        print("\n" + "=" * 60)
+        print("👋 ¡Gracias por usar el Sistema de Business Intelligence!")
+        print("=" * 60)
+        print("📊 Sistema desarrollado por Juan Camilo Riaño Molano")
+        print("🏢 Pipeline Integrado para Análisis Inmobiliario")
+        print("📅 Versión 4.1 - Pipeline Unificado Optimizado")
+        print("=" * 60)
 
-            # Exportar análisis de estados a un solo Excel con varias hojas
-            print("Exportando análisis de estados a 'estado_analysis.xlsx'...")
-            export_estado_analysis_xlsx()
-            print("[OK] Análisis de estados exportado correctamente.")
 
-            # Mostrar resultados principales de cada consulta en consola
-            from sqlalchemy import create_engine
-
-            engine = create_engine(db_url)
-            import pandas as pd
-
-            print("\nResumen de análisis de estados:")
-            for sheet, query in QUERIES:
-                try:
-                    df = pd.read_sql(query, engine)
-                    print(f"\n[{sheet}]")
-                    if not df.empty:
-                        print(df.head(10).to_string(index=False))
-                    else:
-                        print("Sin resultados.")
-                except Exception as e:
-                    print(f"Error ejecutando consulta '{sheet}': {e}")
-
-            # Ejecutar análisis exploratorio automáticamente
-            print("\n" + "=" * 70)
-            print("EJECUTANDO ANÁLISIS EXPLORATORIO AUTOMÁTICO")
-            print("=" * 70)
-            print("Calculando indicadores clave e inconsistencias específicas...")
-            ejecutar_analisis_completo()
-        else:
-            print("No se pudo conectar a la base de datos. Revise la configuración y vuelva a intentar.")
+def main():
+    """Función principal con análisis de argumentos"""
+    args = parse_arguments()
+    app = MainApplication()
+    
+    # Si se proporcionan argumentos de línea de comandos, ejecutar directamente
+    if args.unified:
+        print("🚀 Ejecutando Pipeline Unificado desde línea de comandos...")
+        app._execute_unified_pipeline()
+    elif args.optimized:
+        print("⚡ Ejecutando Pipeline Optimizado desde línea de comandos...")
+        app._execute_optimized_pipeline()
+    elif args.automatic:
+        print("🎯 Ejecutando Modo Automático desde línea de comandos...")
+        app._execute_automatic_mode()
+    elif args.analysis_only:
+        print("� Ejecutando Solo Análisis desde línea de comandos...")
+        app._execute_analysis_only()
+    elif args.diagrams_only:
+        print("🎨 Ejecutando Solo Diagramas desde línea de comandos...")
+        app._execute_diagrams_only()
     else:
-        print("Ejecución finalizada. No se cargaron los datos a la base de datos.")
+        # Ejecutar modo interactivo
+        app.run()
 
 
-# =======================
-# Función para análisis exploratorio
-# =======================
-def preguntar_analisis_exploratorio():
-    """
-    Pregunta al usuario si desea realizar un análisis exploratorio de los datos
-    y ejecuta main_analysis.py si la respuesta es afirmativa.
-    """
-    print("\n¿Desea realizar un análisis exploratorio de los datos?")
-    respuesta = input('Escriba "Si" para ejecutar el análisis, o cualquier otra tecla para finalizar: ').strip().lower()
-    if respuesta == "si":
-        subprocess.run([sys.executable, "main_analysis.py"])
+# Funciones de retrocompatibilidad
+def ejecutar_analisis_exploratorio_interactivo():
+    """Función de retrocompatibilidad para análisis exploratorio"""
+    try:
+        if not os.path.exists("data/cleanData/CLMUESTRA.csv"):
+            print("❌ No se encontraron datos limpios.")
+            print("💡 Ejecute primero el pipeline de procesamiento.")
+            return
+        
+        menu = InteractiveMenu()
+        show_graphics = menu.confirm_action(
+            "¿Desea mostrar gráficos interactivos?", default=True
+        )
+        
+        ejecutar_analisis_completo(mostrar_graficos=show_graphics)
+        print("✅ Análisis exploratorio completado.")
+        
+    except Exception as e:
+        print(f"❌ Error en análisis exploratorio: {e}")
+
+
+def parse_arguments():
+    """Analizar argumentos de línea de comandos"""
+    parser = argparse.ArgumentParser(
+        description="Pipeline Integrado para Análisis de Datos Inmobiliarios",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Ejemplos de uso:
+  python main.py                    # Modo interactivo (menú)
+  python main.py --unified           # Ejecutar pipeline unificado
+  python main.py --optimized         # Ejecutar pipeline optimizado
+  python main.py --analysis-only     # Solo análisis exploratorio
+  python main.py --diagrams-only     # Solo diagramas ejecutivos
+        """
+    )
+    
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--unified", "-u",
+        action="store_true",
+        help="Ejecutar pipeline unificado (recomendado)"
+    )
+    group.add_argument(
+        "--optimized", "-o",
+        action="store_true",
+        help="Ejecutar pipeline optimizado"
+    )
+    group.add_argument(
+        "--automatic", "-a",
+        action="store_true",
+        help="Ejecutar modo automático completo"
+    )
+    group.add_argument(
+        "--analysis-only", "-an",
+        action="store_true",
+        help="Solo ejecutar análisis exploratorio"
+    )
+    group.add_argument(
+        "--diagrams-only", "-d",
+        action="store_true",
+        help="Solo generar diagramas ejecutivos"
+    )
+    
+    parser.add_argument(
+        "--verbose", "-v",
+        action="store_true",
+        help="Mostrar información detallada de ejecución"
+    )
+    
+    return parser.parse_args()
+
+
+# Backward compatibility functions
+def ejecutar_analisis_exploratorio_interactivo():
+    """Backward compatibility function for exploratory analysis"""
+    try:
+        if not os.path.exists("data/cleanData/CLMUESTRA.csv"):
+            print("❌ No se encontraron datos limpios.")
+            print("💡 Ejecute primero el pipeline de procesamiento.")
+            return
+        
+        menu = InteractiveMenu()
+        show_graphics = menu.confirm_action(
+            "¿Desea mostrar gráficos interactivos?", default=True
+        )
+        
+        ejecutar_analisis_completo(mostrar_graficos=show_graphics)
+        print("✅ Análisis exploratorio completado.")
+        
+    except Exception as e:
+        print(f"❌ Error en análisis exploratorio: {e}")
+
+
+def main():
+    """Main function with argument parsing"""
+    args = parse_arguments()
+    app = MainApplication()
+    
+    # Set CLI mode flag for non-interactive execution
+    if any([args.unified, args.optimized, args.automatic, args.analysis_only, args.diagrams_only]):
+        app._is_cli_mode = True
+    
+    # If command line arguments are provided, execute directly
+    if args.unified:
+        print("🚀 Ejecutando Pipeline Unificado desde línea de comandos...")
+        app._execute_unified_pipeline()
+    elif args.optimized:
+        print("⚡ Ejecutando Pipeline Optimizado desde línea de comandos...")
+        app._execute_optimized_pipeline()
+    elif args.automatic:
+        print("🎯 Ejecutando Modo Automático desde línea de comandos...")
+        app._execute_automatic_mode()
+    elif args.analysis_only:
+        print("🔬 Ejecutando Solo Análisis desde línea de comandos...")
+        app._execute_analysis_only()
+    elif args.diagrams_only:
+        print("🎨 Ejecutando Solo Diagramas desde línea de comandos...")
+        app._execute_diagrams_only()
     else:
-        print("Ejecución finalizada.")
+        # Run interactive mode
+        app.run()
 
 
-# =======================
-# Punto de entrada del script principal
-# =======================
+# Legacy function imports for backward compatibility
+try:
+    from scripts.clean_and_backup_data import clean_and_backup_data
+    from scripts.obtain_data import obtain_data
+    from scripts.tratamiento_inconsistencias import ejecutar_tratamiento_inconsistencias
+    from scripts.clean_muestra import clean_muestra
+    from scripts.clean_estados import clean_estados
+    from scripts.test_db_connection import probar_conexion_db
+    from scripts.load_to_sql import main as load_to_sql_main
+    from scripts.export_sql_to_excel import export_sql_to_excel
+except ImportError as e:
+    print(f"⚠️ Advertencia: No se pudieron importar algunos módulos legacy: {e}")
+
+
 if __name__ == "__main__":
-    run_pipeline()
-    preguntar_analisis_exploratorio()
+    main()

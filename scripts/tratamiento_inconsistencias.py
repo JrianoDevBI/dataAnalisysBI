@@ -390,6 +390,21 @@ def ejecutar_tratamiento_inconsistencias():
         total_outliers_winsor = sum([stats["total_outliers"] for stats in stats_winsor.values()])
         print(f"📈 Outliers winsorizados: {total_outliers_winsor}")
         print("✅ Tratamiento de inconsistencias completado exitosamente")
+        
+        # Aclaración sobre el impacto en análisis posteriores
+        print("\n" + "💡" * 50)
+        print("NOTA IMPORTANTE: IMPACTO EN ANÁLISIS POSTERIOR")
+        print("💡" * 50)
+        print("🔄 Los datos procesados han sido mejorados estadísticamente:")
+        print("   • Outliers corregidos por winsorización (límites P1-P99)")
+        print("   • Valores faltantes imputados con medianas zonales")
+        print("   • Duplicados críticos eliminados")
+        print("📊 Al comparar con análisis PRE-tratamiento, esperará:")
+        print("   • MENOR número de inconsistencias detectadas")
+        print("   • MEJOR tasa de confiabilidad de datos")
+        print("   • PRECIOS más estables (menos outliers extremos)")
+        print("   • ESTADOS más consistentes después de limpieza")
+        print("💡" * 50)
 
         return True
 

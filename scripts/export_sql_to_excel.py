@@ -67,7 +67,12 @@ def export_query_to_excel(sql_file, db_url):
     # Crear el engine de SQLAlchemy
     engine = create_engine(db_url)
     # Ejecutar el query y obtener el DataFrame
-    df = pd.read_sql(query, engine)
+    try:
+        with engine.connect() as connection:
+            df = pd.read_sql(query, connection)
+    except Exception:
+        # Fallback: intentar con engine directo si falla la conexión
+        df = pd.read_sql(query, engine)
     # Generar ruta y nombre de archivo Excel en data/query_data/
     output_dir = os.path.join(os.path.dirname(os.path.dirname(sql_file)), "data", "query_data")
     os.makedirs(output_dir, exist_ok=True)
@@ -78,18 +83,38 @@ def export_query_to_excel(sql_file, db_url):
 
 
 # =======================
-# Ejecución principal
+# Función principal
 # =======================
-if __name__ == "__main__":
+def export_sql_to_excel():
+    """
+    Función principal para exportar consultas SQL a Excel
+    """
     # Cargar variables de entorno desde .env
     from dotenv import load_dotenv
+    import os
 
-    load_dotenv()
+    # Definir la raíz del proyecto de forma robusta
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env_path = os.path.join(project_root, "config", ".env")
+    load_dotenv(env_path)
+    
     # Leer la URL de conexión a la base de datos
     db_url = os.getenv("DATABASE_URL")
     if not db_url:
         raise ValueError("No se encontró la variable DATABASE_URL en el entorno")
 
     # Exportar los resultados de los queries especificados
-    export_query_to_excel("sql_queries/ultimo_estado.sql", db_url)
-    export_query_to_excel("sql_queries/diferencia_absoluta_y_ranking.sql", db_url)
+    try:
+        sql_dir = os.path.join(project_root, "sql_queries")
+        export_query_to_excel(os.path.join(sql_dir, "ultimo_estado.sql"), db_url)
+        export_query_to_excel(os.path.join(sql_dir, "diferencia_absoluta_y_ranking.sql"), db_url)
+    except Exception as e:
+        print(f"❌ Error exportando a Excel: {e}")
+        print("⚠️  Los datos están disponibles en la base de datos SQL.")
+
+
+# =======================
+# Ejecución principal
+# =======================
+if __name__ == "__main__":
+    export_sql_to_excel()
